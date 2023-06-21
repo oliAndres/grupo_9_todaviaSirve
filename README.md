@@ -19,3 +19,6 @@
 ## Inspiración de los referentes del mercado:
 ### Sitios por los productos o servicios que ofrecen:
 #### https://telovendo.com.ar/ | www.mercadolibre.com.ar |  www.ebay.com
+
+### Sitios por la estética que presentan:
+#### www.mercadolibre.com.ar |  www.ebay.com  | www.latamairlines.com/ar/es

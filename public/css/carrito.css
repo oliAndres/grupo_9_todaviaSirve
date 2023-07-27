@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #eaf0f2;
+}
+
+.producto1_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 130px;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.producto2_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 130px;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.producto3_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 130px;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.price_total{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 80px;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.type_payment{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_payment {
+    width: 300px;
+    padding: 20px;
+    background-color: rgba(111, 107, 107, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Agregar el box shadow aquí */
+}
+

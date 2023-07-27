@@ -3,10 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito</title>
+    <title>TodaviaSirve</title>
     <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
-    <h1>Carrito</h1>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+<body class="home">
+    <header>
+     <div class="back">
+        <div class="menu container">
+          
+            <a href="#" class="logo"><img src="/images/ts3.png" alt=""></a>
+            <div class="search">
+                <input type="text" placeholder="¿Que productos buscas....?">
+                <button><i class="fi fi-rr-search"></i></button>
+            </div>
+            
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img src="/images/menu.png" class="menu-icono" alt="">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li> <a href="#">Ofertas</a></li>
+                    <li> <a href="#">Categorias</a></li>
+                    <li> <a href="#">Vender</a></li>
+                    <li> <a href="#">Ayuda</a></li>
+                    <li> <a href="#">Registrarse</a></li>
+                    <li> <a href="#">Ingresar</a></li>
+                </ul>
+            </nav>
+        </div>
+     </div>   
+    </header>
+    <main>
+            <div>
+            <ul>
+                <li>
+                    <h3>Tu Carrito(3)</h3>
+                    
+                </li>
+            </ul>
+            <hr>
+            <div class="producto1_box">
+                <article>
+                   <img src="/images/piero.jpg" alt="" width="100px" height="100px">
+               </article>
+               <div class="info_product">
+               <h4>Sommier Piero 2x2</h4>
+               </div>
+               <div class="price_product"></div>
+               <p> $ 60.000 </p>
+           </div>
+            <article class="producto2_box">
+                <div>
+                   <img src="/images/minicomponente.jpg" alt="" width="100px" height="100px">
+               </div>
+               <div class="info_product">
+               <h4>Mini Componente NOBLEX</h4>
+               </div>
+               <div class="price_product"></div>
+               <p>$ 15.000 </p>
+           </article>
+           <div class="producto3_box">
+            <article>
+               <img src="/images/muebletv.jpg" alt="" width="100px" height="100px">
+           </article>
+           <div class="info_product">
+           <h4>MuebleTV Living</h4>
+           </div>
+           <div class="price_product"></div>
+           <p>$ 45.000 </p>
+       </div>
+            <div class="price_total">
+                <h3>TOTAL A PAGAR = </h3>
+                <h3>$ 120.000</h3>
+            </div>
+            <hr>
+            <div class="type_payment">
+                <img src="/images/ms.png" alt="" width="80px" height="50px">
+                <img src="/images/vs.png" alt="" width="80px" height="50px">
+                <img src="/images/mp.png" alt="" width="80px" height="50px">
+                <img src="/images/rp.jpg" alt="" width="80px" height="50px">
+            </div>
+            <div class="form_box">
+            <div class="form_payment">
+                <form action="/procesar_pago" method="post">
+                    <label for="nombre">Nombre y Apellido:</label>
+                    <input type="text" id="nombre" name="nombre" required><br>
+                    <label for="tarjeta">Número de Tarjeta:</label>
+                    <input type="text" id="tarjeta" name="tarjeta" required><br>
+            
+                    <label for="expiracion">Fecha de Expiración:</label>
+                    <input type="text" id="expiracion" name="expiracion" required><br>
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" required><br>
+            
+                    <input type="submit" value="PAGAR">
+                </form>
+
+            </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer--iconBox">
+            <ul class="footer__iconBox--ul">
+                <li style="--clr:#55acee">
+                    <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                </li>
+                <li style="--clr:#43d854">
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                </li>
+                <li style="--clr:#55acee">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a> 
+                </li>
+                <li style="--clr:#ff0095">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer--access">
+            <ul>
+                <li><a href="#">Mi cuenta</a></li>
+                <li><a href="#">Mis Compras</a></li>
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="#">Favoritos</a></li>
+                <li><a href="#">Categorias</a></li>
+                <li><a href="#">Vender</a></li>
+
+            </ul>
+        </div>
+        <div class="footer--date">
+            <p>Copyright &copy; 2023 TodaviaSirve S.R.L<p>
+            <p>Juana Manso 1691, Piso 1, CP 1768, Puerto Madero, CABA</p>
+        </div>
+    </footer>
 </body>
 </html>

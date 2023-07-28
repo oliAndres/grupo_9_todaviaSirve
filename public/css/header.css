@@ -4,7 +4,7 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .container {
@@ -13,7 +13,7 @@
     margin: 0 auto;
 }
 
-.back{
+.home__header__back{
     padding: 30px 0;
     background-image: linear-gradient(
         90deg,
@@ -39,13 +39,13 @@
     border-radius: 10%;
 }
 
-.search{
+.home__header__search{
 display: flex;
 }
 
 input{
     padding: 5%;
-    padding-right: 30px;
+    padding-right: 40px;
     border-radius: 5px 0 0 5px;
     border: 0;
     outline: none;
@@ -66,19 +66,19 @@ button{
     background-color: rgb(15, 82, 141);
 }
 
-.menu .navbar ul li{
+.menu .home__header__navbar ul li{
     position: relative;
     float:left;
 }
 
-.menu .navbar ul li a{
+.menu .home__header__navbar ul li a{
     font-size: 15px;
     padding: 20px;
     color: white;
     display: block;
 }
 
-.menu .navbar ul li a:hover{
+.menu .home__header__navbar ul li a:hover{
     color: #1b6b99;
 }
 #menu {
@@ -107,44 +107,46 @@ button{
     width: 100%;
     height: 100%;
 }
-@media (min-width: 481px){
-    .container{
-        display: flex;
-        
-        width: 50%;
+
+@media (max-width: 804px) {
+    
+    .home__header__search{
+        display: none;
     }
-}
-@media (max-width: 891px) {
     .menu {
         padding: 15px;
+        
     }
     .menu label {
         display: flex;
+        position: relative;
+        right: 10px;
     }
 
-    .back {
-        padding: 47px 0;
+    .home__header__back {
+        padding: 45px 0;
     }
 
-    .menu .navbar {
+    .menu .home__header__navbar {
         position: absolute;
         top: 100%;
         left: 0%;
         right: 0%;
         background-image: linear-gradient(
             90deg,
-            rgb(50, 173, 179) 25%,
-            rgb(64, 135, 179) 73%);
+            rgba(50, 173, 179, 0.9) 25%,
+            rgba(64, 135, 179, 0.9) 73%);
         
         display: none;
     }
 
-    .menu .navbar ul li {
+    .menu .home__header__navbar ul li {
         width: 100%;
+
     }
 
  
-    #menu:checked ~ .navbar {
+    #menu:checked ~ .home__header__navbar {
         display: initial;
     }
 }

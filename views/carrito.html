@@ -7,34 +7,34 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 <body class="home">
-    <header>
-     <div class="back">
-        <div class="menu container">
-          
-            <a href="#" class="logo"><img src="/images/ts3.png" alt=""></a>
-            <div class="search">
-                <input type="text" placeholder="¿Que productos buscas....?">
-                <button><i class="fi fi-rr-search"></i></button>
-            </div>
-            
-            <input type="checkbox" id="menu">
-            <label for="menu">
-                <img src="/images/menu.png" class="menu-icono" alt="">
-            </label>
-            <nav class="navbar">
-                <ul>
-                    <li> <a href="#">Ofertas</a></li>
-                    <li> <a href="#">Categorias</a></li>
-                    <li> <a href="#">Vender</a></li>
-                    <li> <a href="#">Ayuda</a></li>
-                    <li> <a href="#">Registrarse</a></li>
-                    <li> <a href="#">Ingresar</a></li>
-                </ul>
-            </nav>
-        </div>
-     </div>   
-    </header>
-    <main>
+    <header class="home__header">
+        <div class="home__header__back">
+           <div class="menu container">
+               <a href="#" class="logo"><img src="/images/ts3.png" alt=""></a>
+               <div class="home__header__search">
+                   <input type="text" placeholder="¿Que productos buscas....?">
+                   <button><i class="fi fi-rr-search"></i></button>
+               </div>
+               <input type="checkbox" id="menu">
+               <label for="menu">
+                   <img src="/images/menu.png" class="menu-icono" alt="">
+               </label>
+               <nav class="home__header__navbar">
+                   <ul>
+                       <li> <a href="#">Ofertas</a></li>
+                       <li> <a href="#">Categorias</a></li>
+                       <li> <a href="#">Vender</a></li>
+                       <li> <a href="#">Favoritos</a></li>
+                       <li> <a href="#">Mi Cuenta</a></li>
+                   </ul>
+               </nav>
+              
+           </div>
+        </div>   
+       </header>
+    
+       <main class="main">
+        <section class="home__main__section">
             <div>
             <ul>
                 <li>
@@ -43,52 +43,70 @@
                 </li>
             </ul>
             <hr>
-            <div class="producto1_box">
-                <article>
-                   <img src="/images/piero.jpg" alt="" width="100px" height="100px">
-               </article>
+            <div class="productos_container">
+            <article class="producto1_box">
+                <div>
+                   <img src="/images/piero.jpg" alt="" >
+               </div>
                <div class="info_product">
                <h4>Sommier Piero 2x2</h4>
-               </div>
-               <div class="price_product"></div>
                <p> $ 60.000 </p>
-           </div>
+               <button class="button_main">
+                <p>Eliminar</p>
+               </button>
+               </div>
+           </article>
             <article class="producto2_box">
                 <div>
-                   <img src="/images/minicomponente.jpg" alt="" width="100px" height="100px">
+                   <img src="/images/minicomponente.jpg" alt="" >
                </div>
                <div class="info_product">
                <h4>Mini Componente NOBLEX</h4>
-               </div>
-               <div class="price_product"></div>
                <p>$ 15.000 </p>
+               <button class="button_main">
+                <p>Eliminar</p>
+               </button>
+               </div>
            </article>
-           <div class="producto3_box">
-            <article>
-               <img src="/images/muebletv.jpg" alt="" width="100px" height="100px">
-           </article>
-           <div class="info_product">
-           <h4>MuebleTV Living</h4>
+           <article class="producto3_box">
+            <div>
+               <img src="/images/muebletv.jpg" alt="" >
            </div>
-           <div class="price_product"></div>
-           <p>$ 45.000 </p>
-       </div>
+               <div class="info_product">
+               <h4>MuebleTV Living</h4>
+               <p>$ 45.000 </p>
+               <button class="button_main">
+                <p>Eliminar</p>
+               </button>
+           </div>
+       </article>
+    </div>
+            <div class="precio_total_box">   
             <div class="price_total">
-                <h3>TOTAL A PAGAR = </h3>
-                <h3>$ 120.000</h3>
+                <h3>TOTAL:  </h3>
+                <h3>120.000 $ </h3>
             </div>
-            <hr>
-            <div class="type_payment">
-                <img src="/images/ms.png" alt="" width="80px" height="50px">
-                <img src="/images/vs.png" alt="" width="80px" height="50px">
-                <img src="/images/mp.png" alt="" width="80px" height="50px">
-                <img src="/images/rp.jpg" alt="" width="80px" height="50px">
+            </div>        
+            <div class="buy_continue">
+                <button class="button_main">
+                    <h3>Elegir mas productos</h3>
+                </button>
+
+                <button class="button_main">
+                    <h3>Continuar Compra</h3>
+                </button>
+
             </div>
-            <div class="form_box">
+            
+            <!-- <div class="form_box">
             <div class="form_payment">
                 <form action="/procesar_pago" method="post">
+                    <h4>Datos De Tarjeta</h4> 
+                    <br>
                     <label for="nombre">Nombre y Apellido:</label>
-                    <input type="text" id="nombre" name="nombre" required><br>
+                    <br>
+                    <input type="text" id="nombre" name="nombre" required>
+                    <br>
                     <label for="tarjeta">Número de Tarjeta:</label>
                     <input type="text" id="tarjeta" name="tarjeta" required><br>
             
@@ -96,13 +114,15 @@
                     <input type="text" id="expiracion" name="expiracion" required><br>
                     <label for="cvv">CVV:</label>
                     <input type="text" id="cvv" name="cvv" required><br>
-            
-                    <input type="submit" value="PAGAR">
                 </form>
-
+            <button>
+                <h4>PAGAR</h4>
+            </button>    
             </div>
-            </div>
+            </div> -->
+            
         </div>
+        </section>
     </main>
     <footer class="footer">
         <div class="footer--iconBox">

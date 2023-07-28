@@ -3,6 +3,9 @@
 @import '/css/header.css';
 @import '/css/home.css';
 @import './footer.css';
+@import './register.css';
+@import './registerOk.css';
+@import './login.css';
 @import './productos.css';
 
 

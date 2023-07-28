@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 15px 15px 50px 15px;
+    margin: 15px 15px 70px 15px;
     width: 90%;
     max-width: 481px;
     background-color: white;
@@ -72,7 +72,7 @@
 
 @media(min-width: 481px){
     .login__main--box {
-        margin: 30px 0 30px;
+        margin: 30px 0 80px;
         border-radius: 10px;
     }
 }

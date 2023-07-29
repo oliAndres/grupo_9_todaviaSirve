@@ -24,6 +24,11 @@
 .card-precio {
     text-align: center;
 }
+.productos__main-button{
+   display: flex;
+  
+
+}
 
 
 /*----------- 481px ----------- */

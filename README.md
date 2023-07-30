@@ -1,17 +1,23 @@
-# grupo_9_todaviaSirve
-## Descripción:
-### todaviaSirve ofrece servicio de "compra/venta" de una amplia gamas de "productos usados".
-### como novedad incorpora la posibilida de realizar "trueque" de productos entre los usuarios.
-
-## Público:
-### todaviaSirve apunta a todo publico en general.
-### apunta a toda persona tenga cosas usadas y quiera venderlas.
-### apunta a toda persona que quiera comprar algun producto usado.
-### apunta a toda persona que quiera tener la posibilidad de adquirir un producto a travez de trueque.
-
-## Integrantes:
-### Andrés Olivera | Edad: 36 | Ciudad: Moreno |
-### Cristian Velazquez | Edad: 27 | Ciudad: Capital Federal |
-### Melitza Gaunas | Edad: 35 | Ciudad: Avellaneda |
-### Federico Chandia | Edad: 26 | Ciudad: Magdalena |
-
+# Resultados de la Retro  del Sprint 1
+**Hacer Más:**
+1. Mini reuniones de seguimiento y apoyo.
+2. Compartir más nuestro avance.
+3. Pedir más feedback.
+4. Ser más precisos a la hora de comunicar al equipo sobre la realizacion de tareas
+----------------- // --------------------
+**Dejar de hacer:**
+1. procrastinar.
+2. Darle importancia a detalles minimos que nos pueden retrasar en el avance del proyecto
+----------------- // --------------------
+**Seguir haciendo:**
+1. Daylis 
+2. Seguir teniendo buena comunicación.
+3. Seguir apoyandonos y darnos una mano.
+----------------- // --------------------
+**Empezar a hacer:**
+1. Trabajar en el Sprint 2.
+2. Buscar e incorporar nuevas tecnicas y/o herramientas que nos faciliten el trabajo en equipo
+----------------- // --------------------
+**Hacer menos:**
+1. Menos cambios de alcance en medio del proyecto. A menudo, los cambios repentinos causan retrasos y dificultades para cumplir con los plazos
+----------------- // --------------------

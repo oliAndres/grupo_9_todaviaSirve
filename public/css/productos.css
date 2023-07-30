@@ -1,0 +1,57 @@
+.productos__main {
+    text-align: justify;
+    margin: 0px 10px 10px 10px;
+}
+
+.justify-content-between {
+    border-style: inset;
+    
+}
+
+.card-title {
+    text-align: center;
+    font-weight: 900;
+
+}
+
+.card-text {
+    padding: 3px;
+    border-bottom-style: inset;
+    margin: 0px;
+    font-size: x-small;
+}
+
+.card-precio {
+    text-align: center;
+}
+.productos__main-button{
+   display: flex;
+  
+
+}
+
+
+/*----------- 481px ----------- */
+
+@media (min-width:481px) {
+    .productos__main {
+        display: block;
+    }
+
+    .card-text {
+        font-size: medium;
+    }
+}
+
+/*----------- 769px ----------- */
+
+@media (min-width:769px) {
+    .productos__main {
+        display: contents;
+        padding: 0px;
+    }
+
+    .card-text {
+        font-size: small;
+    }
+}

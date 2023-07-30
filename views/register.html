@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <script src="https://kit.fontawesome.com/2b30b879ab.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header class="home__header">
+        <div class="home__header__back">
+           <div class="menu container">
+               <a href="#" class="logo"><img src="/images/ts3.png" alt=""></a>
+               <div class="home__header__search">
+                   <input type="text" placeholder="¿Que productos buscas....?">
+                   <button><i class="fi fi-rr-search"></i></button>
+               </div>
+               <input type="checkbox" id="menu">
+               <label for="menu">
+                   <img src="/images/menu.png" class="menu-icono" alt="">
+               </label>
+               <nav class="home__header__navbar">
+                   <ul>
+                       <li> <a href="#">Ofertas</a></li>
+                       <li> <a href="#">Categorias</a></li>
+                       <li> <a href="#">Vender</a></li>
+                       <li> <a href="#">Favoritos</a></li>
+                       <li> <a href="#">Mi Cuenta</a></li>
+                   </ul>
+               </nav>
+              
+           </div>
+        </div>   
+       </header>
+    <main class="register--main">
+        <div class="register__main--box">
+            <div class="register__main__box--title">
+                <h2>Creá tu cuenta</h2>
+            </div>
+            <div class="register__main__box--formbox">
+                <form class="register__main__box__formbox--form" action="/registerOk" method="get">
+                    <div>
+                        <label class="register__main__box__formbox--campobox">
+                            <input class="register__main__box__formbox--campo" type="text" name="name" id="name" placeholder="Nombre" required>
+                        </label>
+                    </div>
+                    <div class="register__main__box__formbox--campobox">
+                        <label>
+                            <input class="register__main__box__formbox--campo" type="text" name="lastname" id="lastname" placeholder="Apellido" required>
+                        </label>
+                    </div>
+                    <div class="register__main__box__formbox--campobox">
+                        <label>
+                            <input class="register__main__box__formbox--campo" type="email" name="email" id="email" placeholder="Correo electronico" required>
+                        </label>
+                    </div>
+                    <div class="register__main__box__formbox--campobox">
+                        <label>
+                            <input class="register__main__box__formbox--campo" type="password" name="password" id="password" placeholder="Contraseña" required>
+                        </label>
+                    </div>
+                    <div class="register__main__box__formbox--campobox">
+                        <label>
+                            <input class="register__main__box__formbox--campo" type="password" name="passwordTwo" id="passwordTwo" placeholder="Repetir Contraseña" required>
+                        </label>
+                    </div>
+                    <div class="register__main__box__formbox--buttonbox">
+                        <a href="/registerOk">
+                            <button class="register__main__box__formbox--button">Crear</button>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer--iconBox">
+            <ul class="footer__iconBox--ul">
+                <li style="--clr:#55acee">
+                    <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                </li>
+                <li style="--clr:#43d854">
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                </li>
+                <li style="--clr:#55acee">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a> 
+                </li>
+                <li style="--clr:#ff0095">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer--access">
+            <ul>
+                <li><a href="#">Mi cuenta</a></li>
+                <li><a href="#">Mis Compras</a></li>
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="#">Favoritos</a></li>
+                <li><a href="#">Categorias</a></li>
+                <li><a href="#">Vender</a></li>
+
+            </ul>
+        </div>
+        <div class="footer--date">
+            <p>Copyright &copy; 2023 TodaviaSirve S.R.L<p>
+            <p>Juana Manso 1691, Piso 1, CP 1768, Puerto Madero, CABA</p>
+        </div>
+    </footer>
+</body>
+</html>

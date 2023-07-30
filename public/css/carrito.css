@@ -25,14 +25,15 @@ body {
     box-shadow : 0 0 10px rgba(0, 0, 0, 0.3)   
 }
 .button_main{
-    background-color: #2A394F;
+    background-color: rgb(50, 173, 179);
     padding: 5px;
     position: relative;
     border: 0;
-    margin-left: auto;
+    margin-left: 20px;
     border-radius: 8px;
     color: white;
     cursor: pointer;
+    display: inline-block;
 }
 div.info_product {
 width: 90%;
@@ -73,10 +74,10 @@ align-items: flex-end;
     margin-top: 10px;
     padding: 15px;
     display: flex;
-    padding-right: 25%;
+    
     flex-direction: row;
-    justify-items: center;
-    justify-content:space-evenly;
+    
+    justify-content:center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     
     
@@ -101,3 +102,18 @@ align-items: flex-end;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+/*Media Query para cambiar font size en resoluciones 
+menores a 480 y asi evitar que se grande la letra*/
+@media (max-width:480px){
+    div.info_product {
+        padding-left: 10px;
+        font-size: 17px;
+        align-items:flex-end
+    }
+
+    .buy_continue button h3{
+        font-size: 15px;
+
+
+    }
+}

@@ -1,3 +1,4 @@
+
 .productos__main {
     text-align: justify;
     margin: 0px 10px 10px 10px;
@@ -8,27 +9,40 @@
     
 }
 
-.card-title {
+.productos__main-card-title {
+    margin-top: 5px;
     text-align: center;
     font-weight: 900;
 
 }
 
-.card-text {
+.productos__main-card-text {
     padding: 3px;
     border-bottom-style: inset;
     margin: 0px;
     font-size: x-small;
+    
 }
 
-.card-precio {
+.productos__main-card-precio {
     text-align: center;
 }
-.productos__main-button{
-   display: flex;
+
+   .productos__main-center-bt{  
+    display: flex;
+    justify-content: center; } 
+
+  
+    .productos__main-img {
+        display: flex;
+        justify-content: center;
+    
+      } 
+
   
 
-}
+
+
 
 
 /*----------- 481px ----------- */
@@ -38,7 +52,7 @@
         display: block;
     }
 
-    .card-text {
+    .productos__main-card-text {
         font-size: medium;
     }
 }
@@ -51,7 +65,9 @@
         padding: 0px;
     }
 
-    .card-text {
+    .productos__main-card-text{
         font-size: small;
     }
+
+    
 }

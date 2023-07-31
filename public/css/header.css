@@ -108,7 +108,22 @@ button{
     height: 100%;
 }
 
-@media (max-width: 804px) {
+
+@media (min-width: 1024px){
+
+}
+
+@media (min-width: 768px){
+    .menu .home__header__navbar ul li a{
+        font-size: 15px;
+        padding: 15px;
+        color: white;
+        display: block;
+    }
+}
+
+
+@media (max-width: 768px) {
     
     .home__header__search{
         display: none;
@@ -150,3 +165,4 @@ button{
         display: initial;
     }
 }
+

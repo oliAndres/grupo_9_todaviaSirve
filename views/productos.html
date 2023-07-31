@@ -4,77 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
+    <link rel="stylesheet" href="/css/styles.css">
     <!--css boostrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> 
 
     <script src="https://kit.fontawesome.com/2b30b879ab.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="fontawesome/css/all.css">
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
-    <body class="home">
-        <header>
-         <div class="back">
-            <div class="menu container">
-                <a href="#" class="logo"><img src="/images/ts3.png" alt=""></a>
-                <div class="search">
-                    <input type="text" placeholder="¿Que productos buscas....?">
-                    <button><i class="fi fi-rr-search"></i></button>
-                </div>
-                <input type="checkbox" id="menu">
-                <label for="menu">
-                    <img src="/images/menu.png" class="menu-icono" alt="">
-                </label>
-                <nav class="navbar">
-                    <ul>
-                        <li> <a href="#">Ofertas</a></li>
-                        <li> <a href="#">Categorias</a></li>
-                        <li> <a href="#">Vender</a></li>
-                        <li> <a href="#">Ayuda</a></li>
-                        <li> <a href="#">Registrarse</a></li>
-                        <li> <a href="#">Ingresar</a></li>
-                    </ul>
-                </nav>
-               
-            </div>
-         </div>   
-        </header>
+
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
    
-    <main class="productos__main">
-        <div class="row">
-            <div class="col-12 col-md-10 col-lg-8 mx-auto mt-5">
-                <div class="card mb-3" >
-                    <div class="row g-0">
-                      <div class="col-12 col-md-7">
-                        <div class="d-flex flex-column gap-1">
-                            <img id="main-image" src="/images/productos/samsung-hg46ea590ls.jpg" class="img-fluid rounded-top" alt="...">
-                            <div class="d-flex justify-content-between">
-                                <img src="images/productos/samsung2.jpg" width="22%" alt="" onclick="document.getElementById('main-image').setAttribute('src','/images/productos/samsung2.jpg')">
-                                <img src="images/productos/Samsung detalle del producto-medidas.jpg" width="46%"  alt="" onclick="document.getElementById('main-image').setAttribute('src','/images/productos/Samsung detalle del producto-medidas.jpg')">
-                                <img src="images/productos/samsung5.jpg" width="30%" alt="" onclick="document.getElementById('main-image').setAttribute('src','/images/productos/samsung5.jpg')">
+  
+</head>
+
+<body class="home">    
+    <header class="home__header">
+        <div class="home__header__back">
+           <div class="menu container">
+               <a href="/" class="logo"><img src="/images/ts3.png" alt=""></a>
+               <div class="home__header__search">
+                   <input type="text" placeholder="¿Que productos buscas....?">
+                   <button><i class="fi fi-rr-search"></i></button>
+               </div>
+               <input type="checkbox" id="menu">
+               <label for="menu">
+                   <img src="/images/menu.png" class="menu-icono" alt="">
+               </label>
+               <nav class="home__header__navbar">
+                   <ul>
+                       <li> <a href="#">Ofertas</a></li>
+                       <li> <a href="#">Categorias</a></li>
+                       <li> <a href="#">Vender</a></li>
+                       <li> <a href="#">Favoritos</a></li>
+                       <li> <a href="/login">Mi Cuenta</a></li>
+                   </ul>
+               </nav>
+              
+           </div>
+        </div>   
+       </header> 
+
+        <main class="productos__main">
+            <div class="row">
+                <div class="col-12 col-md-10 col-lg-8 mx-auto mt-5">
+                    <div class="productos__main-card mb-3">
+                        <div class="productos__main-row g-0">
+                            <div class="productos__main-img">
+                            <div class="col-12 col-md-7">
+                                <div class="d-flex flex-column gap-1">
+                                    <img id="main-image" src="/images/productos/samsung-hg46ea590ls.jpg"
+                                        class="img-fluid rounded-top" alt="...">
+                                    <div class="d-flex justify-content-between">
+                                        <img src="images/productos/samsung2.jpg" width="22%" alt=""
+                                            onclick="document.getElementById('main-image').setAttribute('src','/images/productos/samsung2.jpg')">
+                                        <img src="images/productos/Samsung detalle del producto-medidas.jpg" width="46%"
+                                            alt=""
+                                            onclick="document.getElementById('main-image').setAttribute('src','/images/productos/Samsung detalle del producto-medidas.jpg')">
+                                        <img src="images/productos/samsung5.jpg" width="30%" alt=""
+                                            onclick="document.getElementById('main-image').setAttribute('src','/images/productos/samsung5.jpg')">
+                                        </div>
+                                        </div>
+                                </div>
+
+                            </div>
+                            <class="col-12 col-md-5">
+                                <div class="productos__main-card-body">
+                                    <h6 class="productos__main-card-title">Detalle del producto</h6>
+                                    <p class="productos__main-card-text">Samsung D6100 101,6 cm (40") Full HD Smart TV Negro, Rosa:
+                                        Samsung D6100. Diagonal de la pantalla: 101,6 cm (40"), Resolución de la
+                                        pantalla: 1920 x 1080 Pixeles, Tipo HD: Full HD. 3D. Smart TV. Tecnología de
+                                        interpolación de movimiento: CMR (Clear Motion Rate) 200. Formato de señal
+                                        digital: DVB-C, DVB-T. Ethernet. Color del producto: Negro, Rosa.</p>
+                                    <p class="card-text"><small class="text-body-secondary">Tiempo de uso: 3
+                                            meses</small></p>
+
+                                    <h3 class="productos__main-card-precio">$ 90.000</h3>
+                                    
+                                </div>
+                                <div class="productos__main-center-bt">  
+                                <a href="/carrito">
+                                    <button class="productos__main-button">Comprar</button>
+                                </a>
+                            </div> 
                             </div>
                         </div>
-                    
-                      </div>
-                      <div class="col-12 col-md-5">
-                        <div class="card-body">
-                          <h6 class="card-title">Detalle del producto</h6>
-                          <p class="card-text">Samsung D6100 101,6 cm (40") Full HD Smart TV Negro, Rosa: Samsung D6100. Diagonal de la pantalla: 101,6 cm (40"), Resolución de la pantalla: 1920 x 1080 Pixeles, Tipo HD: Full HD. 3D. Smart TV. Tecnología de interpolación de movimiento: CMR (Clear Motion Rate) 200. Formato de señal digital: DVB-C, DVB-T. Ethernet. Color del producto: Negro, Rosa.</p>
-                          <p class="card-text"><small class="text-body-secondary">Tiempo de uso: 3 meses</small></p>
-
-                          <h3 class="card-precio">$ 90.000</h3>
-                          
-                        </div>
-                      </div>
                     </div>
-                  </div>
+                </div>
             </div>
-        </div>
-    </main>
+            
+                
+            
+        </main>
 
 
 
-       <footer class="footer">
+        <footer class="footer">
             <div class="footer--iconBox">
                 <ul class="footer__iconBox--ul">
                     <li style="--clr:#55acee">
@@ -84,7 +108,7 @@
                         <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
                     </li>
                     <li style="--clr:#55acee">
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a> 
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
                     </li>
                     <li style="--clr:#ff0095">
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -99,13 +123,15 @@
                     <li><a href="#">Favoritos</a></li>
                     <li><a href="#">Categorias</a></li>
                     <li><a href="#">Vender</a></li>
-    
+
                 </ul>
             </div>
             <div class="footer--date">
-                <p>Copyright &copy; 2023 TodaviaSirve S.R.L<p>
+                <p>Copyright &copy; 2023 TodaviaSirve S.R.L
+                <p>
                 <p>Juana Manso 1691, Piso 1, CP 1768, Puerto Madero, CABA</p>
             </div>
         </footer>
-    </body>
-    </html>
+</body>
+
+</html>

@@ -1,37 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TodaviaSirve</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todavia Sirve</title>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+  <!-- SWIPER -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="/public/css/home.css">
+  
+</head>
+
 <body class="home">
-    <header>
-     <div class="back">
-        <div class="menu container">
-            <a href="#" class="logo"><img src="/images/ts3.png" alt=""></a>
-            <div class="search">
-                <input type="text" placeholder="¿Que productos buscas....?">
-                <button><i class="fi fi-rr-search"></i></button>
-            </div>
-            <input type="checkbox" id="menu">
-            <label for="menu">
-                <img src="/images/menu.png" class="menu-icono" alt="">
-            </label>
-            <nav class="navbar">
-                <ul>
-                    <li> <a href="#">Ofertas</a></li>
-                    <li> <a href="#">Categorias</a></li>
-                    <li> <a href="#">Vender</a></li>
-                    <li> <a href="#">Ayuda</a></li>
-                    <li> <a href="#">Registrarse</a></li>
-                    <li> <a href="#">Ingresar</a></li>
-                </ul>
-            </nav>
-           
+    <header class="home__header">
+        <div class="home__header__back">
+           <div class="menu container">
+               <a href="/" class="logo"><img src="/public/images/ts3.png" alt=""></a>
+               <div class="home__header__search">
+                   <input type="text" placeholder="¿Que productos buscas....?">
+                   <button><i class="fi fi-rr-search"></i></button>
+               </div>
+               <input type="checkbox" id="menu">
+               <label for="menu">
+                   <img src="/public/images/menu.png" class="menu-icono" alt="">
+               </label>
+               <nav class="home__header__navbar">
+                   <ul>
+                       <li> <a href="#">Ofertas</a></li>
+                       <li> <a href="#">Categorias</a></li>
+                       <li> <a href="#">Vender</a></li>
+                       <li> <a href="#">Favoritos</a></li>
+                       <li> <a href="/login">Mi Cuenta</a></li>
+                   </ul>
+               </nav>
+              
+           </div>
+        </div>   
+       </header>
+  <main>
+    <div class="hero-image">
+      <img class="banner" src="/public/images/banner.jpg" alt="">
+      <div class="hero-text">
+        <h1>Todavia sirve</h1>
+        <p>Todo lo que buscas en nuevos y usados!</p>
+        <button>Publicar</button>
+      </div>
+    </div>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="/public/images/Auto_usado3.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="/public/images/Campera_usada.webp" alt=""></div>
+        <div class="swiper-slide"><img src="/public/images/Lancha3.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="/public/images/parlantes-beamlb230-1.jpg" alt=""></div>
+      </div>
+
+      <div class="card-container">
+        <div class="card-section">
+          <div class="card">
+            <img src="/public/images/Auto_usado1.jpg" alt="" style="width:100%">
+            <p class="card-descripcion">Producto-</p>
+            <p class="price">$19.99</p>
+            <p>Some text about the product..</p>
+          </div>
+          <div class="card">
+            <img src="/public/images/Campera_usada.webp" alt="" style="width:100%">
+            <p class="card-descripcion">Producto-</p>
+            <p class="price">$19.99</p>
+            <p>Some text about the product..</p>
+          </div>
+          <div class="card">
+            <img src="/public/images/stilh_motoguadaña2.jpg" alt="" style="width:100%">
+            <p class="card-descripcion">Producto-</p>
+            <p class="price">$19.99</p>
+            <p>Some text about the product..</p>
+          </div>
+          <div class="card">
+            <img src="/public/images/parlantes-beamlb230.jpg" alt="" style="width:100%">
+            <p class="card-descripcion">Producto-</p>
+            <p class="price">$19.99</p>
+            <p>Some text about the product..</p>
+          </div>
+          <div class="card">
+            <img src="/public/images/Lancha3.jpg" alt="" style="width:100%">
+            <p class="card-descripcion">Producto-</p>
+            <p class="price">$19.99</p>
+            <p>Some text about the product..</p>
+          </div>
+          <div class="card">
+            <img src="/public/images/Lancha.jpg" alt="" style="width:100%">
+            <p class="card-descripcion">Producto-</p>
+            <p class="price">$19.99</p>
+            <p>Some text about the product..</p>
+          </div>
+          <div class="card">
+            <img src="/public/images/parlantes-beamlb230.jpg" alt="" style="width:100%">
+            <p class="card-descripcion">Producto-</p>
+            <p class="price">$19.99</p>
+            <p>Some text about the product..</p>
+          </div>
+          <div class="card">
+            <img src="/public/images/parlantes-beamlb230.jpg" alt="" style="width:100%">
+            <p class="card-descripcion">Producto-</p>
+            <p class="price">$19.99</p>
+            <p>Some text about the product..</p>
+          </div>
         </div>
-     </div>   
-    </header>
+      </div>
+  </main>
+  <footer class="footer">
+    <div class="footer--iconBox">
+      <ul class="footer__iconBox--ul">
+        <li style="--clr:#55acee">
+          <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+        </li>
+        <li style="--clr:#43d854">
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        </li>
+        <li style="--clr:#55acee">
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        </li>
+        <li style="--clr:#ff0095">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer--access">
+      <ul>
+        <li><a href="#">Mi cuenta</a></li>
+        <li><a href="#">Mis Compras</a></li>
+        <li><a href="#">Ofertas</a></li>
+        <li><a href="#">Favoritos</a></li>
+        <li><a href="#">Categorias</a></li>
+        <li><a href="#">Vender</a></li>
+
+      </ul>
+    </div>
+    <div class="footer--date">
+      <p>Copyright &copy; 2023 TodaviaSirve S.R.L
+      <p>
+      <p>Juana Manso 1691, Piso 1, CP 1768, Puerto Madero, CABA</p>
+    </div>
+  </footer>
+  <!-- JS SWIPER -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="/swiper.js"></script>
 </body>
+
 </html>

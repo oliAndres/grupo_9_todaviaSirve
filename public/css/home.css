@@ -1,12 +1,9 @@
-@import 'header.css';
-@import 'carousel_swiper.css';
-@import 'footer.css';
-
-
 * {
     box-sizing: border-box;
 }
-
+.home__main{
+    background-color: #ffff;
+}
 /* HERO IMAGE */
 .hero-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
@@ -55,7 +52,8 @@
     flex-wrap: wrap;
 }
 .card-descripcion{
-    font-size: 1rem;
+    font-size: 1.5rem;
+    margin-top: 5px;
 }
 .card img {
     object-fit: cover;
@@ -76,7 +74,6 @@
 @media(max-width: 768px) {
     .card-descripcion{
         font-size: 1.4rem;
-        margin-top: 5px;
     }
 }
 @media(max-width: 420px){

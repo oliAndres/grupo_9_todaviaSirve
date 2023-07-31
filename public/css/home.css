@@ -1,4 +1,7 @@
+@import 'header.css';
 @import 'carousel_swiper.css';
+@import 'footer.css';
+
 
 * {
     box-sizing: border-box;
@@ -51,20 +54,34 @@
     display: flex;
     flex-wrap: wrap;
 }
-
+.card-descripcion{
+    font-size: 1rem;
+}
 .card img {
     object-fit: cover;
     width: 250px;
     height: 250px;
 
 }
-
 .card:hover {
     Transform: scale(1.2)
 }
 
 .price {
-    margin-left: 2rem;
-    margin-top: 1.9rem;
-    font-size: 22px;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    font-size: 1.3rem;
 }
+
+@media(max-width: 768px) {
+    .card-descripcion{
+        font-size: 1.4rem;
+        margin-top: 5px;
+    }
+}
+@media(max-width: 420px){
+    .card-container{
+        padding: 3.5rem 0;
+    }
+}
+

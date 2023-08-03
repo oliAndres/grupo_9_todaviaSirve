@@ -19,6 +19,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .banner {
@@ -57,10 +59,15 @@
     flex-wrap: wrap;
 }
 
-.card-descripcion {
+.card-name {
     font-size: 1.5rem;
+    margin: 4px;
 }
 
+.card-descripcion{
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
 .card img {
     object-fit: cover;
     width: 250px;
@@ -75,16 +82,17 @@
 .card a {
     text-decoration: none;
     color: #010101;
+    width: -webkit-fill-available;
 }
 
 .price {
     margin-left: 1rem;
-    margin-top: 0.5rem;
+    margin-top: 5px;
     font-size: 1.3rem;
 }
 
 @media(max-width: 768px) {
-    .card-descripcion {
+    .card-name {
         font-size: 1.4rem;
     }
 }

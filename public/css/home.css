@@ -1,11 +1,13 @@
-@import 'header.css';
-@import 'carousel_swiper.css';
-@import 'footer.css';
-
-
 * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
+
+.home__main {
+    background-color: #ffff;
+}
+
+
 
 /* HERO IMAGE */
 .hero-image {
@@ -17,6 +19,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .banner {
@@ -36,7 +40,7 @@
 
 
 .card-container {
-    padding: 4rem ;
+    padding: 4rem;
 }
 
 .card-section {
@@ -54,8 +58,15 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.card-name {
+    font-size: 1.5rem;
+    margin: 4px;
+}
+
 .card-descripcion{
-    font-size: 1rem;
+    margin-bottom: 5px;
+    margin-left: 5px;
 }
 .card img {
     object-fit: cover;
@@ -63,25 +74,31 @@
     height: 250px;
 
 }
+
 .card:hover {
-    Transform: scale(1.2)
+    Transform: scale(1.2);
+
+}
+.card a {
+    text-decoration: none;
+    color: #010101;
+    width: -webkit-fill-available;
 }
 
 .price {
     margin-left: 1rem;
-    margin-top: 0.5rem;
+    margin-top: 5px;
     font-size: 1.3rem;
 }
 
 @media(max-width: 768px) {
-    .card-descripcion{
+    .card-name {
         font-size: 1.4rem;
-        margin-top: 5px;
-    }
-}
-@media(max-width: 420px){
-    .card-container{
-        padding: 3.5rem 0;
     }
 }
 
+@media(max-width: 420px) {
+    .card-container {
+        padding: 3.5rem 0;
+    }
+}

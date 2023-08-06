@@ -59,15 +59,35 @@
 .login__main__box__formbox--buttonbox {
     display: flex;
     justify-content: center;
-    padding-bottom: 20px;
+    padding: 10px 10px 30px;
+    gap: 30px;
 }
 .login__main__box__formbox--button {
     background-color: rgb(50, 173, 179);
     margin: 0;
     border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+.login__main__box__formbox--button:hover {
+    box-shadow:  3px 3px 8px silver;
 }
 .login__main__box__formbox--button:focus {
     background-color: rgb(64, 135, 179);
+}
+.login__main__box__formbox--button2 {
+    background-color: #fff;
+    margin: 0;
+    border-radius: 5px;
+    color: rgb(64, 135, 179);
+    font-weight: bold;
+}
+.login__main__box__formbox--button2:hover {
+    box-shadow:  3px 3px 8px silver;
+}
+.login__main__box__formbox--button2:focus {
+    background-color: rgb(64, 135, 179);
+    color: #fff;
 }
 
 @media(min-width: 481px){

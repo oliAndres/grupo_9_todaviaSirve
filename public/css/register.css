@@ -66,6 +66,9 @@
     margin: 0;
     border-radius: 5px;
 }
+.register__main__box__formbox--button:hover {
+    box-shadow:  3px 3px 8px silver;
+}
 .register__main__box__formbox--button:focus {
     background-color: rgb(64, 135, 179);
 }

@@ -5,15 +5,13 @@
 }
 
 .justify-content-between {
-    border-style: inset;
-    
+    border-style: inset;    
 }
 
 .productos__main-card-title {
     margin-top: 5px;
     text-align: center;
     font-weight: 900;
-
 }
 
 .productos__main-card-text {
@@ -36,7 +34,7 @@
     .productos__main-img {
         display: flex;
         justify-content: center;
-    
+   
       } 
 
   

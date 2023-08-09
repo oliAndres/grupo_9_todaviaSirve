@@ -10,7 +10,7 @@ app.get('/carrito',(req,res)=>res.sendFile(path.join(__dirname,'views','carrito.
 app.get('/register',(req,res)=>res.sendFile(path.join(__dirname,'views','register.html')));
 app.get('/registerOk',(req,res)=>res.sendFile(path.join(__dirname,'views','registerOk.html')));
 app.get('/login',(req,res)=>res.sendFile(path.join(__dirname,'views','login.html')));
-app.get('/productos',(req,res)=>res.sendFile(path.join(__dirname,'views','productos.html')))
+app.get('/productDetail',(req,res)=>res.sendFile(path.join(__dirname,'views','productDetail.html')))
 app.get('/*',(req,res)=>res.sendFile(path.join(__dirname,'views','404.html')));
 
 

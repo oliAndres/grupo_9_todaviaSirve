@@ -13,31 +13,8 @@
 </head>
 
 <body class="home">
-  <header class="home__header">
-    <div class="home__header__back">
-      <div class="menu container">
-        <a href="/" class="logo"><img src="/images/ts3.png" alt=""></a>
-        <div class="home__header__search">
-          <input type="text" placeholder="¿Que productos buscas....?">
-          <button><i class="fi fi-rr-search"></i></button>
-        </div>
-        <input type="checkbox" id="menu">
-        <label for="menu">
-          <img src="/images/menu.png" class="menu-icono" alt="">
-        </label>
-        <nav class="home__header__navbar">
-          <ul>
-            <li> <a href="#">Ofertas</a></li>
-            <li> <a href="#">Categorias</a></li>
-            <li> <a href="#">Vender</a></li>
-            <li> <a href="#">Favoritos</a></li>
-            <li> <a href="/login">Mi Cuenta</a></li>
-          </ul>
-        </nav>
-
-      </div>
-    </div>
-  </header>
+  
+  <%- include('partials/header') %> 
   <main class="home__main">
     <div class="hero-image">
       <img class="banner" src="/images/banner.jpg" alt="">
@@ -124,40 +101,8 @@
       </div>
     </div>
   </main>
-  <footer class="footer">
-    <div class="footer--iconBox">
-      <ul class="footer__iconBox--ul">
-        <li style="--clr:#55acee">
-          <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-        </li>
-        <li style="--clr:#43d854">
-          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-        </li>
-        <li style="--clr:#55acee">
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-        </li>
-        <li style="--clr:#ff0095">
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        </li>
-      </ul>
-    </div>
-    <div class="footer--access">
-      <ul>
-        <li><a href="#">Mi cuenta</a></li>
-        <li><a href="#">Mis Compras</a></li>
-        <li><a href="#">Ofertas</a></li>
-        <li><a href="#">Favoritos</a></li>
-        <li><a href="#">Categorias</a></li>
-        <li><a href="#">Vender</a></li>
+  <%- include('partials/footer') %> 
 
-      </ul>
-    </div>
-    <div class="footer--date">
-      <p>Copyright &copy; 2023 TodaviaSirve S.R.L
-      <p>
-      <p>Juana Manso 1691, Piso 1, CP 1768, Puerto Madero, CABA</p>
-    </div>
-  </footer>
   <!-- JS SWIPER -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <!-- Por fallos en la importacion decidí incluir el script de swiper completo -->

@@ -1,43 +1,54 @@
-
-.productos__main {
+.product-detail__main {
     text-align: justify;
     margin: 0px 10px 10px 10px;
 }
-
-.justify-content-between {
-    border-style: inset;    
+.product-detail__main-img {
+    display: flex;
+    justify-content: center;
+}
+.product-detail__main-image-central {
+    background-color: white;
+    display: flex;
+    align-content: center;
+    flex-wrap: nowrap;
+    justify-content: center;
 }
 
-.productos__main-card-title {
+img#main-image {
+    height: 230px;
+}
+.product-detail__main-image-justify-content-between {
+    border-style: inset;
+    gap: inherit;
+    justify-content: space-between;
+}
+
+.product-detail__main-card-title {
     margin-top: 5px;
     text-align: center;
     font-weight: 900;
 }
-
-.productos__main-card-text {
+.product-detail__main-card-text {
     padding: 3px;
     border-bottom-style: inset;
     margin: 0px;
     font-size: x-small;
-    
-}
 
-.productos__main-card-precio {
+}
+.product-detail__main-card-precio {
     text-align: center;
 }
 
-   .productos__main-center-bt{  
+.product-detail__main-center-bt {
     display: flex;
-    justify-content: center; } 
+    justify-content: center;
+}
 
-  
-    .productos__main-img {
-        display: flex;
-        justify-content: center;
-   
-      } 
-
-  
+button.product-detail__main-button{
+    background-color: rgb(50, 173, 179);
+    border-radius:5px;
+    font-weight: bold;
+}
 
 
 
@@ -46,26 +57,35 @@
 /*----------- 481px ----------- */
 
 @media (min-width:481px) {
-    .productos__main {
+    .product-detail__main {
         display: block;
     }
 
-    .productos__main-card-text {
+    .product-detail__main-card-text {
         font-size: medium;
     }
-}
+
+    .product-detail__main-image-central {
+        height: 260px;
+        padding-top: 10px;
+    }
+  }
 
 /*----------- 769px ----------- */
 
 @media (min-width:769px) {
-    .productos__main {
+    .product-detail__main {
         display: contents;
         padding: 0px;
     }
 
-    .productos__main-card-text{
+    .product-detail__main-card-text {
         font-size: small;
     }
+}
 
-    
+@media(min-width: 1024px) {
+    img#main-image {
+        height: 250px;
+    }
 }

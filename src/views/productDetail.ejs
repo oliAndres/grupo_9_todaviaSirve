@@ -5,18 +5,20 @@
 <body class="home">
     <%- include('partials/header') %>
 
-        <main class="productos__main">
+        <main class="product-detail__main">
             <div class="row">
                 <div class="col-12 col-md-10 col-lg-8 mx-auto mt-5">
-                    <div class="productos__main-card mb-3">
-                        <div class="productos__main-row g-0">
-                            <div class="productos__main-img">
+                    <div class="product-detail__main-card mb-3">
+                        <div class="product-detail__main-row g-0">
+                            <div class="product-detail__main-img">
 
                                 <div class="col-12 col-md-7">
                                     <div class="d-flex flex-column gap-1">
-                                        <img id="main-image" src="/images/productos/samsung-hg46ea590ls.jpg" class="img-fluid rounded-top" alt="...">
+                                        <div class="product-detail__main-image-central">
 
-                                        <div class="d-flex justify-content-between">
+                                          <img id="main-image" src="/images/productos/samsung-hg46ea590ls.jpg" class="img-fluid rounded-top" alt="..." widht="100%" style="object-fit:cover"; width:100%; height:100%;>
+                                        </div>
+                                        <div class="d-flex product-detail__main-image-justify-content-between">
                                             <img src="/images/productos/samsung2.jpg" width="22%" alt=""
                                                 onclick="document.getElementById('main-image').setAttribute('src','/images/productos/samsung2.jpg')">
                                             <img src="/images/productos/Samsung detalle del producto-medidas.jpg"
@@ -30,9 +32,9 @@
 
                             </div>
                             <class="col-12 col-md-5">
-                                <div class="productos__main-card-body">
-                                    <h6 class="productos__main-card-title">Detalle del producto</h6>
-                                    <p class="productos__main-card-text">Samsung D6100 101,6 cm (40") Full HD Smart TV
+                                <div class="product-detail__main-card-body">
+                                    <h6 class="product-detail__main-card-title">Detalle del producto</h6>
+                                    <p class="product-detail__main-card-text">Samsung D6100 101,6 cm (40") Full HD Smart TV
                                         Negro, Rosa:
                                         Samsung D6100. Diagonal de la pantalla: 101,6 cm (40"), Resolución de la
                                         pantalla: 1920 x 1080 Pixeles, Tipo HD: Full HD. 3D. Smart TV. Tecnología de
@@ -41,12 +43,12 @@
                                     <p class="card-text"><small class="text-body-secondary">Tiempo de uso: 3
                                             meses</small></p>
 
-                                    <h3 class="productos__main-card-precio">$ 90.000</h3>
+                                    <h3 class="product-detail__main-card-precio">$ 90.000</h3>
 
                                 </div>
-                                <div class="productos__main-center-bt">
+                                <div class="product-detail__main-center-bt">
                                     <a href="/carrito">
-                                        <button class="productos__main-button">Comprar</button>
+                                        <button class="product-detail__main-button">Comprar</button>
                                     </a>
                                 </div>
                         </div>

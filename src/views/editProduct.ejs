@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head') %>
+  <body>
+    <%- include('partials/header') %>
+    <main class="editProduct__main">
+    
+      <form class="editProduct__main__form" action="" name="" method="POST">
+        <h3 class="editProduct__main__form--titulo">Edicion De Productos</h3>
+        <div class="mb-3">
+          <label for="" class="form-label">Lista de Categorias </label>
+          <br />
+          <select class="form-select" id="">
+            <option value="Seleccionar">Seleccionar...</option>
+            <option value="Tecnologia">Tecnologia</option>
+            <option value="Hogar">Hogar Y Muebles</option>
+            <option value="Moda">Moda</option>
+            <option value="Celulares">Celulares</option>
+            <option value="Electrodomesticos">Electrodomesticos</option>
+            <option value="Herramientas">Herramientas</option>
+            <option value="Juguetes">Juegos y Juguetes</option>
+            <option value="Otros">Otros</option>
+          </select>
+          <label for="" class="form-label">Lista de Productos </label>
+          <br />
+          <select class="form-select" id="">
+            <option selected>Seleccionar...</option>
+            <option value="">Televisor 40" TCL</option>
+            <option value="">Campera RompeViento</option>
+            <option value="">Lancha</option>
+            <option value="">Parlantes DJ</option>
+            <option value="">MotoGuadaña</option>
+          </select>
+          <label for="">Nombre </label>
+          <input
+            type="text"
+            class="form-control"
+            id=""
+            placeholder="Nombre Del Producto"
+          />
+          <label for="" class="form-label">Precio</label>
+          <input
+            type="text"
+            class="form-control"
+            id=""
+            placeholder="Precio Del Producto"
+          />
+        </div>
+
+        <div class="mb-5">
+          <label for="" class="form-label">Descripcion</label>
+          <textarea class="form-control" id="" rows="3">Descripcion Breve Del Producto</textarea>
+        </div>
+        <div class="boxselect_categorias"></div>
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="inputGroupSelect01"
+            >Categorias</label
+          >
+          <select class="form-select form-select-sm" aria-label="Categorias">
+            <option selected>Seleccionar...</option>
+            <option value="Tecnologia">Tecnologia</option>
+            <option value="Hogar">Hogar Y Muebles</option>
+            <option value="Moda">Moda</option>
+            <option value="Celulares">Celulares</option>
+            <option value="Electrodomesticos">Electrodomesticos</option>
+            <option value="Herramientas">Herramientas</option>
+            <option value="Juguetes">Juegos y Juguetes</option>
+            <option value="Otros">Otros</option>
+          </select>
+        </div>
+        <br />
+
+        <div class="boxselect_estadoProducto">
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="">Estado</label>
+            <select class="form-select" id="">
+              <option selected>Seleccionar...</option>
+              <option value="">Nuevo</option>
+              <option value="">Usado</option>
+            </select>
+          </div>
+        </div>
+        <div class="boximage_imgProduct">
+          <label for="" class="form-label">Imagen del producto</label>
+
+          <div class="input-group mb-3">
+            <input type="file" class="form-control" id="" />
+            <label class="input-group-text" for="">Subir</label>
+          </div>
+        </div>
+
+        <div class="boxbutton">
+          <div>
+            <a href="/">
+              <button type="button" class="guardar_Cambios">Guardar Cambios</button>
+              </a>
+          </div>
+          <div>
+            <button type="reset" class="Borrar">Borrar</button>
+          </div>
+
+
+        </div>
+      </form>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </main>
+     <%- include('partials/footer') %>  
+  </body>
+</html>

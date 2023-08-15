@@ -4,4 +4,6 @@ const router = express.Router();
 
 router.get('/detail', productsController.detail);
 
+router.get('/edit', productsController.edit);
+
 module.exports = router;

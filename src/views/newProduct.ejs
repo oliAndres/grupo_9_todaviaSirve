@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+
+    <body>
+        <%- include('partials/header') %>
+        <main class="newProduct__main">
+            <form action="" method="post" class="newProduct__main__form" >
+                <h3 class="newProduct__main__form--title">Vende lo que quieras!</h3>
+                <br>
+                <div class="mb-3">
+                <input placeholder="Nombre" class="form-control" type="text" name="prodName">
+                <input placeholder="precio" type="number" name="precio">
+                <div class="boximage_imgProduct">
+                    <label for="" class="form-label">Imagen del producto</label>
+                    <div class="input-group mb-3">
+                      <input type="file" class="form-control" id="" />
+                      <label class="input-group-text" for="">Subir</label>
+                    </div>
+                  </div>
+                <label for="prodDescription" class="form-label">Breve descripción</label>
+                <textarea class="form-control" id="" rows="3">Descripcion Breve Del Producto</textarea>
+                <div class="boxselect_estadoProducto">
+                    <div class="input-group mb-3">
+                      <label class="input-group-text" for="">Estado</label>
+                      <select class="form-select" id="">
+                        <option selected>Seleccionar...</option>
+                        <option value="">Nuevo</option>
+                        <option value="">Usado</option>
+                      </select>
+                    </div>
+                  </div>
+                <select name="tiempo-uso"  id="tiempo-uso" class="form-select form-select-sm" aria-label="Tiempo de uso">
+                    <option value="menos6">Menos 6 meses</option>
+                    <option value="mas6">Más 6 meses</option>
+                    <option value="masAño">Más de 1 año</option>
+                </select>
+                <section>
+                    <label for="color" class="form-label">Color</label>
+                    <input type="text" class="form-control" name="colorProd" placeholder="Ingrese el color" id="colorProd">
+                    <label for="color" class="form-label">Material</label>
+                    <input type="text" class="form-control" name="materialProd" placeholder="Ingrese el material" id="materialProd">
+                    <h5>Categoría</h5>
+                    <ul>
+                        <li><label for="electro" class="form-label">Electro</label>
+                            <input type="checkbox" value="electro" name="electro" id="electro">
+                        </li>
+                        <li><label for="moda" class="form-label">Moda</label>
+                            <input type="checkbox" value="moda" name="moda" id="moda">
+                        </li>
+                        <li><label for="hogar" class="form-label">Hogar</label>
+                            <input type="checkbox" value="hogar" name="hogar" id="hogar">
+                        </li>
+                        <li><label for="jugueteria" class="form-label">Jugueteria</label>
+                            <input type="checkbox" value="jugueteria" name="jugueteria" id="jugueteria">
+                        </li>
+                        <li><label for="otros" class="form-label">Otros</label>
+                            <input type="checkbox" value="otros" name="otros" id="otros">
+                        </li>
+                    </ul>
+                </section>
+              
+            <select name="stock" id="stock" class="form-select form-select-sm" aria-label="Stock">
+                <option value="Nuevo">Único</option>
+                <option value="Usado">Stock</option>
+            </select>
+            <select name="variante" id="variante" class="form-select form-select-sm" aria-label="Variante">
+                <option value="color">color</option>
+                <option value="material">Material</option>
+                <option value="tamaño">Tamaño</option>
+
+            </select>  
+            <div class="boxbutton">
+                <div>
+                  <a href="/">
+                    <button type="button" class="Publicar">Publicar</button>
+                    </a>
+                </div>
+                <div>
+                  <button type="reset" class="Limpiar">Limpiar</button>
+                </div>
+            </form>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            </main>
+            <%- include('partials/footer') %>
+    </body>
+
+</html>

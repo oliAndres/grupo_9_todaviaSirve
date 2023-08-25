@@ -1,4 +1,4 @@
-# Resultados de la Retro  del Sprint 2
+# Resultados de la Retro  del Sprint 3
 **Hacer Más:**
 1. Puntualidad en las reuniones
 2. Arrancar las tareas desde el inicio del sprint

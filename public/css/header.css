@@ -41,6 +41,7 @@
 
 .home__header__search{
 display: flex;
+
 }
 
 input{
@@ -72,6 +73,7 @@ button{
 }
 
 .menu .home__header__navbar ul li a{
+    text-decoration: none;
     font-size: 15px;
     padding: 20px;
     color: white;

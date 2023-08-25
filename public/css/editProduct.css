@@ -1,0 +1,60 @@
+
+/* .editProduct__main{
+    height: 80%;
+    width: 100%;
+    
+} */
+.editProduct__main{
+    width: 100%;
+    padding: 25px;
+}
+.editProduct__main__form{
+    display: flex;
+    flex-direction: column;
+}
+
+.editProduct__main__form{
+padding: 10px;
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.editProduct__main--form{
+padding: 10px;
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.editProduct__main__form--titulo{
+    text-align: center;
+    font-size: 22px;
+    font-family: roboto;
+}
+.guardar_Cambios {
+    border-radius: 10%;
+    background-color:var(--celeste); 
+    color: white;
+}
+
+.Borrar {
+    border-radius: 10%;
+    background-color: var(--celeste);
+    color: white; 
+
+}
+.boxbutton{
+    flex-wrap: wrap;
+    display: flex;
+
+    justify-content: space-around;
+}
+
+@media (min-width: 1024px){
+    .editProduct__main__form{
+        padding-top: 10px;
+        width: 50%;
+        margin: 0 auto;
+    }
+ 
+    
+}

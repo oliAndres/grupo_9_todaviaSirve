@@ -6,6 +6,6 @@ router.get('/detail', productsController.detail);
 
 router.get('/edit', productsController.edit); 
 
-router.get('/new', productsController.new);
+router.get('/add', productsController.add);
 
 module.exports = router;

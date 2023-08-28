@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <div class="table--container">
+          <h1>Administrador de Productos</h1>
+          <a href="/create" class="btn btn-outline-primary mt-4 "><i class='bx bxs-plus-circle bx-md' ></i></a>
+          <table class="table table-bordered table-striped text-center mt-4  small-table">
+            <thead class="thead-dark">
+             
+              <tr class="bg-primary text-white">
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% products.forEach(producto => { %>
+                <tr>
+                  <td><%= producto.id %></td>
+                  <td><%= producto.name %></td>
+                  <td><%= producto.marca %></td>
+                  <td><%= producto.price %></td>
+                  <td><%= producto.category %></td>
+                  <td><%= producto.description %></td>
+                  
+                  <td>
+                    <a href="/edit/<%= producto.id %>" class="btn btn-outline-primary">EDITAR</a>
+                    <a href="/delete/<%= producto.id %>" class="btn btn-outline-danger">ELIMINAR</a>
+                  </td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    <%- include('partials/footer') %>
+</body>
+</html>

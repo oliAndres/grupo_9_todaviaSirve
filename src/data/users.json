@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "firstName" : "Federico",
+        "lastName" : "Chandia",
+        "email" : "fede@gmail.com",
+        "password" : 1234,
+        "category" : "admin",
+        "image" : "federico.jpg"
+
+    },
+    {
+        "id": 2,
+        "firstName" : "Melitza",
+        "lastName" : "Gaunas",
+        "email" : "melitza@gmail.com",
+        "password" : 12345,
+        "category" : "admin",
+        "image" : "Melitza.jpg"
+
+    },
+    {
+        "id": 3,
+        "firstName" : "Christian",
+        "lastName" : "Velasquez",
+        "email" : "fede@gmail.com",
+        "password" : 1234,
+        "category" : "admin",
+        "image" : "Christian.jpg"
+
+    },
+    {
+        "id": 4,
+        "firstName" : "Andres",
+        "lastName" : "Olivera",
+        "email" : "Andres@gmail.com",
+        "password" : 1234,
+        "category" : "admin",
+        "image" : "Andres.jpg"
+
+    },
+    {
+        "id": 5,
+        "firstName" : "Marcos",
+        "lastName" : "Estevez",
+        "email" : "marcos@gmail.com",
+        "password" : 4444,
+        "category" : "user",
+        "image" : "user2.jpg"
+
+    },
+    {
+        "id": 6,
+        "firstName" : "Arturo",
+        "lastName" : "Buendia",
+        "email" : "artu@gmail.com",
+        "password" : 1234,
+        "category" : "user",
+        "image" : "user1.jpg"
+
+    },
+    {
+        "id": 7,
+        "firstName" : "Juan",
+        "lastName" : "mohicano",
+        "email" : "juani@gmail.com",
+        "password" : 1234,
+        "category" : "user",
+        "image" : "user3.jpg"
+
+    }
+]

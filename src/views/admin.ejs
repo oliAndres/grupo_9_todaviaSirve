@@ -5,9 +5,9 @@
     <%- include('partials/header') %>
     <main>
         <div class="table--container">
-          <h1>Administrador de Productos</h1>
-          <a href="/create" class="btn btn-outline-primary mt-4 "><i class='bx bxs-plus-circle bx-md' ></i></a>
-          <table class="table table-bordered table-striped text-center mt-4  small-table">
+          <h1 class="title-table">Administrador de Productos</h1>
+          <a href="/create" class="btn btn-outline-primary mt-4 button-agregar"><i class='bx bxs-plus-circle bx-md' ></i></a>
+          <table class="table table-bordered table-striped text-center mt-4  small-table table-shadow">
             <thead class="thead-dark">
              
               <tr class="bg-primary text-white">
@@ -31,8 +31,8 @@
                   <td><%= producto.description %></td>
                   
                   <td>
-                    <a href="/edit/<%= producto.id %>" class="btn btn-outline-primary">EDITAR</a>
-                    <a href="/delete/<%= producto.id %>" class="btn btn-outline-danger">ELIMINAR</a>
+                    <a href="/edit/<%= producto.id %>" class="btn btn-outline-primary btn-sm btn-action">EDITAR</a>
+                    <a href="/delete/<%= producto.id %>" class="btn btn-outline-danger btn-sm btn-action">ELIMINAR</a>
                   </td>
                 </tr>
               <% }); %>

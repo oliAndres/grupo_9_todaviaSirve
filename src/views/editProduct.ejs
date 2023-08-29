@@ -8,7 +8,7 @@
       <form class="editProduct__main__form" action="" name="" method="POST">
         <h3 class="editProduct__main__form--titulo">Edicion De Productos</h3>
         <div class="mb-3">
-          <label for="" class="form-label">Lista de Categorias </label>
+          <!-- <label for="" class="form-label">Lista de Categorias </label>
           <br />
           <select class="form-select" id="">
             <option value="Seleccionar">Seleccionar...</option>
@@ -30,13 +30,15 @@
             <option value="">Lancha</option>
             <option value="">Parlantes DJ</option>
             <option value="">MotoGuadaña</option>
-          </select>
+          </select> -->
           <label for="">Nombre </label>
           <input
             type="text"
             class="form-control"
             id=""
             placeholder="Nombre Del Producto"
+            name="name"
+            value="<%= name %>"
           />
           <label for="" class="form-label">Precio</label>
           <input
@@ -44,12 +46,14 @@
             class="form-control"
             id=""
             placeholder="Precio Del Producto"
+            name="price"
+            value="<%= price %>"
           />
         </div>
 
         <div class="mb-5">
           <label for="" class="form-label">Descripcion</label>
-          <textarea class="form-control" id="" rows="3">Descripcion Breve Del Producto</textarea>
+          <textarea class="form-control" id="" rows="3"><%= description %> Descripcion Breve Del Producto</textarea>
         </div>
         <div class="boxselect_categorias"></div>
         <div class="input-group mb-3">
@@ -58,14 +62,9 @@
           >
           <select class="form-select form-select-sm" aria-label="Categorias">
             <option selected>Seleccionar...</option>
-            <option value="Tecnologia">Tecnologia</option>
-            <option value="Hogar">Hogar Y Muebles</option>
-            <option value="Moda">Moda</option>
-            <option value="Celulares">Celulares</option>
-            <option value="Electrodomesticos">Electrodomesticos</option>
-            <option value="Herramientas">Herramientas</option>
-            <option value="Juguetes">Juegos y Juguetes</option>
-            <option value="Otros">Otros</option>
+            <% categories.forEach(category => { %>
+              <option value="<%= category.name %>"><%= category.name %></option>             
+            <% }) %>
           </select>
         </div>
         <br />

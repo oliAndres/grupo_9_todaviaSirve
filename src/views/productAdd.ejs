@@ -5,28 +5,29 @@
     <body>
         <%- include('partials/header') %>
             <main class="newProduct__main">
-                <form action="" method="post" class="newProduct__main__form">
+                <form action="/products/add" method="POST" class="newProduct__main__form">
                     <h3 class="newProduct__main__form--title">Vende lo que quieras!</h3>
                     <br>
                     <div class="mb-3">
-                        <input placeholder="Nombre" class="form-control" type="text" name="prodName">
-                        <input placeholder="precio" type="number" name="precio" class="form-control">
+                        <input placeholder="Nombre" class="form-control" type="text" name="prodName" id="prodName">
+                        <input placeholder="precio" type="number" name="precio" id="price" class="form-control">
                         <div class="boximage_imgProduct">
                             <label for="" class="form-label">Imagen del producto</label>
                             <div class="input-group mb-3">
-                                <input type="file" class="form-control" id="" />
-                                <label class="input-group-text" for="">Subir</label>
+                                <input type="file" class="form-control" name="image" id="image" />
+                                <label class="input-group-text" for="image">Subir</label>
                             </div>
                         </div>
                         <label for="prodDescription" class="form-label">Breve descripción</label>
-                        <textarea class="form-control" id="" rows="3">...</textarea>
+                        <textarea class="form-control" name="description" id="description" rows="3">...</textarea>
                         <div class="boxselect_estadoProducto">
                             <div class="input-group mb-3">
-                                <label class="input-group-text" for="">Estado</label>
-                                <select class="form-select" id="">
-                                    <option selected>Seleccionar...</option>
-                                    <option value="">Nuevo</option>
-                                    <option value="">Usado</option>
+                                <label class="input-group-text" for="category">Estado</label>
+                                <select class="form-select" name="category" id="category">
+                                    <option value="" selected>Seleccionar...</option>
+                                    <% categories.forEach(category => { %>
+                                     <option value="<%= category.name %>"><%= category.name %></option>
+                                    <% }) %>
                                 </select>
                             </div>
                         </div>
@@ -84,7 +85,7 @@
                             </div>
                             <div>
                                 <a href="/">
-                                <button type="button" class="Publicar">Publicar</button>
+                                <button type="submit" class="Publicar">Publicar</button>
                             </a>
                             </div>
                 </form>

@@ -1,0 +1,12 @@
+[ 
+    {
+        "id:" : 1,
+        "name" : "Nuevo",
+        "image" : null
+    },
+    {
+        "id:" : 2,
+        "name" : "Usado",
+        "image" : null
+    }
+]

@@ -4,4 +4,5 @@ module.exports ={
     edit : require('./products/edit'),
     create : require('./products/create'),
     remove : require('./products/removeProduct'),
+    update : require('./products/update'),
 }

@@ -5,10 +5,10 @@
     <%- include('partials/header') %>
     <main class="editProduct__main">
     
-      <form class="editProduct__main__form" action="" name="" method="POST">
+      <form class="editProduct__main__form" action="/products/update/<%= id %>?_method=PUT" method="POST" enctype="multipart/form-data">
         <h3 class="editProduct__main__form--titulo">Edicion De Productos</h3>
         <div class="mb-3">
-          <label for="" class="form-label">Lista de Categorias </label>
+          <!-- <label for="" class="form-label">Lista de Categorias </label>
           <br />
           <select class="form-select" id="">
             <option value="Seleccionar">Seleccionar...</option>
@@ -30,42 +30,49 @@
             <option value="">Lancha</option>
             <option value="">Parlantes DJ</option>
             <option value="">MotoGuadaña</option>
-          </select>
+          </select> -->
           <label for="">Nombre </label>
           <input
             type="text"
             class="form-control"
-            id=""
+            id="name"
             placeholder="Nombre Del Producto"
+            name="name"
+            value="<%= name %>"
+          />
+          <label for="">Marca </label>
+          <input
+            type="text"
+            class="form-control"
+            id="marca"
+            placeholder="Nombre Del Producto"
+            name="marca"
+            value="<%= marca %>"
           />
           <label for="" class="form-label">Precio</label>
           <input
             type="text"
             class="form-control"
-            id=""
+            id="price"
             placeholder="Precio Del Producto"
+            name="price"
+            value="<%= price %>"
           />
         </div>
 
         <div class="mb-5">
           <label for="" class="form-label">Descripcion</label>
-          <textarea class="form-control" id="" rows="3">Descripcion Breve Del Producto</textarea>
+          <textarea name="description" class="form-control" id="description" rows="3"><%= description %></textarea>
         </div>
         <div class="boxselect_categorias"></div>
         <div class="input-group mb-3">
           <label class="input-group-text" for="inputGroupSelect01"
             >Categorias</label
           >
-          <select class="form-select form-select-sm" aria-label="Categorias">
-            <option selected>Seleccionar...</option>
-            <option value="Tecnologia">Tecnologia</option>
-            <option value="Hogar">Hogar Y Muebles</option>
-            <option value="Moda">Moda</option>
-            <option value="Celulares">Celulares</option>
-            <option value="Electrodomesticos">Electrodomesticos</option>
-            <option value="Herramientas">Herramientas</option>
-            <option value="Juguetes">Juegos y Juguetes</option>
-            <option value="Otros">Otros</option>
+          <select class="form-select form-select-sm" aria-label="Default select example" name="category" id="category">
+            <% categories.forEach(item => { %>
+              <option <%= item.name === category && 'selected' %> value="<%= item.name %>"><%= item.name %></option>             
+            <% }) %>
           </select>
         </div>
         <br />
@@ -73,26 +80,32 @@
         <div class="boxselect_estadoProducto">
           <div class="input-group mb-3">
             <label class="input-group-text" for="">Estado</label>
-            <select class="form-select" id="">
+            <select class="form-select" id="">       
               <option selected>Seleccionar...</option>
               <option value="">Nuevo</option>
               <option value="">Usado</option>
             </select>
           </div>
         </div>
+        <hr>
         <div class="boximage_imgProduct">
           <label for="" class="form-label">Imagen del producto</label>
 
+          <div class="col-12 col-md-6">
+            <img src="/images/productos/<%= image1 || 'default-placeholder.jpg' %>" alt="">
+          </div>
+          <hr>
+
           <div class="input-group mb-3">
-            <input type="file" class="form-control" id="" />
-            <label class="input-group-text" for="">Subir</label>
+            <label class="btn btn-secondary" for="image">Subir</label>
+            <input hideen type="file" class="form-control" id="image">
           </div>
         </div>
 
         <div class="boxbutton">
           <div>
             <a href="/">
-              <button type="button" class="guardar_Cambios">Guardar Cambios</button>
+              <button class="guardar_Cambios">Guardar Cambios</button>
               </a>
           </div>
           <div>

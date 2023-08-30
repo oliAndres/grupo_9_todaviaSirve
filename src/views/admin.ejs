@@ -44,11 +44,10 @@
                   </td>
 
                   <td>
-                    <a href="/edit/<%= producto.id %>" class="btn btn-outline-primary">EDITAR</a>
+                    <a href="/edit/<%= producto.id %>" class="btn btn-outline-primary btn-sm btn-action">EDITAR</a>
                     <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
                       data-bs-target="#deleteModalProducts<%= producto.id %>"> Eliminar</button>
                     <%- include('partials/modalDelete', { id: producto.id, name: producto.name }) %>
-
                   </td>
                 </tr>
                 <% }); %>

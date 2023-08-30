@@ -3,9 +3,9 @@
       "id": "1",
       "name": "Microondas Acero Inoxidable",
       "marca": "Smeg",
-      "price": 219000,
-      "category": "hogar y muebles",
+      "price": 229000,
       "description": "Microondas Acero Inoxidable Smeg - Con Grill - 23 Litros.",
+      "category": "hogar",
       "image1": "microondasSmeg.webp",
       "image2": "microondasSmeg2.webp",
       "image3": "microondasSmeg3.webp"
@@ -130,13 +130,5 @@
       "image1": "TelevisorLcd.webp",
       "image2": "TelevisorLcd2.webp",
       "image3": "TelevisorLcd3.webp"
-   },
-   {
-      "id": "121",
-      "price": null,
-      "category": "Usado",
-      "description": "...lasasdaddadwqeqrqr",
-      "image": null,
-      "createAt": "2023-08-29T23:37:27.690Z"
    }
 ]

@@ -9,5 +9,5 @@ router.get('/edit/:id', productsController.edit);
 router.put('/update/:id',upload.array('images'), productsController.update);
 
 router.get('/add', productsController.add);
-
+router.post('/add', productsController.create)
 module.exports = router;

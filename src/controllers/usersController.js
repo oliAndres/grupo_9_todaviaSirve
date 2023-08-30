@@ -7,5 +7,5 @@ module.exports = {
     },
     registerOk : (req,res) => {
         return res.render('registerOk');
-    }
+    },
 }

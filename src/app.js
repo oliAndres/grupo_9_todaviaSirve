@@ -11,8 +11,7 @@ var productsRouter = require('./routes/products');
 var carritoRouter = require('./routes/carrito');
 var adminRouter = require('./routes/admin')
 var app = express();
-const methodOverride = require('method-override');
-app.use(methodOverride('_method'));
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

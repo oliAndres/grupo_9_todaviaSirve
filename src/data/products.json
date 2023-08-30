@@ -1,16 +1,5 @@
 [
    {
-      "id": "1",
-      "name": "Microondas Acero Inoxidable",
-      "marca": "Smeg",
-      "price": 229000,
-      "description": "Microondas Acero Inoxidable Smeg - Con Grill - 23 Litros.",
-      "category": "hogar",
-      "image1": "microondasSmeg.webp",
-      "image2": "microondasSmeg2.webp",
-      "image3": "microondasSmeg3.webp"
-   },
-   {
       "id": "2",
       "name": "cafetera con filtro",
       "marca": "Atma",

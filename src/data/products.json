@@ -110,17 +110,6 @@
       "image3": "iPhone123.webp"
    },
    {
-      "id": "11",
-      "name": "Campera De Cuero",
-      "marca": "Levis",
-      "price": 49999,
-      "category": "moda",
-      "description": "Campera De Cuero Tipo Levis Bross Etc! Talle S Amplio Hombre",
-      "image1": "CamperaDeCuero.webp",
-      "image2": "CamperaDeCuero2.webp",
-      "image3": "CamperaDeCuero3.webp"
-   },
-   {
       "id": "12",
       "name": "Lcd 42",
       "marca": "Philips",

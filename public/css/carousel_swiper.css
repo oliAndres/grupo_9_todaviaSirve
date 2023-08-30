@@ -19,10 +19,10 @@ body {
 
 .swiper-slide img {
     display: block;
-    width: 70%;
-    height: 70%;
-    object-fit: cover;
-}
+    width: 450px; /* Ancho en píxeles */
+    height: auto; /* Altura en píxeles */
+    object-fit: cover; /* Ajusta la imagen para cubrir el área sin distorsionar */
+  }
 
 .swiper {
     margin-left: auto;

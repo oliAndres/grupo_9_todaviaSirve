@@ -10,83 +10,39 @@
       <div class="hero-text">
         <h1>Todavia sirve</h1>
         <p>Todo lo que buscas en nuevos y usados!</p>
-        <button><p> <a href="/products/new">Publicar</a></p></button>
+        <button><p> <a href="/products/add">Publicar</a></p></button>
       </div>
     </div>
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="/images/Auto_usado3.jpg" alt=""></div>
-        <div class="swiper-slide"><img src="/images/Campera_usada.webp" alt=""></div>
-        <div class="swiper-slide"><img src="/images/Lancha3.jpg" alt=""></div>
-        <div class="swiper-slide"><img src="/images/parlantes-beamlb230-1.jpg" alt=""></div>
+        <% products.forEach(producto => { %>
+          <div class="swiper-slide">
+            <img src="/images/productos/<%= producto.image1 %>" alt="" class="product-image">
+          </div>
+        <% }); %>
       </div>
     </div>
+    
     <div class="card-container">
       <div class="card-section">
-        <div class="card">
-          <a href="/products/detail">
-          <img src="\images\tv-50-noblex-dr50x7550-android-4k.jpg" alt="" style="width:100%"></a>
-          <p class="card-name">Televisor 40"</p>
-          <p class="price">$90.000</p>
-          <p class="card-descripcion">Vendo tele 40"...</p>
+          <% products.forEach(producto => {%>
+          <div class="card">
+          <a href="/products/detail/<%= producto.id %>">
+          <img src="/images/productos/<%= producto.image1 %>" alt="" style="width:100%"></a>
+          <p class="card-name"><%= producto.name %></p>
+          <p class="price"><%= producto.price %></p>
+          <p class="card-descripcion"><%= producto.description %></p>
         </div>
-        <div class="card">
-          <a href="/products/detail">
-          <img src="/images/Auto_usado1.jpg" alt="" style="width:100%"></a>
-          <p class="card-name">Camioneta</p>
-          <p class="price">$19.99</p>
-          <p  class="card-descripcion">Camioneta 2008 103.000 km...</p>
-        </div>
-        <div class="card">
-          <a href="/products/detail">
-            <img src="/images/Campera_usada.webp" alt="" style="width:100%"></a>
-            <p class="card-name">Campera</p>
-            <p class="price">$19.99</p>
-            <p class="card-descripcion">Campera rompeviento semi-nueva...</p>
-          
-        </div>
-        <div class="card">
-          <a href="/products/detail">
-          <img src="/images/stilh_motoguadaña2.jpg" alt="" style="width:100%"></a>
-          <p class="card-name">Motoguadaña</p>
-          <p class="price">$19.99</p>
-          <p class="card-descripcion">Sthil poco uso...</p>
-        </div>
-        <div class="card">
-          <a href="/products/detail">
-          <img src="/images/parlantes-beamlb230.jpg" alt="" style="width:100%"></a>
-          <p class="card-name">Parlantes Beam</p>
-          <p class="price">$19.99</p>
-          <p class="card-descripcion">Parlantes poco uso los vendo...</p>
-        </div>
-        <div class="card">
-          <a href="/products/detail">
-          <img src="/images/Lancha3.jpg" alt="" style="width:100%"></a>
-          <p class="card-name">Lancha</p>
-          <p class="price">$19.99</p>
-          <p class="card-descripcion">Lancha motor fuera de borda...</p>
-        </div>
-        <div class="card">
-          <a href="/products/detail">
-          <img src="/images/Lancha.jpg" alt="" style="width:100%"></a>
-          <p class="card-name">Lancha</p>
-          <p class="price">$19.99</p>
-          <p class="card-descripcion">Lancha perfecto vacaciones de...</p>
-        </div>
-        <div class="card">
-          <a href="/products/detail">
-          <img src="/images/parlantes-beamlb230.jpg" alt="" style="width:100%"></a>
-          <p class="card-name">Parlantes</p>
-          <p class="price">$19.99</p>
-          <p class="card-descripcion">Permuto parlantes...</p>
-        </div>
-        <div class="card">
-          <a href="/products/detail">
-          <img src="/images/parlantes-beamlb230.jpg" alt="" style="width:100%"></a>
-          <p class="card-name">Parlantes DJ</p>
-          <p class="price">$19.99</p>
-          <p class="card-descripcion">Parlantes para salon de fiesta...</p>
-        </div>
+          <%}) %>
+          <% products.forEach(producto => {%>
+            <div class="card">
+            <a href="/products/detail/<%= producto.id %>">
+            <img src="/images/productos/<%= producto.image1 %>" alt="" style="width:100%"></a>
+            <p class="card-name"><%= producto.name %></p>
+            <p class="price"><%= producto.price %></p>
+            <p class="card-descripcion"><%= producto.description %></p>
+          </div>
+            <%}) %>          
       </div>
     </div>
   </main>

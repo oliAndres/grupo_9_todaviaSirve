@@ -1,10 +1,7 @@
-module.exports = {
-    detail : (req,res) => {
-        return res.render('productDetail');
-    },
-    new : (req,res) => {
-        return res.render('newProduct');
-    },
+module.exports ={
+    add : require('./products/add'),
+    detail : require('./products/detail'),
     edit : require('./products/edit'),
-    update : require('./products/update')
+    update : require('./products/update'),
+    create : require('./products/create')
 }

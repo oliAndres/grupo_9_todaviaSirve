@@ -8,7 +8,7 @@ module.exports = (req,res) => {
 
     const product = products.find(product => product.id === id);
 
-    return res.render('editProduct', {
+    return res.render('productEdit', {
         categories,
         ...product
     });

@@ -1,0 +1,44 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+.table--container {
+    margin-bottom: 30px; 
+}
+
+.title-table {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 550px;
+    top: 30px;
+    left: 30vw;
+}
+.btn-action{
+    display: block;
+    margin-bottom: 5%;
+}
+.button-agregar{
+    display:inline-block;
+    background-color: white;
+    border: 1px solid black;
+    justify-content: center;
+    position:relative;
+    left: 7.5%;
+    top: 22px;
+
+}
+
+.table-shadow {
+    
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8); 
+}
+
+.small-table {
+    max-width: 85%; 
+    margin: 0 auto;
+    border: 1px solid black;
+  }

@@ -1,3 +1,4 @@
+const {existsSync, unlinkSync} = require('fs');
 const { readJSON, writeJSON } = require("../../data");
 
 module.exports = (req,res) => {
@@ -8,11 +9,17 @@ module.exports = (req,res) => {
 
     const productsModify = products.map(product => {
         if(product.id === req.params.id){
+
+            req.files.length && product.images.forEach(image => {
+                existsSync(`./images/productos/${product.images}`) && unlinkSync(`./images/productos/${product.images}`);
+            });
+
             product.name = name.trim()
             product.marca = marca.trim()
             product.price = +price
             product.category = category
             product.description = description.trim()
+            product.images = req.files.length ? req.files.map(file => file.filename) : product.images;
         }
         return product
     })

@@ -89,18 +89,23 @@
         </div>
         <hr>
         <div class="boximage_imgProduct">
-          <label for="" class="form-label">Imagen del producto</label>
-
-          <div class="col-12 col-md-6">
-            <img src="/images/productos/<%= image1 || 'default-placeholder.jpg' %>" alt="">
+          <label for="" class="form-label">Imagenes del producto</label>
+          
+          <div class="col-12 col-md-6 d-flex gap-1">
+            <% images.forEach(image => { %>
+             <img width="100px" src="/images/productos/<%= image || "default-placeholder.jpg" %>" alt="">
+            <% }) %>
           </div>
-          <hr>
 
+          
+          <br>
+          
           <div class="input-group mb-3">
-            <label class="btn btn-secondary" for="image">Subir</label>
-            <input hideen type="file" class="form-control" id="image">
+            <label class="btn btn-secondary" for="images">Cambiar imagenes</label>
+            <input hidden class="form-control" type="file" id="images" name="images" multiple>
           </div>
         </div>
+        <hr>
 
         <div class="boxbutton">
           <div>

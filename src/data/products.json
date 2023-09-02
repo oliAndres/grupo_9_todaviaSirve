@@ -1,14 +1,29 @@
 [
    {
+      "id": "1",
+      "name": "Microondas Acero Inoxidable",
+      "marca": "Smeg",
+      "price": 229000,
+      "description": "Microondas Acero Inoxidable Smeg - Con Grill - 23 Litros.",
+      "category": "hogar",
+      "images": [
+         "microondasSmeg.webp",
+         "microondasSmeg2.webp",
+         "microondasSmeg3.webp"
+      ]
+   },
+   {
       "id": "2",
       "name": "cafetera con filtro",
       "marca": "Atma",
       "price": 14990,
       "category": "electrodomesticos",
       "description": "Cafetera Atma 2180p - Un Solo Uso, Funcional E Impecable.",
-      "image1": "cafeteraAtma.webp",
-      "image2": "cafeteraAtma2.webp",
-      "image3": "cafeteraAtma3.webp"
+      "images": [
+         "cafeteraAtma.webp",
+         "cafeteraAtma2.webp",
+         "cafeteraAtma3.webp"
+      ]
    },
    {
       "id": "3",
@@ -17,9 +32,11 @@
       "price": 180000,
       "category": "electrodomesticos",
       "description": "Heladera Peabody 2f1200 Con Freezer 237l Excelente Estado",
-      "image1": "heladeraPeabody.webp",
-      "image2": "heladeraPeabody2.webp",
-      "image3": "heladeraPeabody3.webp"
+      "images": [
+         "heladeraPeabody.webp",
+         "heladeraPeabody2.webp",
+         "heladeraPeabody3.webp"
+      ]
    },
    {
       "id": "4",
@@ -28,9 +45,11 @@
       "price": 55000,
       "category": "electrodomesticos",
       "description": "Horno De Mesa Eléctrico Axel Ax-hc45 45l Negro 220 Poco Uso",
-      "image1": "hornoBlackDecker.jpg",
-      "image2": "hornoBlackDecker2.jpg",
-      "image3": "hornoBlackDecker3.jpg"
+      "images": [
+         "hornoBlackDecker.jpg",
+         "hornoBlackDecker2.jpg",
+         "hornoBlackDecker3.jpg"
+      ]
    },
    {
       "id": "5",
@@ -39,9 +58,11 @@
       "price": 65000,
       "category": "tecnologia",
       "description": "Parlante Portátil Jbl Charge 3 (impecable)",
-      "image1": "parlanteJBL.webp",
-      "image2": "parlanteJBL2.webp",
-      "image3": "parlanteJBL3.webp"
+      "images": [
+         "parlanteJBL.webp",
+         "parlanteJBL2.webp",
+         "parlanteJBL3.webp"
+      ]
    },
    {
       "id": "6",
@@ -50,9 +71,11 @@
       "price": 35000,
       "category": "electrodomesticos",
       "description": "Tv 22 Philips Modelo 22pfl3404/77, en excelente estado ",
-      "image1": "tvphilips22Pulgadas.jpg",
-      "image2": "tvphilips22Pulgadas2.jpg",
-      "image3": "tvphilips22Pulgadas3.jpg"
+      "images": [
+         "tvphilips22Pulgadas.jpg",
+         "tvphilips22Pulgadas2.jpg",
+         "tvphilips22Pulgadas3.jpg"
+      ]
    },
    {
       "id": "7",
@@ -61,9 +84,11 @@
       "price": 78000,
       "category": "herramientas",
       "description": "Motoguadaña Sthil, 27.2 cc, 0.75kw ",
-      "image1": "motoguadañaSthil.webp",
-      "image2": "motoguadañaSthil2.webp",
-      "image3": "motoguadañaSthil3.webp"
+      "images": [
+         "motoguadañaSthil.webp",
+         "motoguadañaSthil2.webp",
+         "motoguadañaSthil3.webp"
+      ]
    },
    {
       "id": "8",
@@ -72,9 +97,11 @@
       "price": 161900,
       "category": "juegos y juguetes",
       "description": "Sony PlayStation 3 Super Slim 500GB Standard color charcoal black",
-      "image1": "play3.webp",
-      "image2": "play32.webp",
-      "image3": "play33.webp"
+      "images": [
+         "play3.webp",
+         "play32.webp",
+         "play33.webp"
+      ]
    },
    {
       "id": "9",
@@ -83,9 +110,11 @@
       "price": 279900,
       "category": "celulares",
       "description": "Samsamsung Galaxy Z Flip 3 Negro Liberado",
-      "image1": "SamsamsungGalaxyZFlip.webp",
-      "image2": "SamsamsungGalaxyZFlip2.webp",
-      "image3": "SamsamsungGalaxyZFlip3.webp"
+      "images": [
+         "SamsamsungGalaxyZFlip.webp",
+         "SamsamsungGalaxyZFlip2.webp",
+         "SamsamsungGalaxyZFlip3.webp"
+      ]
    },
    {
       "id": "10",
@@ -94,9 +123,11 @@
       "price": 390000,
       "category": "celulares",
       "description": "iPhone 12 De 128 Gb Blanco En Excelente Estado Con Cable",
-      "image1": "iPhone12.webp",
-      "image2": "iPhone122.webp",
-      "image3": "iPhone123.webp"
+      "images": [
+         "iPhone12.webp",
+         "iPhone122.webp",
+         "iPhone123.webp"
+      ]
    },
    {
       "id": "11",
@@ -105,9 +136,11 @@
       "price": 49999,
       "category": "moda",
       "description": "Campera De Cuero Tipo Levis Bross Etc! Talle S Amplio Hombre",
-      "image1": "CamperaDeCuero.webp",
-      "image2": "CamperaDeCuero2.webp",
-      "image3": "CamperaDeCuero3.webp"
+      "images": [
+         "CamperaDeCuero.webp",
+         "CamperaDeCuero2.webp",
+         "CamperaDeCuero3.webp"
+      ]
    },
    {
       "id": "12",
@@ -116,8 +149,10 @@
       "price": 45000,
       "category": "electrodomesticos",
       "description": "Televisor Lcd 42 Usado",
-      "image1": "TelevisorLcd.webp",
-      "image2": "TelevisorLcd2.webp",
-      "image3": "TelevisorLcd3.webp"
+      "images": [
+         "TelevisorLcd.webp",
+         "TelevisorLcd2.webp",
+         "TelevisorLcd3.webp"
+      ]
    }
 ]

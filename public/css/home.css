@@ -78,10 +78,6 @@
 
 }
 
-.card:hover {
-    Transform: scale(1.2);
-
-}
 .card a {
     text-decoration: none;
     color: #010101;

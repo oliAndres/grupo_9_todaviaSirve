@@ -11,7 +11,7 @@ module.exports = (req,res) => {
         if(product.id === req.params.id){
 
             req.files.length && product.images.forEach(image => {
-                existsSync(`./images/productos/${product.images}`) && unlinkSync(`./images/productos/${product.images}`);
+                existsSync(`./public/images/productos/${image}`) && unlinkSync(`./public/images/productos/${image}`);
             });
 
             product.name = name.trim()

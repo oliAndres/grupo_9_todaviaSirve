@@ -5,21 +5,15 @@
     <body>
         <%- include('partials/header') %>
             <main class="newProduct__main">
-                <form action="/products/add" method="POST" class="newProduct__main__form">
+                <form action="/products/add" method="POST" class="newProduct__main__form" enctype="multipart/form-data">
                     <h3 class="newProduct__main__form--title">Vende lo que quieras!</h3>
                     <br>
                     <div class="mb-3">
-                        <input placeholder="Nombre" class="form-control" type="text" name="prodName" id="prodName">
-                        <input placeholder="precio" type="number" name="precio" id="price" class="form-control">
-                        <div class="boximage_imgProduct">
-                            <label for="" class="form-label">Imagen del producto</label>
-                            <div class="input-group mb-3">
-                                <input type="file" class="form-control" name="image" id="image" />
-                                <label class="input-group-text" for="image">Subir</label>
-                            </div>
-                        </div>
-                        <label for="prodDescription" class="form-label">Breve descripción</label>
-                        <textarea class="form-control" name="description" id="description" rows="3">...</textarea>
+                        <input placeholder="Nombre" class="form-control" type="text" name="name" id="name">
+                        <label for="marca" class="form-label">Marca</label>
+                        <input type="text" class="form-control" name="marca"
+                            placeholder="Ingrese la marca" id="marcaProd">
+                        <input placeholder="precio" type="number" name="price" id="price" class="form-control">
                         <div class="boxselect_estadoProducto">
                             <div class="input-group mb-3">
                                 <label class="input-group-text" for="category">Estado</label>
@@ -31,6 +25,17 @@
                                 </select>
                             </div>
                         </div>
+                        <label for="prodDescription" class="form-label">Breve descripción</label>
+                        <textarea class="form-control" name="description" id="description" rows="3">...</textarea>
+                        <div class="boximage_imgProduct">
+                            <label for="" class="form-label">Imagen del producto</label>
+                            <div class="input-group mb-3">
+                                <input type="file" class="form-control" multiple name="images" id="images" />
+                                <label class="input-group-text" for="images">Subir</label>
+                            </div>
+                        </div>
+                        
+                       
                         <label for="tiempo-uso" class="form-label">Tiempo de uso</label>
                         <select name="tiempo-uso" id="tiempo-uso" class="form-select form-select-sm"
                             aria-label="Tiempo de uso">
@@ -42,9 +47,7 @@
                             <label for="color" class="form-label">Color</label>
                             <input type="text" class="form-control" name="colorProd" placeholder="Ingrese el color"
                                 id="colorProd">
-                            <label for="color" class="form-label">Material</label>
-                            <input type="text" class="form-control" name="materialProd"
-                                placeholder="Ingrese el material" id="materialProd">
+                            
                             <label for="Categoría" class="form-label">Categoría</label>
                             <ul>
                                 <li><label for="electro" class="form-label">Electro</label>

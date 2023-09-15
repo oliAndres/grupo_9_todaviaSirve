@@ -1,6 +1,6 @@
 [
    {
-      "id": "1",
+      "id": 1,
       "name": "Microondas Acero Inoxidable",
       "marca": "Smeg",
       "price": 229000,
@@ -13,7 +13,7 @@
       ]
    },
    {
-      "id": "2",
+      "id": 2,
       "name": "cafetera con filtro",
       "marca": "Atma",
       "price": 14990,
@@ -26,7 +26,7 @@
       ]
    },
    {
-      "id": "3",
+      "id": 3,
       "name": "heladera",
       "marca": "Peabody",
       "price": 180000,
@@ -39,7 +39,7 @@
       ]
    },
    {
-      "id": "4",
+      "id": 4,
       "name": "Horno electrico",
       "marca": "Black & Decker",
       "price": 55000,
@@ -52,7 +52,7 @@
       ]
    },
    {
-      "id": "5",
+      "id": 5,
       "name": "Parlante portatil",
       "marca": "JBL",
       "price": 65000,
@@ -65,7 +65,7 @@
       ]
    },
    {
-      "id": "6",
+      "id": 6,
       "name": "tv philips",
       "marca": "Philips",
       "price": 35000,
@@ -78,7 +78,7 @@
       ]
    },
    {
-      "id": "7",
+      "id": 7,
       "name": "motoguadaña Sthil",
       "marca": "Sthil",
       "price": 78000,
@@ -91,7 +91,7 @@
       ]
    },
    {
-      "id": "8",
+      "id": 8,
       "name": "PlayStation 3",
       "marca": "Sony",
       "price": 161900,
@@ -104,7 +104,7 @@
       ]
    },
    {
-      "id": "9",
+      "id": 9,
       "name": "Galaxy Z Flip 3",
       "marca": "Samsamsung",
       "price": 279900,
@@ -117,7 +117,7 @@
       ]
    },
    {
-      "id": "10",
+      "id": 10,
       "name": "iPhone 12",
       "marca": "iPhone",
       "price": 390000,
@@ -128,7 +128,7 @@
       "image3": "iPhone123.webp"
    },
    {
-      "id": "11",
+      "id": 11,
       "name": "Campera De Cuero",
       "marca": "Levis",
       "price": 49999,
@@ -141,7 +141,7 @@
       ]
    },
    {
-      "id": "12",
+      "id": 12,
       "name": "Lcd 42",
       "marca": "Philips",
       "price": 45000,
@@ -152,5 +152,17 @@
          "TelevisorLcd2.webp",
          "TelevisorLcd3.webp"
       ]
+   },
+   {
+      "id": 13,
+      "name": "Cerveza",
+      "marca": "Quilmes",
+      "price": 1000,
+      "category": "hogar",
+      "description": "Bien Fria",
+      "images": [
+         "1694042205870_products_.png"
+      ],
+      "createAt": "2023-09-06T23:16:46.006Z"
    }
 ]

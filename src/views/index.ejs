@@ -25,24 +25,16 @@
     
     <div class="card-container">
       <div class="card-section">
-          <% products.forEach(producto => {%>
+        <% products.forEach(producto => { %>
           <div class="card">
-          <a href="/products/detail/<%= producto.id %>">
-          <img src="/images/productos/<%= producto.image1 %>" alt="" style="width:100%"></a>
-          <p class="card-name"><%= producto.name %></p>
-          <p class="price"><%= producto.price %></p>
-          <p class="card-descripcion"><%= producto.description %></p>
-        </div>
-          <%}) %>
-          <% products.forEach(producto => {%>
-            <div class="card">
             <a href="/products/detail/<%= producto.id %>">
-            <img src="/images/productos/<%= producto.image1 %>" alt="" style="width:100%"></a>
+              <img src="/images/productos/<%= producto.images[0] %>" alt="" style="width:100%">
+            </a>
             <p class="card-name"><%= producto.name %></p>
             <p class="price"><%= producto.price %></p>
             <p class="card-descripcion"><%= producto.description %></p>
           </div>
-            <%}) %>          
+        <% }); %>
       </div>
     </div>
   </main>

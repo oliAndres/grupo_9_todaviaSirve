@@ -1,9 +1,14 @@
 const express = require('express');
-const usersController = require('../controllers/usersController');
 const router = express.Router();
+const usersController = require('../controllers/usersController');
+const loginValidator = require("../validations/loginValidator");
+const checkInvited = require('../middlewares/checkInvited');
+const checkUserLogin = require('../middlewares/checkUserLogin');
 
 /* GET users listing. */
-router.get('/login', usersController.login);
+router.get("/register",checkInvited, usersController.register)
+router.get("/login", checkInvited, usersController.login)
+router.post("/login",loginValidator, usersController.loginProcess)
 router.get('/register', usersController.register);
 router.get('/registerOk', usersController.registerOk);
 

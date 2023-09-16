@@ -11,8 +11,7 @@ var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 var carritoRouter = require('./routes/carrito');
 var adminRouter = require('./routes/admin');
-const cookieCheck = require('./middlewares/cookieCheck');
-const checkLocals = require('./middlewares/checkLocals');
+
 var app = express();
 
 
@@ -34,9 +33,6 @@ app.use(session({
   saveUninitialized : true
 }));
 
-
-app.use(cookieCheck);
-app.use(checkLocals);
 
 
 

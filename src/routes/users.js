@@ -8,7 +8,7 @@ const checkUserLogin = require('../middlewares/checkUserLogin');
 /* GET users listing. */
 router.get("/register",checkInvited, usersController.register)
 router.get("/login", checkInvited, usersController.login)
-router.post("/login",loginValidator, usersController.loginProcess)
+router.post("/login", usersController.loginProcess)
 router.get('/register', usersController.register);
 router.get('/registerOk', usersController.registerOk);
 

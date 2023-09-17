@@ -3,6 +3,7 @@ module.exports = {
         return res.render('login');
     },
     loginProcess : require('./users/loginProcess'),
+    logOut : require('./users/logOut'),
     register : require('./users/register'),
     register : (req,res) => {
         return res.render('register');

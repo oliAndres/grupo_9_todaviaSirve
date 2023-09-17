@@ -10,5 +10,6 @@ router.get("/login",  loginValidator, usersController.login)
 router.post("/login", usersController.loginProcess)
 router.get('/register', usersController.register);
 router.get('/registerOk', usersController.registerOk);
+router.get('/logOut', usersController.logOut);
 
 module.exports = router;

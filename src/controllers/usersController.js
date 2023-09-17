@@ -12,4 +12,6 @@ module.exports = {
         return res.render('registerOk');
     },
     update : require('./users/update'),
+
+    newUser: require('./users/createUser') 
 }

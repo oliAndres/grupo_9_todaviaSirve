@@ -11,6 +11,7 @@ var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 var carritoRouter = require('./routes/carrito');
 var adminRouter = require('./routes/admin');
+const userSessionCheck = require('./middlewares/userSessionCheck');
 
 var app = express();
 
@@ -33,7 +34,7 @@ app.use(session({
   saveUninitialized : true
 }));
 
-
+app.use(userSessionCheck);
 
 
 app.use('/', indexRouter);

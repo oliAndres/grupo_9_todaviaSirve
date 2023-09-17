@@ -15,5 +15,5 @@ module.exports = [
                 return false
             }
             return true
-        }).withMessage('El email o la contraseña no son correctos')
+        }).withMessage('El email o la contraseña son incorrectos')
 ]

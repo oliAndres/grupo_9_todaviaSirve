@@ -19,6 +19,9 @@ module.exports = (req,res) => {
             name,
             role
         }
+        req.body.remember !== undefined && res.cookie('todaviaSirve', req.session.userLogin, {
+            maxAge : 1000 * 60
+        })
         console.log(req.session.userLogin)
         return res.redirect('/')
 

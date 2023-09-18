@@ -14,5 +14,6 @@ router.post("/login", loginProcess, usersController.loginProcess)
 router.get('/register', usersController.register);
 router.post('/registerOk', arrayValidaciones,validateCreateForm,usersController.newUser);
 router.get('/logOut', usersController.logOut);
+router.put('/update', usersController.update)
 
 module.exports = router;

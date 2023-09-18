@@ -10,7 +10,7 @@ const notUserCheck = require('../middlewares/notUserCheck');
 /* GET users listing. */
 router.get("/register", usersController.register)
 router.get("/login", notUserCheck, usersController.login)
-router.post("/login", loginProcess, usersController.loginProcess)
+router.post("/login", loginValidator, usersController.loginProcess)
 router.get('/register', usersController.register);
 router.post('/registerOk', arrayValidaciones,validateCreateForm,usersController.newUser);
 router.get('/logOut', usersController.logOut);

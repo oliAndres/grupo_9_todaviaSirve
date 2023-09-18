@@ -11,13 +11,14 @@ module.exports = (req,res) => {
         const users = readJSON('users.json');
         const {email, remember} = req.body
         const user = users.find(user => user.email === email);
-        const {id, name, role} = user;
+        const {id, name, role, image} = user;
 
        
         req.session.userLogin = {
             id,
             name,
-            role
+            role,
+            image
         }
         console.log(req.session.userLogin)
         return res.redirect('/')

@@ -13,4 +13,6 @@ module.exports = {
     },
     update : require('./users/update'),
     profile : require('./users/profile'),
+
+    newUser: require('./users/createUser'),
 }

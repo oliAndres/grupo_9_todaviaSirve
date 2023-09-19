@@ -1,86 +1,98 @@
 [
-    {
-        "id": 1,
-        "name" : "Federico",
-        "lastName" : "Chandia",
-        "address" : null,
-        "birthdate" : null,
-        "email" : "fede@gmail.com",
-        "password" : 1234,
-        "role" : "admin",
-        "image" : "federico.jpg"
-
-    },
-    {
-        "id": 2,
-        "name" : "Melitza",
-        "lastName" : "Gaunas",
-        "address" : null,
-        "birthdate" : null,
-        "email" : "melitza@gmail.com",
-        "password" : 1234,
-        "role" : "admin",
-        "image" : "Melitza.jpg"
-
-    },
-    {
-        "id": 3,
-        "name" : "Christian",
-        "lastName" : "Velasquez",
-        "address" : null,
-        "birthdate" : null,
-        "email" : "Christian@gmail.com",
-        "password" : 1234,
-        "role" : "admin",
-        "image" : "Christian.jpg"
-
-    },
-    {
-        "id": 4,
-        "name" : "Andres",
-        "lastName" : "Olivera",
-        "address" : null,
-        "birthdate" : null,
-        "email" : "Andres@gmail.com",
-        "password" : 1234,
-        "role" : "admin",
-        "image" : "Andres.jpg"
-
-    },
-    {
-        "id": 5,
-        "name" : "Marcos",
-        "lastName" : "Estevez",
-        "address" : null,
-        "birthdate" : null,
-        "email" : "marcos@gmail.com",
-        "password" : 4444,
-        "role" : "user",
-        "image" : "user2.jpg"
-
-    },
-    {
-        "id": 6,
-        "name" : "Arturo",
-        "lastName" : "Buendia",
-        "address" : null,
-        "birthdate" : null,
-        "email" : "artu@gmail.com",
-        "password" : 1234,
-        "role" : "user",
-        "image" : "user1.jpg"
-
-    },
-    {
-        "id": 7,
-        "name" : "Juan",
-        "lastName" : "mohicano",
-        "address" : null,
-        "birthdate" : null,
-        "email" : "juani@gmail.com",
-        "password" : 1234,
-        "role" : "user",
-        "image" : "user3.jpg"
-
-    }
+   {
+      "id": 1,
+      "name": "Federico",
+      "lastName": "Chandia",
+      "address": null,
+      "birthdate": null,
+      "email": "fede@gmail.com",
+      "password": "$2a$10$XTKMUTScdn6EH4lgdzUt6unZM/hiz4lN792TjO9oORLwj1klCuUTm",
+      "passwordTwo": "123456",
+      "role": "admin",
+      "image": "federico.jpg"
+   },
+   {
+      "id": 2,
+      "name": "Melitza",
+      "lastName": "Gaunas",
+      "address": null,
+      "birthdate": null,
+      "email": "melitza@gmail.com",
+      "password": "$2a$10$XTKMUTScdn6EH4lgdzUt6unZM/hiz4lN792TjO9oORLwj1klCuUTm",
+      "passwordTwo": "123456",
+      "role": "admin",
+      "image": "Melitza.jpg"
+   },
+   {
+      "id": 3,
+      "name": "Christian",
+      "lastName": "Velasquez",
+      "address": null,
+      "birthdate": null,
+      "email": "Christian@gmail.com",
+      "password": "$2a$10$XTKMUTScdn6EH4lgdzUt6unZM/hiz4lN792TjO9oORLwj1klCuUTm",
+      "passwordTwo": "123456",
+      "role": "admin",
+      "image": "Christian.jpg"
+   },
+   {
+      "id": 4,
+      "name": "Andres",
+      "lastName": "Olivera",
+      "address": null,
+      "birthdate": null,
+      "email": "Andres@gmail.com",
+      "password": "$2a$10$XTKMUTScdn6EH4lgdzUt6unZM/hiz4lN792TjO9oORLwj1klCuUTm",
+      "passwordTwo": "123456",
+      "role": "admin",
+      "image": "Andres.jpg"
+   },
+   {
+      "id": 5,
+      "name": "Marcos",
+      "lastName": "Estevez",
+      "address": null,
+      "birthdate": null,
+      "email": "marcos@gmail.com",
+      "password": "$2a$10$XTKMUTScdn6EH4lgdzUt6unZM/hiz4lN792TjO9oORLwj1klCuUTm",
+      "passwordTwo": "123456",
+      "role": "user",
+      "image": "user2.jpg"
+   },
+   {
+      "id": 6,
+      "name": "Arturo",
+      "lastName": "Buendia",
+      "address": null,
+      "birthdate": null,
+      "email": "artu@gmail.com",
+      "password": "$2a$10$XTKMUTScdn6EH4lgdzUt6unZM/hiz4lN792TjO9oORLwj1klCuUTm",
+      "passwordTwo": "123456",
+      "role": "user",
+      "image": "user1.jpg"
+   },
+   {
+      "id": 7,
+      "name": "Juan",
+      "lastName": "mohicano",
+      "address": null,
+      "birthdate": null,
+      "email": "juani@gmail.com",
+      "password": "$2a$10$XTKMUTScdn6EH4lgdzUt6unZM/hiz4lN792TjO9oORLwj1klCuUTm",
+      "passwordTwo": "123456",
+      "role": "user",
+      "image": "user3.jpg"
+   },
+   {
+      "id": 8,
+      "name": "pepe",
+      "lastName": "argento",
+      "address": null,
+      "birthdate": null,
+      "email": "pepe@gmail.com",
+      "password": "$2a$10$XTKMUTScdn6EH4lgdzUt6unZM/hiz4lN792TjO9oORLwj1klCuUTm",
+      "passwordTwo": "123456",
+      "role": "user",
+      "image": "user3.jpg"
+   }
 ]

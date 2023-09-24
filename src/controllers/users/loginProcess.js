@@ -1,31 +1,46 @@
-const {validationResult} = require('express-validator');
+const { check, validationResult } = require('express-validator');
 const { readJSON } = require('../../data');
 
+// Función para mostrar la página de inicio de sesión
+exports.showLoginPage = (req, res) => {
+    res.render('login', { errors: [] }); // Pasamos un arreglo vacío de errores para que no se muestren errores al cargar la página
+};
 
-module.exports = (req,res) => {
+// Función para procesar el formulario de inicio de sesión
+exports.processLogin = [
+    (req, res) => {
+        const errors = validationResult(req);
 
-    const errors = validationResult(req);
-    
- console.log(req.body)
-    if(errors.isEmpty()){
-        const users = readJSON('users.json');
-        const {email, remember} = req.body
-        const user = users.find(user => user.email === email);
-        const {id, name, role} = user;
-
-       
-        req.session.userLogin = {
-            id,
-            name,
-            role
+        if (!errors.isEmpty()) {
+            return res.render('login', {
+                errors: errors.array()
+            });
         }
-        console.log(req.session.userLogin)
-        return res.redirect('/')
 
-    }else {
-        return res.render('login',{
-            errors : errors.mapped()
-        })
+        const users = readJSON('users.json');
+        const { email, password} = req.body;
+
+        const user = users.find(user => user.email === email && user.password === password);
+
+        if (user && user.password === password) {
+            const { id, name, role, image } = user;
+
+            req.session.userLogin = {
+                id,
+                name,
+                role,
+                image
+            };
+
+            req.body.remember !== undefined && res.cookie('todaviaSirve', req.session.userLogin, {
+                maxAge: 1000 * 60
+            });
+
+            return res.redirect('/');
+        } else {
+            return res.render('login', {
+                errors: [{ msg: 'Las credenciales proporcionadas son incorrectas' }]
+            });
+        }
     }
-    
-}
+];

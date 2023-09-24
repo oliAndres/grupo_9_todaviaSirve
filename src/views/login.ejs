@@ -11,11 +11,6 @@
             </div>
             <div class="login__main__box--formbox">
                 <form class="login__main__box__formbox--form" action="/users/Login" method="POST">
-                    <div>
-                        <label class="login__main__box__formbox--campobox">
-                            <input class="login__main__box__formbox--campo" type="text" name="name" id="name" placeholder="Nombre" required>
-                        </label>
-                    </div>
                     <div class="login__main__box__formbox--campobox">
                         <label>
                             <input class="login__main__box__formbox--campo" type="email" name="email" id="email" placeholder="Correo electronico" required>
@@ -32,6 +27,15 @@
                               Recordarme
                         </label>
                           </div>
+                          <% if (errors && errors.length > 0) { %>
+                            <div class="alert alert-danger">
+                                <ul>
+                                    <% for (let i = 0; i < errors.length; i++) { %>
+                                        <li><%= errors[i].msg %></li>
+                                    <% } %>
+                                </ul>
+                            </div>
+                        <% } %>
                     <div class="login__main__box__formbox--buttonbox">
                         <a href="/">
                             <button class="login__main__box__formbox--button" type="submit">Ingresar</button>
@@ -41,6 +45,7 @@
                         </a>
                     </div>
                 </form>
+                
             </div>
         </div>
     </main>

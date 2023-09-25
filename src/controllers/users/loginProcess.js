@@ -18,11 +18,11 @@ exports.processLogin = [
         }
 
         const users = readJSON('users.json');
-        const { email, password} = req.body;
+        const { email, password, passwordTwo} = req.body;
 
-        const user = users.find(user => user.email === email && user.password === password);
+        const user = users.find(user => user.email === email && (user.password === password || user.passwordTwo === password));
 
-        if (user && user.password === password) {
+        if (user) {
             const { id, name, role, image } = user;
 
             req.session.userLogin = {

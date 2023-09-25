@@ -4,6 +4,7 @@ const usersController = require('../controllers/usersController');
 const loginValidator = require("../validations/loginValidator");
 const userCheck = require('../middlewares/userCheck');
 const upload = require('../middlewares/upload');
+const loginProcess = require('../controllers/users/loginProcess');
 const notUserCheck = require('../middlewares/notUserCheck');
 const {arrayValidaciones,validateCreateForm } = require('../middlewares/validacionesRegister');
 

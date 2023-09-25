@@ -3,7 +3,7 @@ const { readJSON } = require('../../data');
 
 // Función para mostrar la página de inicio de sesión
 exports.showLoginPage = (req, res) => {
-    res.render('login', { errors: [] }); // Pasamos un arreglo vacío de errores para que no se muestren errores al cargar la página
+    res.render('login', { errors: [] }); // Paso un arreglo vacío de errores para que no se muestren errores al cargar la página
 };
 
 // Función para procesar el formulario de inicio de sesión

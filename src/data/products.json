@@ -123,9 +123,11 @@
       "price": 390000,
       "category": "celulares",
       "description": "iPhone 12 De 128 Gb Blanco En Excelente Estado Con Cable",
-      "images": ["iPhone12.webp",
-       "iPhone122.webp",
-       "iPhone123.webp"]
+      "images": [
+         "iPhone12.webp",
+         "iPhone122.webp",
+         "iPhone123.webp"
+      ]
    },
    {
       "id": 11,

@@ -1,0 +1,109 @@
+.profile--main {
+    box-sizing: border-box;
+    background-color: var(--grisClaro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile__main--box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 15px;
+    width: 90%;
+    max-width: 581px;
+    background-color: white;
+}
+.profile__main__box--title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 10px;
+}
+.profile__main__box--formbox {
+    display: flex;
+    justify-content: center;
+}
+.profile__main__box__formbox--form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+.profile__main__box__formbox--image {
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 5px;
+}
+.profile__main__box__formbox--image img {
+    border-radius: 50%;
+}
+.profile__main__box__formbox--campobox {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 5px;   
+}
+.profile__main__box__formbox--placeholder {
+    position: absolute;
+    padding: 5px;
+    background-color: white;
+    color: silver;
+    font-size: 18px;
+    
+}
+.profile__main__box__formbox--campo {
+    font-size: 16px;
+    padding: 10px 15px;
+    text-align: center;
+    border: 1px solid silver;
+}
+.profile__main__box__formbox--campo:focus {
+    border: 1px solid rgb(50, 173, 179);
+    box-shadow: 0 0 5px rgb(64, 135, 179);
+}
+.profile__main__box__formbox--buttonbox {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+.profile__main__box__formbox--button {
+    background-color: rgb(50, 173, 179);
+    margin: 0;
+    border-radius: 5px;
+}
+.profile__main__box__formbox--button:hover {
+    box-shadow:  3px 3px 8px silver;
+}
+.profile__main__box__formbox--button:focus {
+    background-color: rgb(64, 135, 179);
+}
+
+@media(min-width: 481px){
+    .profile__main--box {
+        margin: 30px 0 50px;
+        border-radius: 10px;
+    }
+}
+
+@media(min-width: 769px){
+    .profile__main--box {
+        margin: 50px 0 77px;
+        border-radius: 20px;
+    }
+    .profile__main__box__formbox--form {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 90%;
+        
+    }
+    .profile__main__box__formbox--campobox {
+        flex-direction: column;
+        width: 50%;
+    }
+}

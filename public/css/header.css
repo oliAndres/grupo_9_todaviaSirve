@@ -69,7 +69,7 @@ button{
 
 .menu .home__header__navbar ul li{
     position: relative;
-    float:left;
+    float: left;
 }
 
 .menu .home__header__navbar ul li a{
@@ -108,6 +108,11 @@ button{
 .menu-icono img {
     width: 100%;
     height: 100%;
+}
+.header__main__box__formbox--image img {
+    width: 40px;
+    margin: 5px;
+    border-radius: 50%;
 }
 
 

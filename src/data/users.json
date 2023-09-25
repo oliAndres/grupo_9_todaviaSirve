@@ -4,8 +4,11 @@
       "name": "Federico",
       "lastName": "Chandia",
       "email": "fede@gmail.com",
-      "password": 1234,
+      "password": "$2a$10$XTKMUTScdn6EH4lgdzUt6unZM/hiz4lN792TjO9oORLwj1klCuUTm",
+      "passwordTwo": "123456",
       "role": "admin",
+      "address": null,
+      "birthdate": null,
       "image": "federico.jpg"
    },
    {
@@ -13,17 +16,23 @@
       "name": "Melitza",
       "lastName": "Gaunas",
       "email": "melitza@gmail.com",
-      "password": 1234,
+      "password": "$2a$10$XTKMUTScdn6EH4lgdzUt6unZM/hiz4lN792TjO9oORLwj1klCuUTm",
+      "passwordTwo": "123456",
       "role": "admin",
+      "address": null,
+      "birthdate": null,
       "image": "Melitza.jpg"
    },
    {
       "id": 3,
       "name": "Christian",
-      "lastName": "Velazquez",
-      "email": "cris@gmail.com",
-      "password": 1234,
+      "lastName": "Velasquez",
+      "email": "Christian@gmail.com",
+      "password": "$2a$10$XTKMUTScdn6EH4lgdzUt6unZM/hiz4lN792TjO9oORLwj1klCuUTm",
+      "passwordTwo": "123456",
       "role": "admin",
+      "address": null,
+      "birthdate": null,
       "image": "Christian.jpg"
    },
    {
@@ -31,8 +40,11 @@
       "name": "Andres",
       "lastName": "Olivera",
       "email": "Andres@gmail.com",
-      "password": 1234,
+      "password": "$2a$10$XTKMUTScdn6EH4lgdzUt6unZM/hiz4lN792TjO9oORLwj1klCuUTm",
+      "passwordTwo": "123456",
       "role": "admin",
+      "address": null,
+      "birthdate": null,
       "image": "Andres.jpg"
    },
    {
@@ -40,8 +52,11 @@
       "name": "Marcos",
       "lastName": "Estevez",
       "email": "marcos@gmail.com",
-      "password": 4444,
+      "password": "$2a$10$XTKMUTScdn6EH4lgdzUt6unZM/hiz4lN792TjO9oORLwj1klCuUTm",
+      "passwordTwo": "123456",
       "role": "user",
+      "address": null,
+      "birthdate": null,
       "image": "user2.jpg"
    },
    {
@@ -49,8 +64,11 @@
       "name": "Arturo",
       "lastName": "Buendia",
       "email": "artu@gmail.com",
-      "password": 1234,
+      "password": "$2a$10$XTKMUTScdn6EH4lgdzUt6unZM/hiz4lN792TjO9oORLwj1klCuUTm",
+      "passwordTwo": "123456",
       "role": "user",
+      "address": null,
+      "birthdate": null,
       "image": "user1.jpg"
    },
    {
@@ -58,8 +76,11 @@
       "name": "Juan",
       "lastName": "mohicano",
       "email": "juani@gmail.com",
-      "password": 1234,
+      "password": "$2a$10$XTKMUTScdn6EH4lgdzUt6unZM/hiz4lN792TjO9oORLwj1klCuUTm",
+      "passwordTwo": "123456",
       "role": "user",
+      "address": null,
+      "birthdate": null,
       "image": "user3.jpg"
    }
 ]

@@ -26,12 +26,11 @@
    {
       "id": 3,
       "name": "Christian",
-      "lastName": "Velasquez",
-      "email": "Christian@gmail.com",
+      "lastName": "Ramos",
       "password": "$2a$10$XTKMUTScdn6EH4lgdzUt6unZM/hiz4lN792TjO9oORLwj1klCuUTm",
       "passwordTwo": "123456",
       "role": "admin",
-      "address": null,
+      "address": "",
       "birthdate": null,
       "image": "Christian.jpg"
    },

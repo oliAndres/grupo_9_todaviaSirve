@@ -65,7 +65,31 @@
                         <% } %>
                     </div>
                     </div>
-                    
+                    <p class="title_reg">Rol:</p>
+                    <div class="register__main__box__formbox--campobox">
+                        <div class="form-box-reg">
+                            <select class="register__main__box__formbox--campo" type="text" name="role" id="role">
+                                <option value="admin">Admin</option>
+                                <option value="user">Usuario</option>
+                            </select>
+                            <% if(locals.errors && errors.role){ %>
+                                <div class="text-danger">
+                                    <%= errors.role.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <p class="title_reg">Fecha de Nacimiento</p>
+                    <div class="register__main__box__formbox--campobox">
+                        <div class="form-box-reg">
+                            <input class="register__main__box__formbox--campo" type="date" name="birthdate" id="birthdate" placeholder="Fecha de Nacimiento">
+                            <% if(locals.errors && errors.birthdate){ %>
+                                <div class="text-danger">
+                                    <%= errors.birthdate.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
                     <div class="register__main__box__formbox--buttonbox">
                         <button type="submit" class="register__main__box__formbox--button">Crear</button>
                     </div>

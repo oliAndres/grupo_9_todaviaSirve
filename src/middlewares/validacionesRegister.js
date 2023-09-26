@@ -10,6 +10,7 @@ const arrayValidaciones = [
         .withMessage("El Nombre debe tener minimo 3 caracteres")
         .isAlpha()
         .withMessage("El nombre debe contener solo caracteres alfabéticos"),
+
     body('lastname')
         .notEmpty()
         .withMessage("El campo apellido no debe estar vacio")
@@ -32,6 +33,7 @@ const arrayValidaciones = [
           return true;
         })
         .withMessage("El email ya se encuentra registrado"),
+
     body("password").isLength({
             min: 6,
           })
@@ -42,7 +44,20 @@ const arrayValidaciones = [
                     return false
                 }
                 return true
-            }).withMessage('Las contraseñas no coinciden')
+            }).withMessage('Las contraseñas no coinciden'),
+    
+    body("role")
+            .notEmpty()
+            .withMessage("El campo rol no debe estar vacío")
+            .isIn(["admin", "user"])
+            .withMessage("Selecciona un rol válido"),        
+    
+    body("birthdate")
+            .notEmpty()
+            .withMessage("El campo fecha de nacimiento no debe estar vacío")
+            // .isDate()({format: 'DD-MM-YYYY'})
+            // .withMessage("Ingresa una fecha válida"),        
+
 ];
 
 const validateCreateForm = (req, res, next) => {

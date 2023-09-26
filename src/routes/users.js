@@ -15,7 +15,7 @@ router.post('/login', loginProcess.processLogin);
 router.get("/register",notUserCheck, usersController.register)
 router.post('/registerOk', arrayValidaciones,validateCreateForm,usersController.newUser);
 router.get('/logOut', usersController.logOut);
-router.get('/profile',userCheck, usersController.profile);
+router.get('/profile', userCheck, usersController.profile);
 router.put('/update/:id',upload.single('image'), usersController.update);
 
 module.exports = router;

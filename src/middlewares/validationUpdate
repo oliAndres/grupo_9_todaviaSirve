@@ -1,0 +1,54 @@
+const { check, body, validationResult } = require("express-validator");
+const users = require('../data/users.json')
+
+/* Validaciones */
+const arrayValidationUpdate = [
+    body('name')
+        .notEmpty()
+        .withMessage("El campo nombre no debe estar vacio")
+        .isLength({ min: 3 }) 
+        .withMessage("El Nombre debe tener minimo 3 caracteres")
+        .isAlpha()
+        .withMessage("El nombre debe contener solo caracteres alfabéticos"),
+    body('lastname')
+        .notEmpty()
+        .withMessage("El campo apellido no debe estar vacio")
+        .isLength({ min: 3 })
+        .withMessage("El apellido debe tener minimo 3 caracteres")
+        .isAlpha()
+        .withMessage("El apellido debe contener solo caracteres alfabéticos"),
+        
+    body("email")
+        .notEmpty()
+        .withMessage("El email es obligatorio")
+        .isEmail()
+        .withMessage("Formato inválido")
+        .custom((value, { req }) => {
+          const user = users.find((user) => user.email === value);
+    
+          if (user) {
+            return false;
+          }
+          return true;
+        })
+        .withMessage("El email ya se encuentra registrado"),
+   
+];
+
+const validateUpdateProfile = (req, res, next) => {
+    const errors = validationResult(req);
+    console.log(errors.mapped());
+    if (errors.isEmpty()) {
+        next();
+    } else {
+        res.render("profile", {
+            errors: errors.mapped(),
+            old:req.body
+        });
+    }
+};
+
+module.exports = {
+    arrayValidationUpdate,
+    validateUpdateProfile
+};

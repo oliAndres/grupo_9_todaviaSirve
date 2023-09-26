@@ -11,13 +11,19 @@ const arrayValidaciones = [
         .isAlpha()
         .withMessage("El nombre debe contener solo caracteres alfabéticos"),
 
-    body('lastname')
+    body('lastName')
         .notEmpty()
         .withMessage("El campo apellido no debe estar vacio")
         .isLength({ min: 3 })
         .withMessage("El apellido debe tener minimo 3 caracteres")
         .isAlpha()
         .withMessage("El apellido debe contener solo caracteres alfabéticos"),
+    
+    body('address')
+        .notEmpty()
+        .withMessage("El campo direccion no debe estar vacio")
+        .isLength({ min: 3 })
+        .withMessage("El direccion debe tener minimo 3 caracteres"),    
         
     body("email")
         .notEmpty()
@@ -55,8 +61,7 @@ const arrayValidaciones = [
     body("birthdate")
             .notEmpty()
             .withMessage("El campo fecha de nacimiento no debe estar vacío")
-            // .isDate()({format: 'DD-MM-YYYY'})
-            // .withMessage("Ingresa una fecha válida"),        
+      
 
 ];
 

@@ -23,11 +23,24 @@
                     </div>
                     <div class="register__main__box__formbox--campobox">                      
                         <div class="form-box-reg">
-                            <input class="register__main__box__formbox--campo" type="text" name="lastname" id="lastname" placeholder="Apellido" value="<%= locals.old && old.lastname ? old.lastname : ''%>">
+                            <input class="register__main__box__formbox--campo" type="text" name="lastName" id="lastName" placeholder="Apellido" value="<%= locals.old && old.lastName ? old.lastName : ''%>">
                             <div>
                                 <% if(locals.errors && locals.errors.lastname){ %>
                                     <div class="text-danger">
                                         <%= errors.lastname.msg %>
+                                    </div>
+                                <% } %>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="register__main__box__formbox--campobox">                      
+                        <div class="form-box-reg">
+                            <input class="register__main__box__formbox--campo" type="text" name="address" id="address" placeholder="Domicilio" value="<%= locals.old && old.address ? old.address : ''%>">
+                            <div>
+                                <% if(locals.errors && locals.errors.address){ %>
+                                    <div class="text-danger">
+                                        <%= errors.address.msg %>
                                     </div>
                                 <% } %>
                             </div>

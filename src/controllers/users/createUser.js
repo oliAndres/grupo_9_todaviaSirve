@@ -8,9 +8,11 @@ module.exports = (req,res) => {
    const hashPass = bcrypt.hashSync(req.body.password,10)
    if (bcrypt.compareSync(req.body.passwordTwo,hashPass)){
     const newUser = {
-        id: `${users.length + 1}`,
+        id: users.length + 1,
         ...req.body,
-        password:hashPass
+        password:hashPass,
+        image: "user2.jpg"
+
         
     }
     delete(req.body.passwordTwo)

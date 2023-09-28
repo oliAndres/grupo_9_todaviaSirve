@@ -8,7 +8,7 @@ module.exports = (req,res) => {
     const products = readJSON('products.json');
 
     const productsModify = products.map(product => {
-        if(product.id === req.params.id){
+        if(product.id == req.params.id){
 
             req.files.length && product.images.forEach(image => {
                 existsSync(`./public/images/productos/${image}`) && unlinkSync(`./public/images/productos/${image}`);

@@ -11,7 +11,7 @@ const { arrayValidationUpdate } = require('../middlewares/validationUpdate');
 
 
 /* GET users listing. */
-router.get('/login', loginProcess.showLoginPage);
+router.get('/login', loginValidator, loginProcess.showLoginPage);
 router.post('/login', loginProcess.processLogin);
 router.get("/register",notUserCheck, usersController.register)
 router.post('/registerOk', arrayValidaciones,validateCreateForm,usersController.newUser);

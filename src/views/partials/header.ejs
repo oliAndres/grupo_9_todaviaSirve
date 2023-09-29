@@ -18,7 +18,7 @@
                         <% if (userLogin.role === 'admin') { %>
                             <li> <a href="/admin">Admin</a></li>
                         <% } %>
-                        <li> <a href="/users/profile/<%= userLogin.id %>">Hola <%= userLogin.name %> !</a></li>                        
+                        <li> <a href="/users/profile/">Hola <%= userLogin.name %> !</a></li>                        
                         <li>
                             <div class="header__main__box__formbox--image">
                                 <img width="100px" src="/images/productos/userImages/<%= userLogin.image || "Andres.jpg" %>"  alt="">

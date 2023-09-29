@@ -81,5 +81,17 @@
       "address": null,
       "birthdate": null,
       "image": "user3.jpg"
+   },
+   {
+      "id": 8,
+      "name": "leo",
+      "lastName": "Lopez",
+      "address": "CABA",
+      "email": "leo@gmail.com",
+      "password": "$2a$10$2sCP3vNd/.fgq2S4ApXPIeDItBXWmzTMmGHtkcRutGltdI6mV01RS",
+      "passwordTwo": "111111",
+      "role": "user",
+      "birthdate": "2023-09-12",
+      "image": "user2.jpg"
    }
 ]

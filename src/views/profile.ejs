@@ -10,7 +10,7 @@
                 <h2>Perfil de Usuario</h2>
             </div>
             <div class="profile__main__box--formbox">
-                <form class="profile__main__box__formbox--form" action="/users/update/<%= id %>?_method=PUT" method="post" enctype="multipart/form-data">
+                <form class="profile__main__box__formbox--form" action="/users/update?_method=PUT" method="post" enctype="multipart/form-data">
 
                     <div class="profile__main__box__formbox--image">
                         <img width="100px" src="/images/productos/userImages/<%= image || "Andres.jpg" %>"  alt="">
@@ -18,10 +18,20 @@
                     <div class="profile__main__box__formbox--campobox">
                         <label for="name">Nombre</label>
                         <input class="profile__main__box__formbox--campo" type="text" name="name" id="name"  value="<%= name %>">
+                        <% if(locals.errors && locals.errors.name){ %>
+                            <div class="text-danger">
+                                <%= errors.name.msg %>
+                            </div>
+                        <% } %>  
                     </div>
                     <div class="profile__main__box__formbox--campobox">
                         <label for="lastName">Apellido</label>
                         <input class="profile__main__box__formbox--campo" type="text" name="lastName" id="lastName"  value="<%= lastName %>">                        
+                    <% if(locals.errors && locals.errors.lastName){ %>
+                                    <div class="text-danger">
+                                        <%= errors.lastName.msg %>
+                                    </div>
+                                <% } %>
                     </div>
                     <div class="profile__main__box__formbox--campobox">
                         <label for="address">Domicilio</label>

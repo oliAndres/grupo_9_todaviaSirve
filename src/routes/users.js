@@ -7,7 +7,7 @@ const upload = require('../middlewares/upload');
 const loginProcess = require('../controllers/users/loginProcess');
 const notUserCheck = require('../middlewares/notUserCheck');
 const {arrayValidaciones,validateCreateForm } = require('../middlewares/validacionesRegister');
-const { arrayValidationUpdate } = require('../middlewares/validationUpdate');
+const arrayValidationUpdate  = require('../validations/validationUpdate');
 
 
 /* GET users listing. */
@@ -16,7 +16,7 @@ router.post('/login', loginProcess.processLogin);
 router.get("/register",notUserCheck, usersController.register)
 router.post('/registerOk', arrayValidaciones,validateCreateForm,usersController.newUser);
 router.get('/logOut', usersController.logOut);
-router.get('/profile/:id', userCheck, usersController.profile);
-router.put('/update/:id',upload.single('image'), arrayValidationUpdate, usersController.update);
+router.get('/profile/', userCheck, usersController.profile);
+router.put('/update/',upload.single('image'), arrayValidationUpdate, usersController.update);
 
 module.exports = router;

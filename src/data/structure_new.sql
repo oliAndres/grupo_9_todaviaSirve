@@ -76,7 +76,11 @@ DROP TABLE IF EXISTS `images`;
 CREATE TABLE `images` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
+  `main` tinyint(1) DEFAULT NULL,
+  `id_products` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_images_products_idx` (`id_products`),
+  CONSTRAINT `fk_images_products` FOREIGN KEY (`id_products`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -136,15 +140,15 @@ CREATE TABLE `users` (
   `birthdate` varchar(45) DEFAULT NULL,
   `id_address` int DEFAULT NULL,
   `id_images` int DEFAULT NULL,
-  `id_roles` int DEFAULT NULL,
+  `roles_id` int NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`),
   KEY `fk_users_address_idx` (`id_address`),
   KEY `fk_users_images_idx` (`id_images`),
-  KEY `fk_users_roles_idx` (`id_roles`),
+  KEY `fk_users_roles1_idx` (`roles_id`),
   CONSTRAINT `fk_users_address` FOREIGN KEY (`id_address`) REFERENCES `address` (`id`),
   CONSTRAINT `fk_users_images` FOREIGN KEY (`id_images`) REFERENCES `images` (`id`),
-  CONSTRAINT `fk_users_roles` FOREIGN KEY (`id_roles`) REFERENCES `roles` (`id`)
+  CONSTRAINT `fk_users_roles1` FOREIGN KEY (`roles_id`) REFERENCES `roles` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -157,4 +161,4 @@ CREATE TABLE `users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-10-16 18:17:21
+-- Dump completed on 2023-10-19 11:44:50

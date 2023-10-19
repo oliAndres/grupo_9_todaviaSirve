@@ -98,13 +98,11 @@ CREATE TABLE `products` (
   `description` text,
   `discount` int DEFAULT NULL,
   `marca` varchar(45) DEFAULT NULL,
-  `id_images` int DEFAULT NULL,
   `category_id` int DEFAULT NULL,
+  `images_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_products_categories_idx` (`category_id`),
-  KEY `fk_products_images_idx` (`id_images`),
-  CONSTRAINT `fk_products_categories` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`),
-  CONSTRAINT `fk_products_images` FOREIGN KEY (`id_images`) REFERENCES `images` (`id`)
+  CONSTRAINT `fk_products_categories` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -118,7 +116,7 @@ DROP TABLE IF EXISTS `roles`;
 CREATE TABLE `roles` (
   `id` int NOT NULL AUTO_INCREMENT,
   `users` varchar(45) DEFAULT NULL,
-  `invited` varchar(45) DEFAULT NULL,
+  `guest` varchar(45) DEFAULT NULL,
   `admin` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
@@ -141,7 +139,7 @@ CREATE TABLE `users` (
   `id_address` int DEFAULT NULL,
   `id_images` int DEFAULT NULL,
   `roles_id` int NOT NULL,
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`id`,`roles_id`),
   UNIQUE KEY `email_UNIQUE` (`email`),
   KEY `fk_users_address_idx` (`id_address`),
   KEY `fk_users_images_idx` (`id_images`),
@@ -161,4 +159,4 @@ CREATE TABLE `users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-10-19 11:44:50
+-- Dump completed on 2023-10-19 14:38:21

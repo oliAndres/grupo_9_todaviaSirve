@@ -16,21 +16,21 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping data for table `address`
+-- Dumping data for table `addresses`
 --
 
-LOCK TABLES `address` WRITE;
-/*!40000 ALTER TABLE `address` DISABLE KEYS */;
-/*!40000 ALTER TABLE `address` ENABLE KEYS */;
+LOCK TABLES `addresses` WRITE;
+/*!40000 ALTER TABLE `addresses` DISABLE KEYS */;
+/*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Dumping data for table `cart`
+-- Dumping data for table `carts`
 --
 
-LOCK TABLES `cart` WRITE;
-/*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cart` ENABLE KEYS */;
+LOCK TABLES `carts` WRITE;
+/*!40000 ALTER TABLE `carts` DISABLE KEYS */;
+/*!40000 ALTER TABLE `carts` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -70,6 +70,16 @@ LOCK TABLES `roles` WRITE;
 UNLOCK TABLES;
 
 --
+-- Dumping data for table `sequelizemeta`
+--
+
+LOCK TABLES `sequelizemeta` WRITE;
+/*!40000 ALTER TABLE `sequelizemeta` DISABLE KEYS */;
+INSERT INTO `sequelizemeta` VALUES ('20231020164655-create-category.js'),('20231020170547-create-product.js'),('20231020173040-create-image.js'),('20231020173804-create-role.js'),('20231020174546-create-address.js'),('20231020195808-create-user.js'),('20231020203024-create-cart.js');
+/*!40000 ALTER TABLE `sequelizemeta` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Dumping data for table `users`
 --
 
@@ -87,4 +97,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-10-19 14:38:50
+-- Dump completed on 2023-10-21 15:58:05

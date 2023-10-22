@@ -5,8 +5,8 @@
   "scripts": {
     "start": "node ./src/bin/www",
     "dev": "nodemon app.js",
-    "db:create" : "sequelize db:drop & sequelize db:create & sequelize db:migrate & sequelize db:seed:all",
-    "db:reset" : "sequelize db:migrate:undo:all & sequelize db:migrate & sequelize db:seed:all"
+    "db:create": "sequelize db:drop & sequelize db:create & sequelize db:migrate & sequelize db:seed:all",
+    "db:reset": "sequelize db:migrate:undo:all & sequelize db:migrate & sequelize db:seed:all"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

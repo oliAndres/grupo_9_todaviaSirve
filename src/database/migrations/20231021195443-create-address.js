@@ -14,7 +14,7 @@ module.exports = {
         allowNull: false
       },
       province: {
-        type: Sequelize.STRING
+        type: DataTypes.STRING
       },
       street: {
         type: Sequelize.STRING

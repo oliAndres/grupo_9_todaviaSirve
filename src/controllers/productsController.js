@@ -1,3 +1,4 @@
+const db = require('../database/models')
 module.exports ={
     add : require('./products/add'),
     detail : require('./products/detail'),

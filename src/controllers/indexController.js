@@ -1,3 +1,4 @@
+const db = require('../database/models')
 const products= require('../data/products.json');
 
 module.exports = {

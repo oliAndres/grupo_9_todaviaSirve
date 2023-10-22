@@ -1,20 +1,20 @@
 'use strict';
-/** @type {import('sequelize-cli').Migration} */
+/** @type {import('DataTypes-cli').Migration} */
 module.exports = {
-  async up(queryInterface, Sequelize) {
+  async up(queryInterface, DataTypes) {
     await queryInterface.createTable('Carts', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: DataTypes.INTEGER
       },
       quantity: {
-        type: Sequelize.INTEGER,
+        type: DataTypes.INTEGER,
         defaultValue : 1
       },
       userId: {
-        type: Sequelize.INTEGER,
+        type: DataTypes.INTEGER,
         references : {
           model : {
             tableName : 'Users'
@@ -23,7 +23,7 @@ module.exports = {
         onDelete : 'cascade'
       },
       productId: {
-        type: Sequelize.INTEGER,
+        type: DataTypes.INTEGER,
         references : {
           model : {
             tableName : 'Products'
@@ -33,15 +33,15 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: DataTypes.DATE
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: DataTypes.DATE
       }
     });
   },
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface, DataTypes) {
     await queryInterface.dropTable('Carts');
   }
 };

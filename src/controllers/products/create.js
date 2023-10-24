@@ -1,16 +1,15 @@
-const { readJSON, writeJSON } = require('../../data')
-const Product = require('../../data/Product')
+const db = require('../../database/models');
 
-module.exports = (req,res) => {
-    const products = readJSON('products.json')
-    const data= {
-        ...req.body,
-        images : req.files ? req.files.map(file => file.filename) : []
+
+const create = async (req, res) => {
+    try {
+      const product = await db.Product.create(req.body);
+      console.log(product);
+      res.redirect('/admin'); 
+    } catch (error) {
+      console.error('Error:', error);
+      res.status(500).send('Error al crear el producto');
     }
-    const newProduct = new Product(data)
-    
-products.push(newProduct)
-writeJSON(products,'products.json')
-    return res.redirect('/admin')
-
-}
+  };
+  
+  module.exports = create;

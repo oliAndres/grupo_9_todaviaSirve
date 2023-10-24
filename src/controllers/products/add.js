@@ -1,11 +1,13 @@
-const { readJSON } = require("../../data");
+const db = require('../../database/models');
 
 module.exports = (req, res) => {
-    const categories = readJSON('categories.json')
-    const products = readJSON('products.json')
-    return res.render('productAdd', {
-        categories, 
-        products
+  db.Category.findAll()
+    .then(function (allCategories) {
+      res.render('productAdd', { allCategories });
     })
-
+    .catch(function (error) {
+      console.error('Error:', error);
+      res.status(500).send('Error retrieving categories');
+    });
 }
+

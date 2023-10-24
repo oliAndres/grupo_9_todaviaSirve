@@ -95,7 +95,7 @@
       "name": "PlayStation 3",
       "marca": "Sony",
       "price": 161900,
-      "category": "juegos y juguetes",
+      "category": "juguetes",
       "description": "Sony PlayStation 3 Super Slim 500GB Standard color charcoal black",
       "images": [
          "play3.webp",
@@ -106,10 +106,10 @@
    {
       "id": 9,
       "name": "Galaxy Z Flip 3",
-      "marca": "Samsamsung",
+      "marca": "Samsung",
       "price": 279900,
       "category": "celulares",
-      "description": "Samsamsung Galaxy Z Flip 3 Negro Liberado",
+      "description": "Samsung Galaxy Z Flip 3 Negro Liberado",
       "images": [
          "SamsamsungGalaxyZFlip.webp",
          "SamsamsungGalaxyZFlip2.webp",
@@ -145,7 +145,7 @@
    {
       "id": 12,
       "name": "Lcd 42",
-      "marca": "Philips",
+      "marca": "Philco",
       "price": 45000,
       "category": "electrodomesticos",
       "description": "Televisor Lcd 42 Usado",
@@ -154,17 +154,5 @@
          "TelevisorLcd2.webp",
          "TelevisorLcd3.webp"
       ]
-   },
-   {
-      "id": 13,
-      "name": "Cerveza",
-      "marca": "Quilmes",
-      "price": 1000,
-      "category": "hogar",
-      "description": "Bien Fria",
-      "images": [
-         "1694042205870_products_.png"
-      ],
-      "createAt": "2023-09-06T23:16:46.006Z"
    }
 ]

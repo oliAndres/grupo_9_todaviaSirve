@@ -2,6 +2,8 @@ const db = require('../../database/models');
 
 
 const create = async (req, res) => {
+
+  return res.send(req.body)
     try {
       const product = await db.Product.create(req.body);
       console.log(product);

@@ -1,9 +1,11 @@
 const db = require('../../database/models');
 
 module.exports = (req, res) => {
-  db.Category.findAll()
-    .then(function (allCategories) {
-      res.render('productAdd', { allCategories });
+  const categories = db.Category.findAll()
+  const brands = db.Brand.findAll()
+  Promise.all([categories, brands])
+    .then(function ([categories, brands]) {
+      return res.render('productAdd', { allCategories : categories, brands });
     })
     .catch(function (error) {
       console.error('Error:', error);

@@ -19,12 +19,12 @@ module.exports = (sequelize, DataTypes) => {
         as : 'address',
         foreignKey : 'addressId'
       });
-      /*User.hasMany(models.Product, {
+      User.belongsToMany(models.Product, {
         as : 'products',
-        through : 'carts',
+        through : 'Carts',
         foreignKey : 'userId',
         otherKey : 'productId'
-      })*/
+      })
     }
   }
   User.init({

@@ -8,7 +8,7 @@ module.exports = {
         db.Product.findAll()
             .then(products => {
                 res.render('admin.ejs', {products})
-            })
+            }).catch(error => console.log(error))
         
         
     }

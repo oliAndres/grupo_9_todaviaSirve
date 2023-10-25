@@ -25,8 +25,14 @@ module.exports = {
         type: Sequelize.INTEGER,
         defaultValue : 0
       },
-      brand: {
-        type: Sequelize.STRING
+      brandId: {
+        type: Sequelize.INTEGER,        
+        references : {
+          model : {
+            tableName : 'Brands'
+          }
+        },
+        onDelete :'cascade'
       },
       categoryId: {
         type: Sequelize.INTEGER,        

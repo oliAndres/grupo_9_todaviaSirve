@@ -16,7 +16,7 @@ module.exports = (req,res) => {
             db.Product.update(
                 {
                     name : name.trim(),
-                    brand : brand.trim(),
+                    brand : brand,
                     price,
                     categoryId,
                     description

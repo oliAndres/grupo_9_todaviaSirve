@@ -21,10 +21,10 @@
           <input
             type="text"
             class="form-control"
-            id="marca"
+            id="brandId"
             placeholder="Nombre Del Producto"
-            name="marca"
-            value="<%= marca %>"
+            name="brandId"
+            value="<%= brand.name %>"
           />
           <label for="" class="form-label">Precio</label>
           <input
@@ -46,9 +46,9 @@
           <label class="input-group-text" for="categoryId"
             >Categorias</label
           >
-          <select class="form-select form-select-sm" aria-label="Default select example" name="categoryId" id="categoryId">
+          <select class="form-select form-select-sm" aria-label="Default select example" name="" id="">
             <% categories.forEach(category => { %>
-              <option <%= category.id === categoryId && 'selected' %> value="<%= category.id %>"><%= category.name %></option>             
+              <option <%= categories.id === categoryId && 'selected' %> value="<%= categories.id %>"><%= categories.name %></option>             
             <% }) %>
           </select>
         </div>
@@ -70,7 +70,7 @@
           
           <div class="col-12 col-md-6 d-flex gap-1">
             <% images.forEach(image => { %>
-             <img width="100px" src="/images/productos/<%= image.file || "default-placeholder.jpg" %>" alt="">
+             <img width="100px" src="/images/productos/<%= image.file %>" alt="">
             <% }) %>
           </div>
 

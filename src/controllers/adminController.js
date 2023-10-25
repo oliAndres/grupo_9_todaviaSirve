@@ -1,22 +1,22 @@
-const db = require('../database/models')
-
+const db = require("../database/models")
 module.exports = {
-    admin : (req,res) => {
-
-        const products = db.Product.findAll();
-        const categories = db.Category.findAll();
-        const users = db.User.findAll();
-
-        Promise.all([products,categories,users])
-            .then(([products,categories,users]) => {
-                return res.render('admin',{
-                    products,
-                    categories,
-                    users
-                });
-            })
-            .catch(error => console.log(error))
-        
+    admin: async (req, res) => {
+        try {
+            const {name,price,description,brand} = await db.Product.findAll();
+            res.render('admin', { products });
+        } catch (error) {
+            console.error('Error al recuperar productos:', error);
+            res.status(500).json({ error: 'Error interno del servidor' });
+        }
     }
- 
-}
+};
+// module.exports = {
+//     admin: (req, res) => {
+//         db.Product.findAll()
+//             .then(products => {
+//                 res.render('admin.ejs', {products})
+//             })
+    
+//         }
+    
+// } 

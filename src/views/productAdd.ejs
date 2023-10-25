@@ -12,8 +12,8 @@
                         <label for=>Nombre del producto</label>
                         <input placeholder="Ingrese el nombre" class="form-control" type="text" name="name" id="name">
 
-                        <label for="marca" class="form-label">Marca</label>
-                        <input type="text" class="form-control" name="brand" placeholder="Ingrese la marca" id="brand">
+                        <label for="brand" class="form-label">Marca</label>
+                        <input type="text" class="form-control" name="brand" placeholder="Ingrese la marca" id="brandId">
 
                         <label for="">Precio</label>    
                         <input placeholder="Ingrese el precio" type="number" name="price" id="price" class="form-control">
@@ -28,24 +28,13 @@
                             </div>
 
                             <section>
-                                <label for="Categoría" class="form-label">Categoría</label>
-                                <ul>
-                                    <li><label for="electro" class="form-label">Electro</label>
-                                        <input type="checkbox" value="electro" name="electro" id="electro">
-                                    </li>
-                                    <li><label for="moda" class="form-label">Moda</label>
-                                        <input type="checkbox" value="moda" name="moda" id="moda">
-                                    </li>
-                                    <li><label for="hogar" class="form-label">Hogar</label>
-                                        <input type="checkbox" value="hogar" name="hogar" id="hogar">
-                                    </li>
-                                    <li><label for="jugueteria" class="form-label">Jugueteria</label>
-                                        <input type="checkbox" value="jugueteria" name="jugueteria" id="jugueteria">
-                                    </li>
-                                    <li><label for="otros" class="form-label">Otros</label>
-                                        <input type="checkbox" value="otros" name="otros" id="otros">
-                                    </li>
-                                </ul>
+                                <label for="category" class="form-label">Categoría</label>
+                                <select id="categoryId" name="category">
+                                    <% allCategories.forEach(category => { %>
+                                        <option value="<%= category.name %>"><%= category.name %></option>
+                                    <% }); %>
+                                </select>
+                                
                             </section>
                             <div class="boximage_imgProduct">
                                 <label for="" class="form-label">Imagen del producto</label>

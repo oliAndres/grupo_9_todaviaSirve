@@ -1,5 +1,6 @@
+const db = require('../../database/models');
 
-const deleteProduct = async (req, res) => {
+async function deleteProduct(req, res) {
     try {
         const productId = parseInt(req.params.id);
         const product = await db.Product.findByPk(productId);
@@ -8,12 +9,11 @@ const deleteProduct = async (req, res) => {
             return res.status(404).json({ error: 'Producto no encontrado' });
         }
 
-        await product.destroy();
-        return res.redirect("/admin");
+        return res.render('productsDelete', { product });
     } catch (error) {
-        console.error('Error al eliminar el producto:', error);
+        console.error('Error al cargar la página de eliminación del producto:', error);
         return res.status(500).json({ error: 'Error interno del servidor' });
     }
-};
+}
 
 module.exports = deleteProduct;

@@ -3,7 +3,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <form action="/products/removeProducts/<%= id %>?_method=DELETE" method="POST">
+                <form action="/products/destroyProducts/<%= id %>?_method=DELETE" method="POST">
                     <h4 class="my-3 text-center">¿Estás seguro de que deseas eliminar el producto: <%= name %>?</h4>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     <button class="btn btn-outline-danger" type="submit">ELIMINAR</button>

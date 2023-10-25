@@ -1,8 +1,20 @@
-const db = require("../database/models")
+const db = require("../database/models");
+
 module.exports = {
     admin: async (req, res) => {
         try {
-            const {name,price,description,brand} = await db.Product.findAll();
+            const products = await db.Product.findAll({
+                include: [
+                    {
+                        model: db.Brand,
+                        as: 'brand',
+                    },
+                    {
+                        model: db.Category,
+                        as: 'category',
+                    }
+                ]
+            });
             res.render('admin', { products });
         } catch (error) {
             console.error('Error al recuperar productos:', error);
@@ -10,13 +22,5 @@ module.exports = {
         }
     }
 };
-// module.exports = {
-//     admin: (req, res) => {
-//         db.Product.findAll()
-//             .then(products => {
-//                 res.render('admin.ejs', {products})
-//             })
-    
-//         }
-    
-// } 
+
+

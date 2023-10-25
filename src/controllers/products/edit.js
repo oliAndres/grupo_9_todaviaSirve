@@ -15,6 +15,7 @@ module.exports = (req,res) => {
     
     Promise.all([product, categories])
         .then(([product, categories]) => {
+            //return res.send(product)
             return res.render('productEdit', {
                 categories,
                 ...product?.dataValues

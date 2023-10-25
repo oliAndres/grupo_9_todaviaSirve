@@ -28,7 +28,11 @@
         <% products.forEach(producto => { %>
           <div class="card">
             <a href="/products/detail/<%= producto.id %>">
-              <img src="/images/productos/<%= producto.images[0] %>" alt="" style="width:100%">
+              <% if (producto.images && producto.images.length > 0) { %>
+                <img src="/images/productos/<%= producto.images[0].name %>" alt="" style="width:100%">
+              <% } else { %>
+                <p>No image available</p>
+              <% } %>
             </a>
             <p class="card-name"><%= producto.name %></p>
             <p class="price"><%= producto.price %></p>

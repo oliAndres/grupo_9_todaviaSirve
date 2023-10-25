@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.get('/detail/:id', productsController.detail);
 
-router.get('/edit/:id',adminCheck, productsController.edit);
+router.get('/edit/:id', productsController.edit); //adminCheck,
 router.put('/update/:id',upload.array('images'), productsController.update);
 
 router.get('/add',userCheck, productsController.add);

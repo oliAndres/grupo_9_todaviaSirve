@@ -22,10 +22,10 @@
           <input
             type="text"
             class="form-control"
-            id="marca"
-            placeholder="Marca Del Producto"
-            name="marca"
-            value="<%= product.marca %>"
+            id="brandId"
+            placeholder="Nombre Del Producto"
+            name="brandId"
+            value="<%= brand.name %>"
           />
           <label for="" class="form-label">Precio</label>
           <input
@@ -44,31 +44,24 @@
         </div>
         <div class="boxselect_categorias"></div>
         <div class="input-group mb-3">
-          <label class="input-group-text" for="inputGroupSelect01">Categorías</label>
-          <select class="form-select form-select-sm" aria-label="Default select example" name="category" id="category">
+          <label class="input-group-text" for="categoryId"
+            >Categorias</label
+          >
+          <select class="form-select form-select-sm" aria-label="Default select example" name="" id="">
             <% categories.forEach(category => { %>
-              <option <%= category.name === product.category && 'selected' %> value="<%= category.name %>"><%= category.name %></option>             
+              <option <%= category.id === categoryId && 'selected' %> value="<%= category.id %>"><%= category.name %></option>             
             <% }) %>
           </select>
         </div>
         <br />
 
-        <div class="boxselect_estadoProducto">
-          <div class="input-group mb-3">
-            <label class="input-group-text" for="">Estado</label>
-            <select class="form-select" id="state" name="state">       
-              <option <%= product.state === "Nuevo" && 'selected' %> value="Nuevo">Nuevo</option>
-              <option <%= product.state === "Usado" && 'selected' %> value="Usado">Usado</option>
-            </select>
-          </div>
-        </div>
         <hr>
         <div class="boximage_imgProduct">
           <label for="" class="form-label">Imágenes del producto</label>
           
           <div class="col-12 col-md-6 d-flex gap-1">
-            <% product.images.forEach(image => { %>
-              <img width="100px" src="/images/productos/<%= image || "default-placeholder.jpg" %>" alt="">
+            <% images.forEach(image => { %>
+             <img width="100px" src="/images/productos/<%= image.name %>" alt="">
             <% }) %>
           </div>
           

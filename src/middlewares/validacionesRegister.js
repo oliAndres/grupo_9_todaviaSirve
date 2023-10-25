@@ -1,5 +1,5 @@
 const { check, body, validationResult } = require("express-validator");
-const users = require('../data/users.json')
+const db = require("../database/models");
 
 /* Validaciones */
 const arrayValidaciones = [
@@ -31,19 +31,23 @@ const arrayValidaciones = [
         .isEmail()
         .withMessage("Formato inválido")
         .custom((value, { req }) => {
-          const user = users.find((user) => user.email === value);
-    
-          if (user) {
-            return false;
-          }
-          return true;
-        })
-        .withMessage("El email ya se encuentra registrado"),
-
+            return db.User.findOne({
+                where : {
+                  email : value
+                }
+              }).then(user => {
+                if(user){
+                  return Promise.reject()
+                }
+              }).catch((error) => {
+                console.log(error);
+                return Promise.reject('El email ya se encuentra registrado')
+              })
+            }),
     body("password").isLength({
-            min: 6,
+            min: 4,
           })
-        .withMessage("Tu constraseña debe tener minimo 6 caracteres")  ,
+        .withMessage("Tu constraseña debe tener minimo 4 caracteres")  ,
     body('passwordTwo')
             .custom((value,{req}) => {
                 if(value !== req.body.password){
@@ -51,12 +55,7 @@ const arrayValidaciones = [
                 }
                 return true
             }).withMessage('Las contraseñas no coinciden'),
-    
-    body("role")
-            .notEmpty()
-            .withMessage("El campo rol no debe estar vacío")
-            .isIn(["admin", "user"])
-            .withMessage("Selecciona un rol válido"),        
+         
     
     body("birthdate")
             .notEmpty()

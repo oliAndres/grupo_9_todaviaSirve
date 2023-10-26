@@ -17,7 +17,7 @@
       <div class="swiper-wrapper">
         <% products.forEach(producto => { %>
           <div class="swiper-slide">
-            <img src="/images/productos/<%= producto.image1 %>" alt="" class="product-image">
+            <img src="/images/productos/<%= products.image[1] %>" alt="" class="product-image">
           </div>
         <% }); %>
       </div>
@@ -27,16 +27,16 @@
       <div class="card-section">
         <% products.forEach(producto => { %>
           <div class="card">
-            <a href="/products/detail/<%= producto.id %>">
-              <% if (producto.images && producto.images.length > 0) { %>
-                <img src="/images/productos/<%= producto.images[0].name %>" alt="" style="width:100%">
+            <a href="/products/detail/<%= products.id %>">
+              <% if (products.images && products.images.length > 0) { %>
+                <img src="/images/productos/<%= products.images[0].name %>" alt="" style="width:100%">
               <% } else { %>
                 <p>No image available</p>
               <% } %>
             </a>
-            <p class="card-name"><%= producto.name %></p>
-            <p class="price">$<%= producto.price %></p>
-            <p class="card-descripcion"><%= producto.description %></p>
+            <p class="card-name"><%= products.name %></p>
+            <p class="price">$<%= products.price %></p>
+            <p class="card-descripcion"><%= products.description %></p>
           </div>
         <% }); %>
       </div>

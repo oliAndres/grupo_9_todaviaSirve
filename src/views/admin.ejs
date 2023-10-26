@@ -25,29 +25,29 @@
               <% products.forEach(product=> { %>
                 <tr>
                   <td>
-                    <%= product.id %>
+                    <%= products.id %>
                   </td>
                   <td>
-                    <%= product.name %>
+                    <%= products.name %>
                   </td>
                   <td>
-                    <%= product.brand.name%>
+                    <%= products.brand.name%>
                   </td>
                   <td>
-                    <%= product.price %>
+                    <%= products.price %>
                   </td>
                   <td>
-                    <%= product.category.name %>
+                    <%= products.category.name %>
                   </td>
                   <td>
-                    <%= product.description %>
+                    <%= products.description %>
                   </td>
 
                   <td>
-                    <a href="/products/edit/<%= product.id %>" class="btn btn-outline-primary btn-sm btn-action">EDITAR</a>
+                    <a href="/products/edit/<%= products.id %>" class="btn btn-outline-primary btn-sm btn-action">EDITAR</a>
                     <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                      data-bs-target="#deleteModalProducts<%= product.id %>"> Eliminar</button>
-                    <%- include('partials/modalDelete', { id: product.id, name: product.name }) %>
+                      data-bs-target="#deleteModalProducts<%= products.id %>"> Eliminar</button>
+                    <%- include('partials/modalDelete', { id: products.id, name: products.name }) %>
                   </td>
                 </tr>
                 <% }); %>

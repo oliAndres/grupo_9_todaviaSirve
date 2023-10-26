@@ -30,8 +30,8 @@
                             <section>
                                 <label for="category" class="form-label">Categoría</label>
                                 <select id="categoryId" name="category">
-                                    <% allCategories.forEach(category => { %>
-                                        <option value="<%= category.name %>"><%= category.name %></option>
+                                    <% categories.forEach(category => { %>
+                                        <option value="<%= categories.name %>"><%= categories.name %></option>
                                     <% }); %>
                                 </select>
                                 

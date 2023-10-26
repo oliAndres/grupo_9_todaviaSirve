@@ -7,7 +7,7 @@ module.exports = (req,res) => {
 
     if (errors.isEmpty()){
 
-    const {name, brand, price, categoryId, description} = req.body;
+    const {name, brandId, price, categoryId, description} = req.body;
 
     db.Product.findByPk(req.params.id,{
         include : ['images']
@@ -16,9 +16,9 @@ module.exports = (req,res) => {
             db.Product.update(
                 {
                     name : name.trim(),
-                    brand : brand,
+                    brandId : brandId,
                     price,
-                    categoryId,
+                    categoryId : categoryId,
                     description
                 },
                 {

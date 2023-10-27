@@ -28,24 +28,6 @@ module.exports = (req,res) => {
                 }
             )
             .then(() => {
-                // Cambia imagen principal
-                if(req.files.image){
-                    existsSync(`./public/images/productos/${product.images.find(image => image.main).file}`) && 
-                    unlinkSync(`./public/images/productos/${product.images.find(image => image.main).file}`);
-                    db.Image.destroy({
-                        where : {
-                            productId : req.params.id,
-                            main : true
-                        }
-                    })
-                    .then (() => {
-                        db.Image.create({
-                            file : req.files.image[0].filename,
-                            main : true,
-                            productId : req.params.id
-                        })
-                    })
-                }
                 //Cambia imagenes secundarias
                 if(req.files.images){
                     product.images.filter(image => !image.main).forEach((image) => {
@@ -62,7 +44,7 @@ module.exports = (req,res) => {
                     .then(() => {
                         const images = req.files.images.map(({filename}) => {
                             return {
-                                file : filename,
+                                name : filename,
                                 main : false,
                                 productId : product.id
                             }

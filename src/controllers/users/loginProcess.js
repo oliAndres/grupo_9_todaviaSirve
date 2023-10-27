@@ -36,6 +36,7 @@ exports.processLogin = [
   } else {
 
     return res.render('login', {
+      old: req.body,
         errors : errors.mapped()
     })
   }

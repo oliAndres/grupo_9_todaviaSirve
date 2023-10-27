@@ -9,15 +9,19 @@ module.exports = (req,res) => {
             all : true
         }
     });
-    const categories = db.Product.findAll({
+    const categories = db.Category.findAll({
+        order : ['name']
+    });
+    const brands = db.Brand.findAll({
         order : ['name']
     });
     
-    Promise.all([product, categories])
-        .then(([product, categories]) => {
+    Promise.all([product, categories, brands])
+        .then(([product, categories, brands]) => {
             //return res.send(product)
             return res.render('productEdit', {
                 categories,
+                brands,
                 ...product?.dataValues
             });
         })

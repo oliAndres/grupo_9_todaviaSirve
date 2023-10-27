@@ -18,15 +18,17 @@
             name="name"
             value="<%= products.name %>"
           />
-          <label for="">Marca </label>
-          <input
-            type="text"
-            class="form-control"
-            id="brandId"
-            placeholder="Nombre Del Producto"
-            name="brandId"
-            value="<%= brand.name %>"
-          />
+          <br>
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="brandId"
+              >Marca</label>
+            <select class="form-select form-select-sm" aria-label="Default select example" name="brandId" id="brandId">
+              <% brands.forEach(brand => { %>
+                <option <%= brand.id === brandId && 'selected' %> value="<%= brand.id %>"><%= brand.name %></option>             
+              <% }) %>
+            </select>
+          </div>
+
           <label for="" class="form-label">Precio</label>
           <input
             type="text"
@@ -45,9 +47,8 @@
         <div class="boxselect_categorias"></div>
         <div class="input-group mb-3">
           <label class="input-group-text" for="categoryId"
-            >Categorias</label
-          >
-          <select class="form-select form-select-sm" aria-label="Default select example" name="" id="">
+            >Categorias</label>
+          <select class="form-select form-select-sm" aria-label="Default select example" name="categoryId" id="categoryId">
             <% categories.forEach(category => { %>
               <option <%= categories.id === categoryId && 'selected' %> value="<%= categories.id %>"><%= categories.name %></option>             
             <% }) %>
@@ -67,8 +68,8 @@
           
           <br>
           
-          <div class="input-group mb-3">
-            <label class="btn btn-secondary" for="images">Cambiar imágenes</label>
+          <div class="input-group mb-3 gap-2">
+            <label class="btn btn-secondary" for="images">Cambiar imagenes</label>
             <input hidden class="form-control" type="file" id="images" name="images" multiple>
           </div>
         </div>

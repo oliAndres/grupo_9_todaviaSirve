@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       User.belongsTo(models.Role,{
-        as : 'role',
+        as : 'rol',
         foreignKey : 'roleId'
       }),
       User.belongsTo(models.Address,{
@@ -42,6 +42,18 @@ module.exports = (sequelize, DataTypes) => {
       unique : true
     },
     password: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    passwordTwo: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    role: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    image: {
       type: DataTypes.STRING,
       allowNull: false
     },

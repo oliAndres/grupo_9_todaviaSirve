@@ -26,10 +26,20 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      passwordTwo: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       birthdate: {
         type: Sequelize.DATE,
       },
       avatar: {
+        type: Sequelize.STRING,
+      },
+      role: {
+        type: Sequelize.INTEGER,
+      },
+      image: {
         type: Sequelize.STRING,
       },
       addressId: {

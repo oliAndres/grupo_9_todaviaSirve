@@ -22,6 +22,7 @@ exports.processLogin = [
           id: user.id,
           name: user.name,
           role: user.roleId,
+          email: user.email,
         };
 
         req.body.remember !== undefined && res.cookie('todaviaSirve', req.session.userLogin, {

@@ -18,7 +18,7 @@
                     <div class="profile__main__box__formbox--campobox">
                         <label for="name">Nombre</label>
                         <input class="profile__main__box__formbox--campo" type="text" name="name" id="name" value="<%= user.name %>">
-                        <% if(locals.errors && locals.errors.name){ %>
+                        <% if(errors && errors.name){ %>
                             <div class="text-danger">
                                 <%= errors.name.msg %>
                             </div>
@@ -27,7 +27,7 @@
                     <div class="profile__main__box__formbox--campobox">
                         <label for="lastName">Apellido</label>
                         <input class="profile__main__box__formbox--campo" type="text" name="lastName" id="lastName" value="<%= user.lastName %>">
-                        <% if(locals.errors && locals.errors.lastName){ %>
+                        <% if(errors && errors.lastName){ %>
                             <div class="text-danger">
                                 <%= errors.lastName.msg %>
                             </div>

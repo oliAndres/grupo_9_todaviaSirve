@@ -1,31 +1,38 @@
 const db = require('../database/models');
-const products = require('../data/products.json');
 
 module.exports = {
-  index: (req, res) => {
-    console.log(req.session.userLogin);
+    index : (req,res) => {   
+        
+        db.Product.findAll({
+            include : ['images']
+        })
+            .then(products => {
+                
+                return res.render('index', {
+                    products,
+                    productsCarousel : []
+        
+                })
+            })
+            .catch(error => console.log(error))
+    },
+    admin : (req,res)  => {
 
-    db.Product.findAll({
-      include: {
-        model: db.Image,
-        as: 'images', // Debe coincidir con el alias en la definición de la asociación
-      },
-    })
-      .then((products) => {
-        res.render('index.ejs', { products });
-      })
-      .catch((error) => console.log(error));
-  },
-};
+        const products = db.Product.findAll({
+            include : ['category','section','images']
+        });
+        const categories = db.Category.findAll();
+        const users = db.User.findAll();
 
-
-// module.exports = {
-//     admin: (req, res) => {
-//         db.Product.findAll()
-//             .then(products => {
-//                 res.render('admin.ejs', {products})
-//             })
-    
-//         }
-    
-// } 
+        Promise.all([products,categories,users])
+            .then(([products,categories,users]) => {
+                return res.render('admin', {
+                    products,
+                    categories,
+                    users
+                })
+            })
+            .catch(error => console.log(error))
+       
+    }
+}

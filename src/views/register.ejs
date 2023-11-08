@@ -46,31 +46,7 @@
                             <% } %>
                         </div>
                     </div>
-                    <div class="register__main__box__formbox--campobox">
-                        <div class="form-box-reg">
-                            <input class="register__main__box__formbox--campo" type="text" name="lastName" id="lastName" placeholder="Apellido" value="<%= locals.old && locals.old.lastName ? locals.old.lastName : '' %>">
-                            <div>
-                                <% if(locals.errors && locals.errors.lastName){ %>
-                                    <div class="text-danger">
-                                        <%= locals.errors.lastName.msg %>
-                                    </div>
-                                <% } %>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="register__main__box__formbox--campobox">
-                        <div class="form-box-reg">
-                            <input class="register__main__box__formbox--campo" type="text" name="address" id="address" placeholder="Domicilio" value="<%= locals.old && locals.old.address ? locals.old.address : '' %>">
-                            <div>
-                                <% if(locals.errors && locals.errors.address){ %>
-                                    <div class="text-danger">
-                                        <%= locals.errors.address.msg %>
-                                    </div>
-                                <% } %>
-                            </div>
-                        </div>
-                    </div>
-<<<<<<< HEAD
+                
                     </div>
                     <p class="title_reg">Provincia:</p>
                     <div class="register__main__box__formbox--campobox">
@@ -81,34 +57,6 @@
                             <% if(locals.errors && errors.province){ %>
                                 <div class="text-danger">
                                     <%= errors.province.msg %>
-=======
-                    <div class="register__main__box__formbox--campobox">
-                        <div class="form-box-reg">
-                            <input class="register__main__box__formbox--campo" type="email" name="email" id="email" placeholder="Correo electrónico" value="<%= locals.old && locals.old.email ? locals.old.email : '' %>">
-                            <% if(locals.errors && locals.errors.email){ %>
-                                <div class="text-danger">
-                                    <%= locals.errors.email.msg %>
-                                </div>
-                            <% } %>
-                        </div>
-                    </div>
-                    <div class="register__main__box__formbox--campobox">
-                        <div class="form-box-reg">
-                            <input class="register__main__box__formbox--campo" type="password" name="password" id="password" placeholder="Contraseña">
-                            <% if(locals.errors && locals.errors.password){ %>
-                                <div class="text-danger">
-                                    <%= locals.errors.password.msg %>
-                                </div>
-                            <% } %>
-                        </div>
-                    </div>
-                    <div class="register__main__box__formbox--campobox">
-                        <div class="form-box-reg">
-                            <input class="register__main__box__formbox--campo" type="password" name="passwordTwo" id="passwordTwo" placeholder="Repetir Contraseña">
-                            <% if(locals.errors && locals.errors.passwordTwo){ %>
-                                <div class="text-danger">
-                                    <%= locals.errors.passwordTwo.msg %>
->>>>>>> 4164edc5f75d86343421f0897cb199ad9f0b0f93
                                 </div>
                             <% } %>
                         </div>
@@ -116,19 +64,12 @@
                     <p class="title_reg">Ciudad:</p>
                     <div class="register__main__box__formbox--campobox">
                         <div class="form-box-reg">
-<<<<<<< HEAD
                             <select class="register__main__box__formbox--campo" type="text" name="city" id="city">
                                 <option value="" hidden selected>Elije tu ciudad...</option>
                             </select>
                             <% if(locals.errors && errors.city){ %>
                                 <div class="text-danger">
                                     <%= errors.city.msg %>
-=======
-                            <input class="register__main__box__formbox--campo" type="date" name="birthdate" id="birthdate" placeholder="Fecha de Nacimiento">
-                            <% if(locals.errors && locals.errors.birthdate){ %>
-                                <div class="text-danger">
-                                    <%= locals.errors.birthdate.msg %>
->>>>>>> 4164edc5f75d86343421f0897cb199ad9f0b0f93
                                 </div>
                             <% } %>
                         </div>

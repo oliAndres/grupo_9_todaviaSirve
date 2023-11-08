@@ -7,12 +7,21 @@ const router = express.Router();
 
 router.get('/detail/:id', productsController.detail);
 
-router.get('/edit/:id',adminCheck, productsController.edit);
-router.put('/update/:id',upload.array('images'), productsController.update);
+router.get('/edit/:id',adminCheck, productsController.edit); 
+router.put('/update/:id',upload.fields([
+    {
+        name : "image",
+    },
+    {
+        name : "images",
+    },
+]), productsController.update);
 
 router.get('/add',userCheck, productsController.add);
 
-router.delete('/removeProducts/:id', productsController.remove);
+router.get('/deleteProducts/:id', productsController.deleteProduct);
+router.delete('/destroyProducts/:id', productsController.destroyProduct);
 
 router.post('/add', upload.array('images'),productsController.create)
+
 module.exports = router;

@@ -5,56 +5,46 @@
 <body class="home">
     <%- include('partials/header') %>
 
-        <main class="product-detail__main">
-            <div class="row">
-                <div class="col-12 col-md-10 col-lg-8 mx-auto mt-5">
-                    <div class="product-detail__main-card mb-3">
-                        <div class="product-detail__main-row g-0">
-                            <div class="product-detail__main-img">
-
-                                <div class="col-12 col-md-7">
-                                    <div class="d-flex flex-column gap-1">
-                                        <div class="product-detail__main-image-central">
-
-                                          <img id="main-image" src="/images/productos/<%= prodfind.images[0] %>" class="img-fluid rounded-top" alt="..." widht="100%" style="object-fit:cover"; width:100%; height:100%;>
-                                        </div>
-                                        <div class="d-flex product-detail__main-image-justify-content-between">
-                                            <img src="/images/productos/<%= prodfind.images[0] %>" width="22%" alt=""
-                                                onclick="document.getElementById('main-image').setAttribute('src','/images/productos/<%= prodfind.images[0] %>')">
-                                            <img src="/images/productos/<%= prodfind.images[1] %>"
-                                                width="46%" alt=""
-                                                onclick="document.getElementById('main-image').setAttribute('src','/images/productos/<%= prodfind.images[1] %>')">
-                                            <img src="/images/productos/<%= prodfind.images[2] %>" width="30%" alt=""
-                                                onclick="document.getElementById('main-image').setAttribute('src','/images/productos/<%= prodfind.images[2] %>')">
-                                        </div>
+    <main class="product-detail__main">
+        <div class="row">
+            <div class="col-12 col-md-10 col-lg-8 mx-auto mt-5">
+                <div class="product-detail__main-card mb-3">
+                    <div class="product-detail__main-row g-0">
+                        <div class="product-detail__main-img">
+                            <div class="col-12 col-md-7">
+                                <div class="d-flex flex-column gap-1">
+                                    <div class="product-detail__main-image-central">
+                                        <img id="main-image" src="/images/productos/<%= products.images[0] %>" class="img-fluid rounded-top" alt="..." width="100%" style="object-fit: cover;" width="100%" height="100%;">
+                                    </div>
+                                    <div class="d-flex product-detail__main-image-justify-content-between">
+                                        <% products.images.forEach((image, index) => { %>
+                                            <img src="/images/productos/<%= image %>" width="<%= index === 0 ? 22 : (index === 1 ? 46 : 30) %>" alt=""
+                                                onclick="document.getElementById('main-image').setAttribute('src','/images/productos/<%= image %>')">
+                                        <% }) %>
                                     </div>
                                 </div>
-
                             </div>
-                            <class="col-12 col-md-5">
-                                <div class="product-detail__main-card-body">
-                                    <h6 class="product-detail__main-card-title"><%= prodfind.name %></h6>
-                                    <p class="product-detail__main-card-text"><%= prodfind.description %></p>
-                                    
-
-                                    <h3 class="product-detail__main-card-precio">$ <%= prodfind.price %></h3>
-
-                                </div>
-                                <div class="product-detail__main-center-bt">
-                                    <a href="/carrito">
-                                        <button class="product-detail__main-button">Comprar</button>
-                                    </a>
-                                </div>
+                        </div>
+                        <div class="col-12 col-md-5">
+                            <div class="product-detail__main-card-body">
+                                <h6 class="product-detail__main-card-title"><%= products.name %></h6>
+                                <p class="product-detail__main-card-text"><%= products.description %></p>
+                                <h3 class="product-detail__main-card-precio">$ <%= products.price %></h3>
+                            </div>
+                            <div class="product-detail__main-center-bt">
+                                <a href="/carrito">
+                                    <button class="product-detail__main-button">Comprar</button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        
-        </main>
+        </div>
+    </main>
 
-        <%- include('partials/footer') %>
+    <%- include('partials/footer') %>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
-
 </html>

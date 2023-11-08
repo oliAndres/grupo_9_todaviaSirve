@@ -1,0 +1,34 @@
+[
+    {
+        "id" : "1",
+        "name" : "tecnologia"
+    },
+    {
+        "id" : "2",
+        "name" : "hogar"
+    },
+    {
+        "id" : "3",
+        "name" : "moda"
+    },
+    {
+        "id" : "4",
+        "name" : "celulares"
+    },
+    {
+        "id" : "5",
+        "name" : "electrodomesticos"
+    },
+    {
+        "id" : "6",
+        "name" : "herramientas"
+    },
+    {
+        "id" : "7",
+        "name" : "juguetes"
+    },
+    {
+        "id" : "8",
+        "name" : "otros"
+    }
+]

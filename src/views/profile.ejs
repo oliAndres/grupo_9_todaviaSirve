@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+<body>
+    <%- include('partials/header') %>
+
+    <main class="profile--main">
+        <div class="profile__main--box">
+            <div class="profile__main__box--title">
+                <h2>Perfil de Usuario</h2>
+            </div>
+            <div class="profile__main__box--formbox">
+                <form class="profile__main__box__formbox--form" action="/users/update?_method=PUT" method="post" enctype="multipart/form-data">
+
+                    <div class="profile__main__box__formbox--image">
+                        <img width="100px" src="/images/productos/userImages/<%= image || "Andres.jpg" %>"  alt="">
+                    </div>
+                    <div class="profile__main__box__formbox--campobox">
+                        <label for="name">Nombre</label>
+                        <input class="profile__main__box__formbox--campo" type="text" name="name" id="name"  value="<%= name %>">
+                        <% if(locals.errors && locals.errors.name){ %>
+                            <div class="text-danger">
+                                <%= errors.name.msg %>
+                            </div>
+                        <% } %>  
+                    </div>
+                    <div class="profile__main__box__formbox--campobox">
+                        <label for="lastName">Apellido</label>
+                        <input class="profile__main__box__formbox--campo" type="text" name="lastName" id="lastName"  value="<%= lastName %>">                        
+                    <% if(locals.errors && locals.errors.lastName){ %>
+                                    <div class="text-danger">
+                                        <%= errors.lastName.msg %>
+                                    </div>
+                                <% } %>
+                    </div>
+                    <div class="profile__main__box__formbox--campobox">
+                        <label for="address">Domicilio</label>
+                        <input class="profile__main__box__formbox--campo" type="text" name="address" id="address" placeholder="Domicilio" value="<%= address %>" >
+                    </div>
+                    <div class="profile__main__box__formbox--campobox">
+                        <label for="birthdate">Fecha de nacimiento</label>
+                        <input class="profile__main__box__formbox--campo" type="date" name="birthdate" id="birthdate" value="<%= birthdate %>">
+                    </div>
+                    <div class="profile__main__box__formbox--buttonbox">
+                        <a href="/">
+                            <button class="profile__main__box__formbox--button" type="submit">Guardar cambios </button>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <%- include('partials/footer') %>
+    
+</body>
+</html>

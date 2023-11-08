@@ -1,0 +1,141 @@
+.login--main {
+    box-sizing: border-box;
+    background-color: var(--grisClaro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login__main--box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 15px 15px 70px 15px;
+    width: 90%;
+    max-width: 481px;
+    background-color: white;
+}
+
+.login__main__box--title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 10px;
+}
+
+.login__main__box--formbox {
+    display: flex;
+    justify-content: center;
+}
+
+.login__main__box__formbox--form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.login__main__box__formbox--campobox {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+.form-check-input[type=checkbox]{
+    padding: 10px;
+    margin: 2px;
+}
+.login__main__box__formbox--placeholder {
+    position: absolute;
+    padding: 5px;
+    background-color: white;
+    color: silver;
+    font-size: 18px;
+
+}
+
+.login__main__box__formbox--campo {
+    font-size: 16px;
+    padding: 10px 15px;
+    text-align: center;
+    border: 1px solid silver;
+}
+
+.login__main__box__formbox--campo:focus {
+    border: 1px solid rgb(50, 173, 179);
+    box-shadow: 0 0 5px rgb(64, 135, 179);
+}
+
+.login__main__box__formbox--buttonbox {
+    display: flex;
+    justify-content: center;
+    padding: 10px 10px 30px;
+    gap: 30px;
+}
+
+.login__main__box__formbox--button {
+    background-color: rgb(50, 173, 179);
+    margin: 0;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+.login__main__box__formbox--form-check{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.login__main__box__formbox--button:hover {
+    box-shadow: 3px 3px 8px silver;
+}
+
+.login__main__box__formbox--button:focus {
+    background-color: rgb(64, 135, 179);
+}
+
+.login__main__box__formbox--button2 {
+    background-color: #fff;
+    margin: 0;
+    border-radius: 5px;
+    color: rgb(64, 135, 179);
+    font-weight: bold;
+}
+
+.login__main__box__formbox--button2:hover {
+    box-shadow: 3px 3px 8px silver;
+}
+
+.login__main__box__formbox--button2:focus {
+    background-color: rgb(64, 135, 179);
+    color: #fff;
+}
+
+
+@media(min-width: 481px) {
+    .login__main--box {
+        margin: 30px 0 80px;
+        border-radius: 10px;
+    }
+}
+
+@media(min-width: 769px) {
+    .login__main--box {
+        margin: 50px 0 100px;
+        border-radius: 20px;
+    }
+}
+
+@media(min-width: 1024px) {
+    .login__main--box {
+        margin: 50px 0 200px;
+        border-radius: 20px;
+    }
+}

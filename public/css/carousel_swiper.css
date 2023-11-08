@@ -1,0 +1,30 @@
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 450px; /* Ancho en píxeles */
+    height: auto; /* Altura en píxeles */
+    object-fit: cover; /* Ajusta la imagen para cubrir el área sin distorsionar */
+  }
+
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,37 @@
+    <header class="home__header">
+        <div class="home__header__back">
+           <div class="menu container">
+               <a href="/" class="logo"><img src="/images/ts3.png" alt=""></a>
+               <div class="home__header__search">
+                   <input type="text" placeholder="¿Que productos buscas....?">
+                   <button><i class="fi fi-rr-search"></i></button>
+               </div>
+               <input type="checkbox" id="menu">
+               <label for="menu">
+                   <img src="/images/menu.png" class="menu-icono" alt="">
+               </label>
+               <nav class="home__header__navbar">
+                   <ul>
+                    <li> <a href="#">Ofertas</a></li>
+                    <li> <a href="/products/add">Vender</a></li>
+                    <% if (locals.userLogin) { %>
+                        <% if (userLogin.role === 'admin') { %>
+                            <li> <a href="/admin">Admin</a></li>
+                        <% } %>
+                        <li> <a href="/users/profile/">Hola <%= userLogin.name %> !</a></li>                        
+                        <li>
+                            <div class="header__main__box__formbox--image">
+                                <img width="100px" src="/images/productos/userImages/<%= userLogin.image || "Andres.jpg" %>"  alt="">
+                            </div>
+                        </li>
+                        <li> <a href="/users/logOut">Salir</a></li>     
+                    <% }else{ %>
+                    <li> <a href="/users/register">Registrarse</a></li>
+                    <li> <a href="/users/login">Ingresar</a></li>
+                    <% } %>
+                </ul>
+               </nav>
+           </div>
+        </div>   
+       </header>
+ 

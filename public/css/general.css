@@ -1,0 +1,20 @@
+:root{
+    --celeste: #32adb3;
+    --grisOscuro: #666;
+    --grisClaro: #ebebeb;   
+}
+a{
+    color: #ebebeb;
+    text-decoration: none;
+}
+::-webkit-scrollbar{
+    width: 15px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--celeste);
+    border-radius: 50px;
+}
+::-webkit-scrollbar-track{
+    background-color: #fff;
+    border-radius: 50px;
+}

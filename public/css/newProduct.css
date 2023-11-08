@@ -1,0 +1,52 @@
+.newProduct__main{
+    width: 100%;
+    padding: 25px;
+}
+.newProduct__main__form{
+    display: flex;
+    flex-direction: column;
+}
+
+.newProduct__main__form{
+padding: 10px;
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.errorFormat{
+    color: red;
+    display: block;
+}
+
+.newProduct__main__form--title{
+    text-align: center;
+    font-size: 22px;
+    font-family: roboto;
+}
+.Publicar {
+    border-radius: 10%;
+    background-color:var(--celeste); 
+    color: white;
+}
+
+.Limpiar {
+    border-radius: 10%;
+    background-color: var(--celeste);
+    color: white; 
+
+}
+.boxbutton{
+    flex-wrap: wrap;
+    display: flex;
+    padding-top: 1rem;
+    justify-content: space-around;
+}
+
+@media (min-width: 1024px){
+    .newProduct__main__form{
+        padding-top: 10px;
+        width: 50%;
+        margin: 0 auto;
+    }
+ 
+    
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('partials/head') %>
+<body class="home">
+  
+  <%- include('partials/header') %> 
+  <main class="home__main">
+    <div class="hero-image">
+      <img class="banner" src="/images/banner.jpg" alt="">
+      <div class="hero-text">
+        <h1>Todavia sirve</h1>
+        <p>Todo lo que buscas en nuevos y usados!</p>
+        <button><p> <a href="/products/add">Publicar</a></p></button>
+      </div>
+    </div>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <% products.forEach(producto => { %>
+          <div class="swiper-slide">
+            <img src="/images/productos/<%= producto.image1 %>" alt="" class="product-image">
+          </div>
+        <% }); %>
+      </div>
+    </div>
+    
+    <div class="card-container">
+      <div class="card-section">
+        <% products.forEach(producto => { %>
+          <div class="card">
+            <a href="/products/detail/<%= producto.id %>">
+              <img src="/images/productos/<%= producto.images[0].name %>" alt="" style="width:100%">
+            </a>
+            <p class="card-name"><%= producto.name %></p>
+            <p class="price"><%= producto.price %></p>
+            <p class="card-descripcion"><%= producto.description %></p>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </main>
+  <%- include('partials/footer') %> 
+
+  <!-- JS SWIPER -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <!-- Por fallos en la importacion decidí incluir el script de swiper completo -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</body>
+</html>

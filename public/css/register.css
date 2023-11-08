@@ -1,0 +1,98 @@
+.register--main {
+    box-sizing: border-box;
+    background-color: var(--grisClaro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title_reg{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+.register__main--box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 15px;
+    width: 90%;
+    max-width: 481px;
+    background-color: white;
+}
+.form-box-reg{
+    display: flex;
+    flex-direction: column;
+}
+.register__main__box--title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 10px;
+}
+.register__main__box--formbox {
+    display: flex;
+    justify-content: center;
+}
+.register__main__box__formbox--form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+.register__main__box__formbox--campobox {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 5px;   
+}
+.register__main__box__formbox--placeholder {
+    position: absolute;
+    padding: 5px;
+    background-color: white;
+    color: silver;
+    font-size: 18px;
+    
+}
+.register__main__box__formbox--campo {
+    font-size: 16px;
+    padding: 10px 15px;
+    text-align: center;
+    border: 1px solid silver;
+}
+.register__main__box__formbox--campo:focus {
+    border: 1px solid rgb(50, 173, 179);
+    box-shadow: 0 0 5px rgb(64, 135, 179);
+}
+.register__main__box__formbox--buttonbox {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+.register__main__box__formbox--button {
+    background-color: rgb(50, 173, 179);
+    margin: 0;
+    border-radius: 5px;
+}
+.register__main__box__formbox--button:hover {
+    box-shadow:  3px 3px 8px silver;
+}
+.register__main__box__formbox--button:focus {
+    background-color: rgb(64, 135, 179);
+}
+
+@media(min-width: 481px){
+    .register__main--box {
+        margin: 30px 0 50px;
+        border-radius: 10px;
+    }
+}
+
+@media(min-width: 769px){
+    .register__main--box {
+        margin: 50px 0 77px;
+        border-radius: 20px;
+    }
+}

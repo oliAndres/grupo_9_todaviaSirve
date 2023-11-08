@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+<body>
+    <%- include('partials/header') %>
+    
+    <main class="register--main">
+        <div class="register__main--box">
+            <div class="register__main__box--title">
+                <h2>Creá tu cuenta</h2>
+            </div>
+            <div class="register__main__box--formbox">
+                <form class="register__main__box__formbox--form" action="/users/registerOk" method="POST">
+                    <div class="register__main__box__formbox--campobox">
+                        <div class="form-box-reg">
+                            <input class="register__main__box__formbox--campo" type="text" name="name" id="name" placeholder="Nombre" value="<%= locals.old && old.name ? old.name : ''%>">
+                            <% if(locals.errors && locals.errors.name){ %>
+                                <div class="text-danger">
+                                    <%= errors.name.msg %>
+                                </div>
+                            <% } %>  
+                        </div>
+                    </div>
+                    <div class="register__main__box__formbox--campobox">                      
+                        <div class="form-box-reg">
+                            <input class="register__main__box__formbox--campo" type="text" name="lastName" id="lastName" placeholder="Apellido" value="<%= locals.old && old.lastName ? old.lastName : ''%>">
+                            <div>
+                                <% if(locals.errors && locals.errors.lastname){ %>
+                                    <div class="text-danger">
+                                        <%= errors.lastname.msg %>
+                                    </div>
+                                <% } %>
+                            </div>
+                        </div>
+                        
+                    </div>
+                
+                    <div class="register__main__box__formbox--campobox">
+                        <div class="form-box-reg">
+                            <input class="register__main__box__formbox--campo" type="email" name="email" id="email" placeholder="Correo electrónico" value="<%= locals.old && old.email ? old.email : ''%>">
+                            <% if(locals.errors && locals.errors.email){ %>
+                                <div class="text-danger">
+                                    <%= errors.email.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                        
+                    </div>
+                    <div class="register__main__box__formbox--campobox">
+                        <div class="form-box-reg">
+                        <input class="register__main__box__formbox--campo" type="password" name="password" id="password" placeholder="Contraseña" >
+                        <% if(locals.errors && errors.password){ %>
+                            <div class="text-danger">
+                                <%= errors.password.msg %>
+                            </div>
+                        <% } %>
+                    </div>
+                    </div>
+                    <div class="register__main__box__formbox--campobox">
+                        <div class="form-box-reg">
+                        <input class="register__main__box__formbox--campo" type="password" name="passwordTwo" id="passwordTwo" placeholder="Repetir Contraseña" >
+                        <% if(locals.errors && errors.passwordTwo){ %>
+                            <div class="text-danger">
+                                <%= errors.passwordTwo.msg %>
+                            </div>
+                        <% } %>
+                    </div>
+                    </div>
+                    <p class="title_reg">Provincia:</p>
+                    <div class="register__main__box__formbox--campobox">
+                        <div class="form-box-reg">
+                            <select class="register__main__box__formbox--campo" type="text" name="province" id="province">
+                                <option value="" hidden selected>Elije tu provincia...</option>
+                            </select>
+                            <% if(locals.errors && errors.province){ %>
+                                <div class="text-danger">
+                                    <%= errors.province.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <p class="title_reg">Ciudad:</p>
+                    <div class="register__main__box__formbox--campobox">
+                        <div class="form-box-reg">
+                            <select class="register__main__box__formbox--campo" type="text" name="city" id="city">
+                                <option value="" hidden selected>Elije tu ciudad...</option>
+                            </select>
+                            <% if(locals.errors && errors.city){ %>
+                                <div class="text-danger">
+                                    <%= errors.city.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="register__main__box__formbox--campobox">
+                        <input type="checkbox"><label for="">soy mayor de edad</label>
+                    </div>
+                    <div class="register__main__box__formbox--buttonbox">
+                        <button type="submit" class="register__main__box__formbox--button">Crear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <%- include('partials/footer') %>
+    
+</body>
+</html>

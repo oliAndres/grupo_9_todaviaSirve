@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+<body class="home">
+    <%- include('partials/header') %>
+        
+       <main class="main">
+        <section class="home__main__section">
+            <div>
+            <ul>
+                <li>
+                    <h3>Tu Carrito(3)</h3>
+                    
+                </li>
+            </ul>
+            <hr>
+            <div class="productos_container">
+            <article class="producto1_box">
+                <div>
+                   <img src="/images/piero.jpg" alt="" >
+               </div>
+               <div class="info_product">
+               <h4>Sommier Piero 2x2</h4>
+               <p> $ 60.000 </p>
+               <button class="button_main">
+                <p>Eliminar</p>
+               </button>
+               </div>
+           </article>
+            <article class="producto2_box">
+                <div>
+                   <img src="/images/minicomponente.jpg" alt="" >
+               </div>
+               <div class="info_product">
+               <h4>Mini Componente NOBLEX</h4>
+               <p>$ 15.000 </p>
+               <button class="button_main">
+                <p>Eliminar</p>
+               </button>
+               </div>
+           </article>
+           <article class="producto3_box">
+            <div>
+               <img src="/images/muebletv.jpg" alt="" >
+           </div>
+               <div class="info_product">
+               <h4>MuebleTV Living</h4>
+               <p>$ 45.000 </p>
+               <button class="button_main">
+                <p>Eliminar</p>
+               </button>
+           </div>
+       </article>
+    </div>
+            <div class="precio_total_box">   
+            <div class="price_total">
+                <h3>TOTAL:  </h3>
+                <h3>120.000 $ </h3>
+            </div>
+            </div>        
+            <div class="buy_continue">
+                <button class="button_main">
+                    <h3>Elegir mas productos</h3>
+                </button>
+
+                <button class="button_main">
+                    <h3>Continuar Compra</h3>
+                </button>
+
+            </div>
+            
+            <!-- <div class="form_box">
+            <div class="form_payment">
+                <form action="/procesar_pago" method="post">
+                    <h4>Datos De Tarjeta</h4> 
+                    <br>
+                    <label for="nombre">Nombre y Apellido:</label>
+                    <br>
+                    <input type="text" id="nombre" name="nombre" required>
+                    <br>
+                    <label for="tarjeta">Número de Tarjeta:</label>
+                    <input type="text" id="tarjeta" name="tarjeta" required><br>
+            
+                    <label for="expiracion">Fecha de Expiración:</label>
+                    <input type="text" id="expiracion" name="expiracion" required><br>
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" required><br>
+                </form>
+            <button>
+                <h4>PAGAR</h4>
+            </button>    
+            </div>
+            </div> -->
+            
+        </div>
+        </section>
+    </main>
+    <%- include('partials/footer') %>
+    
+</body>
+</html>

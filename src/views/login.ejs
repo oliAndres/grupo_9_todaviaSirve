@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+
+    <body>
+        <%- include('partials/header') %>
+            <div class="login-error">
+                <% if (errors && errors.length> 0) { %>
+                    <div class="alert alert-danger">
+                        <ul>
+                            <% for (let i=0; i < errors.length; i++) { %>
+                                <li>
+                                    <%= errors[i].msg %>
+                                </li>
+                                <% } %>
+                        </ul>
+                    </div>
+                    <% } %>
+            </div>
+            <main class="login--main">
+                <div class="login__main--box">
+                    <div class="login__main__box--title">
+                        <h2>Ingresá</h2>
+                    </div>
+                    <div class="login__main__box--formbox">
+                        <form class="login__main__box__formbox--form" action="/users/Login" method="POST">
+                            <div class="login__main__box__formbox--campobox">
+                                <label>
+                                    <input class="login__main__box__formbox--campo" type="email" name="email" id="email"
+                                        placeholder="Correo electronico">
+                                </label>
+                            </div>
+                            <div class="login__main__box__formbox--campobox">
+                                <label>
+                                    <input class="login__main__box__formbox--campo" type="password" name="password"
+                                        id="password" placeholder="Contraseña">
+                                </label>
+                            </div>
+                            <div>
+                                <div class="login__main__box__formbox--form-check"><input class="form-check-input"
+                                        type="checkbox" value="" id="remember" name="remember">
+                                    <label class="form-check-label" for="remember">
+                                        Recordarme
+                                    </label>
+                                </div>
+                                <div class="login__main__box__formbox--buttonbox">
+                                    <a href="/users/register">
+                                        <button class="login__main__box__formbox--button2" type="button">Crear
+                                            cuenta</button>
+                                    </a>
+                                    <a href="/">
+                                        <button class="login__main__box__formbox--button"
+                                            type="submit">Ingresar</button>
+                                    </a>
+                                    
+                                </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </main>
+            <%- include('partials/footer') %>
+
+    </body>
+
+</html>

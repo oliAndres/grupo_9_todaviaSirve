@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+@import '/css/general.css';
+@import '/css/header.css';
+@import '/css/admin.css';
+@import '/css/carrito.css';
+@import '/css/home.css';
+@import './footer.css';
+@import './register.css';
+@import './registerOk.css';
+@import './login.css';
+@import './profile.css';
+@import './productDetail.css';
+@import './editProduct.css';
+@import './newProduct.css';
+@import 'carousel_swiper.css'

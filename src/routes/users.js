@@ -6,7 +6,7 @@ const userCheck = require('../middlewares/userCheck');
 const upload = require('../middlewares/upload');
 const loginProcess = require('../controllers/users/loginProcess');
 const notUserCheck = require('../middlewares/notUserCheck');
-const {arrayValidaciones,validateCreateForm } = require('../middlewares/validacionesRegister');
+const registerValidator = require('../validations/validacionesRegister');
 const arrayValidationUpdate  = require('../validations/validationUpdate');
 
 
@@ -14,7 +14,7 @@ const arrayValidationUpdate  = require('../validations/validationUpdate');
 router.get('/login', loginValidator, loginProcess.showLoginPage);
 router.post('/login', loginProcess.processLogin);
 router.get("/register",notUserCheck, usersController.register)
-router.post('/registerOk', arrayValidaciones,validateCreateForm,usersController.newUser);
+router.post('/registerOk', registerValidator,usersController.newUser);
 router.get('/logOut', usersController.logOut);
 router.get('/profile/', userCheck, usersController.profile);
 router.put('/update/',upload.single('image'), arrayValidationUpdate, usersController.update);

@@ -34,19 +34,7 @@
                         </div>
                         
                     </div>
-                    <div class="register__main__box__formbox--campobox">                      
-                        <div class="form-box-reg">
-                            <input class="register__main__box__formbox--campo" type="text" name="address" id="address" placeholder="Domicilio" value="<%= locals.old && old.address ? old.address : ''%>">
-                            <div>
-                                <% if(locals.errors && locals.errors.address){ %>
-                                    <div class="text-danger">
-                                        <%= errors.address.msg %>
-                                    </div>
-                                <% } %>
-                            </div>
-                        </div>
-                        
-                    </div>
+                
                     <div class="register__main__box__formbox--campobox">
                         <div class="form-box-reg">
                             <input class="register__main__box__formbox--campo" type="email" name="email" id="email" placeholder="Correo electrónico" value="<%= locals.old && old.email ? old.email : ''%>">
@@ -78,30 +66,34 @@
                         <% } %>
                     </div>
                     </div>
-                    <p class="title_reg">Rol:</p>
+                    <p class="title_reg">Provincia:</p>
                     <div class="register__main__box__formbox--campobox">
                         <div class="form-box-reg">
-                            <select class="register__main__box__formbox--campo" type="text" name="role" id="role">
-                                <option value="admin">Admin</option>
-                                <option value="user">Usuario</option>
+                            <select class="register__main__box__formbox--campo" type="text" name="province" id="province">
+                                <option value="" hidden selected>Elije tu provincia...</option>
                             </select>
-                            <% if(locals.errors && errors.role){ %>
+                            <% if(locals.errors && errors.province){ %>
                                 <div class="text-danger">
-                                    <%= errors.role.msg %>
+                                    <%= errors.province.msg %>
                                 </div>
                             <% } %>
                         </div>
                     </div>
-                    <p class="title_reg">Fecha de Nacimiento</p>
+                    <p class="title_reg">Ciudad:</p>
                     <div class="register__main__box__formbox--campobox">
                         <div class="form-box-reg">
-                            <input class="register__main__box__formbox--campo" type="date" name="birthdate" id="birthdate" placeholder="Fecha de Nacimiento">
-                            <% if(locals.errors && errors.birthdate){ %>
+                            <select class="register__main__box__formbox--campo" type="text" name="city" id="city">
+                                <option value="" hidden selected>Elije tu ciudad...</option>
+                            </select>
+                            <% if(locals.errors && errors.city){ %>
                                 <div class="text-danger">
-                                    <%= errors.birthdate.msg %>
+                                    <%= errors.city.msg %>
                                 </div>
                             <% } %>
                         </div>
+                    </div>
+                    <div class="register__main__box__formbox--campobox">
+                        <input type="checkbox"><label for="">soy mayor de edad</label>
                     </div>
                     <div class="register__main__box__formbox--buttonbox">
                         <button type="submit" class="register__main__box__formbox--button">Crear</button>

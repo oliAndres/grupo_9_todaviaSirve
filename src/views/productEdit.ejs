@@ -16,17 +16,19 @@
             id="name"
             placeholder="Nombre Del Producto"
             name="name"
-            value="<%= product.name %>"
+            value="<%= products.name %>"
           />
-          <label for="">Marca </label>
-          <input
-            type="text"
-            class="form-control"
-            id="brandId"
-            placeholder="Nombre Del Producto"
-            name="brandId"
-            value="<%= brand.name %>"
-          />
+          <br>
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="brandId"
+              >Marca</label>
+            <select class="form-select form-select-sm" aria-label="Default select example" name="brandId" id="brandId">
+              <% brands.forEach(brand => { %>
+                <option <%= brand.id === brandId && 'selected' %> value="<%= brand.id %>"><%= brand.name %></option>             
+              <% }) %>
+            </select>
+          </div>
+
           <label for="" class="form-label">Precio</label>
           <input
             type="text"
@@ -34,22 +36,21 @@
             id="price"
             placeholder="Precio Del Producto"
             name="price"
-            value="<%= product.price %>"
+            value="<%= products.price %>"
           />
         </div>
 
         <div class="mb-5">
           <label for="" class="form-label">Descripción</label>
-          <textarea name="description" class="form-control" id="description" rows="3"><%= product.description %></textarea>
+          <textarea name="description" class="form-control" id="description" rows="3"><%= products.description %></textarea>
         </div>
         <div class="boxselect_categorias"></div>
         <div class="input-group mb-3">
           <label class="input-group-text" for="categoryId"
-            >Categorias</label
-          >
-          <select class="form-select form-select-sm" aria-label="Default select example" name="" id="">
+            >Categorias</label>
+          <select class="form-select form-select-sm" aria-label="Default select example" name="categoryId" id="categoryId">
             <% categories.forEach(category => { %>
-              <option <%= category.id === categoryId && 'selected' %> value="<%= category.id %>"><%= category.name %></option>             
+              <option <%= categories.id === categoryId && 'selected' %> value="<%= categories.id %>"><%= categories.name %></option>             
             <% }) %>
           </select>
         </div>
@@ -61,14 +62,14 @@
           
           <div class="col-12 col-md-6 d-flex gap-1">
             <% images.forEach(image => { %>
-             <img width="100px" src="/images/productos/<%= image.name %>" alt="">
+             <img width="100px" src="/images/productos/<%= images.name %>" alt="">
             <% }) %>
           </div>
           
           <br>
           
-          <div class="input-group mb-3">
-            <label class="btn btn-secondary" for="images">Cambiar imágenes</label>
+          <div class="input-group mb-3 gap-2">
+            <label class="btn btn-secondary" for="images">Cambiar imagenes</label>
             <input hidden class="form-control" type="file" id="images" name="images" multiple>
           </div>
         </div>

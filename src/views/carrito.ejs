@@ -18,11 +18,11 @@
                     <% products.forEach(producto => { %>
                         <article class="producto_box">
                             <div>
-                                <img src="/images/productos/<%= producto.image %>" alt="<%= producto.name %>">
+                                <img src="/images/productos/<%= products.image %>" alt="<%= products.name %>">
                             </div>
                             <div class="info_product">
-                                <h4><%= producto.name %></h4>
-                                <p>$ <%= producto.price %></p>
+                                <h4><%= products.name %></h4>
+                                <p>$ <%= products.price %></p>
                                 <button class="button_main">
                                     <p>Eliminar</p>
                                 </button>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="precio_total_box">
                     <div class="price_total">
-                        <h3>TOTAL: $ <%= totalAmount %> </h3>
+                        <h3>TOTAL: $ 1000 </h3>
                     </div>
                 </div>
                 <div class="buy_continue">

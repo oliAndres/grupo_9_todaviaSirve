@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('partials/head') %>
+<%- include('partials/head') %>
+
 <body>
     <%- include('partials/header') %>
-    
+
     <main class="register--main">
         <div class="register__main--box">
             <div class="register__main__box--title">
                 <h2>Creá tu cuenta</h2>
             </div>
             <div class="register__main__box--formbox">
-                <form class="register__main__box__formbox--form" action="/users/registerOk" method="POST">
+                <form class="register__main__box__formbox--form" action="/users/register" method="POST">
                     <div class="register__main__box__formbox--campobox">
                         <div class="form-box-reg">
-                            <input class="register__main__box__formbox--campo" type="text" name="name" id="name" placeholder="Nombre" value="<%= locals.old && old.name ? old.name : ''%>">
+                            <input class="register__main__box__formbox--campo" type="text" name="name" id="name" placeholder="Nombre" value="<%= locals.old && locals.old.name ? locals.old.name : '' %>">
                             <% if(locals.errors && locals.errors.name){ %>
                                 <div class="text-danger">
                                     <%= errors.name.msg %>
@@ -44,27 +45,8 @@
                                 </div>
                             <% } %>
                         </div>
-                        
                     </div>
-                    <div class="register__main__box__formbox--campobox">
-                        <div class="form-box-reg">
-                        <input class="register__main__box__formbox--campo" type="password" name="password" id="password" placeholder="Contraseña" >
-                        <% if(locals.errors && errors.password){ %>
-                            <div class="text-danger">
-                                <%= errors.password.msg %>
-                            </div>
-                        <% } %>
-                    </div>
-                    </div>
-                    <div class="register__main__box__formbox--campobox">
-                        <div class="form-box-reg">
-                        <input class="register__main__box__formbox--campo" type="password" name="passwordTwo" id="passwordTwo" placeholder="Repetir Contraseña" >
-                        <% if(locals.errors && errors.passwordTwo){ %>
-                            <div class="text-danger">
-                                <%= errors.passwordTwo.msg %>
-                            </div>
-                        <% } %>
-                    </div>
+                
                     </div>
                     <p class="title_reg">Provincia:</p>
                     <div class="register__main__box__formbox--campobox">
@@ -104,6 +86,6 @@
     </main>
 
     <%- include('partials/footer') %>
-    
+
 </body>
 </html>

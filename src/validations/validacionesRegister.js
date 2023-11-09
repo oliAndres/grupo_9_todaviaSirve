@@ -40,14 +40,7 @@ module.exports = [
     body("password").isLength({
             min: 6,
           })
-        .withMessage("Tu constraseña debe tener minimo 6 caracteres")  ,
-    body('passwordTwo')
-            .custom((value,{req}) => {
-                if(value !== req.body.password){
-                    return false
-                }
-                return true
-            }).withMessage('Las contraseñas no coinciden'),
+        .withMessage("Tu constraseña debe tener minimo 6 caracteres"),
     
       
 

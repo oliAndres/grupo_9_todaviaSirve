@@ -32,6 +32,12 @@ module.exports = {
       avatar: {
         type: Sequelize.STRING,
       },
+      role: {
+        type: Sequelize.INTEGER,
+      },
+      image: {
+        type: Sequelize.STRING,
+      },
       addressId: {
         type: Sequelize.INTEGER,
         references: {

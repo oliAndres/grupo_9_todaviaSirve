@@ -8,9 +8,9 @@
     <div class="hero-image">
       <img class="banner" src="/images/banner.jpg" alt="">
       <div class="hero-text">
-        <h1>Todavia sirve</h1>
-        <p>Todo lo que buscas en nuevos y usados!</p>
-        <button><p> <a href="/products/add">Publicar</a></p></button>
+        <h1>Todavía Sirve</h1>
+        <p>¡Todo lo que buscas en nuevos y usados!</p>
+        <button><p><a href="/products/add">Publicar</a></p></button>
       </div>
     </div>
     <div class="swiper mySwiper">
@@ -31,7 +31,7 @@
               <img src="/images/productos/<%= producto.images[0].name %>" alt="" style="width:100%">
             </a>
             <p class="card-name"><%= producto.name %></p>
-            <p class="price"><%= producto.price %></p>
+            <p class="price">$<%= producto.price %></p>
             <p class="card-descripcion"><%= producto.description %></p>
           </div>
         <% }); %>
@@ -42,7 +42,7 @@
 
   <!-- JS SWIPER -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <!-- Por fallos en la importacion decidí incluir el script de swiper completo -->
+  <!-- Por fallos en la importación, decidí incluir el script de swiper completo -->
   <script>
     var swiper = new Swiper(".mySwiper", {
       slidesPerView: 1,

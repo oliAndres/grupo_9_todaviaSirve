@@ -1,36 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('partials/head') %>
-  <body>
+<%- include('partials/head') %>
+<body>
     <%- include('partials/header') %>
+
     <main class="editProduct__main">
     
       <form class="editProduct__main__form" action="/products/update/<%= id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-        <h3 class="editProduct__main__form--titulo">Edicion De Productos</h3>
+        <h3 class="editProduct__main__form--titulo">Edición De Producto</h3>
         <div class="mb-3">
-          <!-- <label for="" class="form-label">Lista de Categorias </label>
-          <br />
-          <select class="form-select" id="">
-            <option value="Seleccionar">Seleccionar...</option>
-            <option value="Tecnologia">Tecnologia</option>
-            <option value="Hogar">Hogar Y Muebles</option>
-            <option value="Moda">Moda</option>
-            <option value="Celulares">Celulares</option>
-            <option value="Electrodomesticos">Electrodomesticos</option>
-            <option value="Herramientas">Herramientas</option>
-            <option value="Juguetes">Juegos y Juguetes</option>
-            <option value="Otros">Otros</option>
-          </select>
-          <label for="" class="form-label">Lista de Productos </label>
-          <br />
-          <select class="form-select" id="">
-            <option selected>Seleccionar...</option>
-            <option value="">Televisor 40" TCL</option>
-            <option value="">Campera RompeViento</option>
-            <option value="">Lancha</option>
-            <option value="">Parlantes DJ</option>
-            <option value="">MotoGuadaña</option>
-          </select> -->
           <label for="">Nombre </label>
           <input
             type="text"
@@ -38,17 +16,19 @@
             id="name"
             placeholder="Nombre Del Producto"
             name="name"
-            value="<%= name %>"
+            value="<%= products.name %>"
           />
-          <label for="">Marca </label>
-          <input
-            type="text"
-            class="form-control"
-            id="marca"
-            placeholder="Nombre Del Producto"
-            name="marca"
-            value="<%= marca %>"
-          />
+          <br>
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="brandId"
+              >Marca</label>
+            <select class="form-select form-select-sm" aria-label="Default select example" name="brandId" id="brandId">
+              <% brands.forEach(brand => { %>
+                <option <%= brand.id === brandId && 'selected' %> value="<%= brand.id %>"><%= brand.name %></option>             
+              <% }) %>
+            </select>
+          </div>
+
           <label for="" class="form-label">Precio</label>
           <input
             type="text"
@@ -56,51 +36,39 @@
             id="price"
             placeholder="Precio Del Producto"
             name="price"
-            value="<%= price %>"
+            value="<%= products.price %>"
           />
         </div>
 
         <div class="mb-5">
-          <label for="" class="form-label">Descripcion</label>
-          <textarea name="description" class="form-control" id="description" rows="3"><%= description %></textarea>
+          <label for="" class="form-label">Descripción</label>
+          <textarea name="description" class="form-control" id="description" rows="3"><%= products.description %></textarea>
         </div>
         <div class="boxselect_categorias"></div>
         <div class="input-group mb-3">
-          <label class="input-group-text" for="inputGroupSelect01"
-            >Categorias</label
-          >
-          <select class="form-select form-select-sm" aria-label="Default select example" name="category" id="category">
-            <% categories.forEach(item => { %>
-              <option <%= item.name === category && 'selected' %> value="<%= item.name %>"><%= item.name %></option>             
+          <label class="input-group-text" for="categoryId"
+            >Categorias</label>
+          <select class="form-select form-select-sm" aria-label="Default select example" name="categoryId" id="categoryId">
+            <% categories.forEach(category => { %>
+              <option <%= categories.id === categoryId && 'selected' %> value="<%= categories.id %>"><%= categories.name %></option>             
             <% }) %>
           </select>
         </div>
         <br />
 
-        <div class="boxselect_estadoProducto">
-          <div class="input-group mb-3">
-            <label class="input-group-text" for="">Estado</label>
-            <select class="form-select" id="">       
-              <option selected>Seleccionar...</option>
-              <option value="">Nuevo</option>
-              <option value="">Usado</option>
-            </select>
-          </div>
-        </div>
         <hr>
         <div class="boximage_imgProduct">
-          <label for="" class="form-label">Imagenes del producto</label>
+          <label for="" class="form-label">Imágenes del producto</label>
           
           <div class="col-12 col-md-6 d-flex gap-1">
             <% images.forEach(image => { %>
-             <img width="100px" src="/images/productos/<%= image || "default-placeholder.jpg" %>" alt="">
+             <img width="100px" src="/images/productos/<%= images.name %>" alt="">
             <% }) %>
           </div>
-
           
           <br>
           
-          <div class="input-group mb-3">
+          <div class="input-group mb-3 gap-2">
             <label class="btn btn-secondary" for="images">Cambiar imagenes</label>
             <input hidden class="form-control" type="file" id="images" name="images" multiple>
           </div>
@@ -111,13 +79,11 @@
           <div>
             <a href="/">
               <button type="submit" class="guardar_Cambios">Guardar Cambios</button>
-              </a>
+            </a>
           </div>
           <div>
             <button type="reset" class="Borrar">Borrar</button>
           </div>
-
-
         </div>
       </form>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

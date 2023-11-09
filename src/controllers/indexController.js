@@ -3,8 +3,8 @@ const products= require('../data/products.json');
 const product = require('../database/models/product');
 
 module.exports = {
-    index : (req,res) => {
-        console.log(req.session.userLogin)
+  index: (req, res) => {
+    console.log(req.session.userLogin);
 
         db.Product.findAll({
             include : ['images']
@@ -16,6 +16,7 @@ module.exports = {
         
     }
 };
+
 
 // module.exports = {
 //     admin: (req, res) => {

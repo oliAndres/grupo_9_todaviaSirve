@@ -13,7 +13,7 @@ const arrayValidationUpdate  = require('../validations/validationUpdate');
 /* GET users listing. */
 router.get('/login', loginValidator, loginProcess.showLoginPage);
 router.post('/login', loginProcess.processLogin);
-router.get("/register",notUserCheck, usersController.register)
+router.get('/register',notUserCheck, usersController.register)
 router.post('/registerOk',usersController.newUser);
 router.get('/logOut', usersController.logOut);
 router.get('/profile/', userCheck, usersController.profile);

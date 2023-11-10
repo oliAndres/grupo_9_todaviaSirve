@@ -6,6 +6,7 @@ module.exports = (req,res) => {
 
     const {name, lastName, city, province, email, password } = req.body
     const errors = validationResult(req);
+    console.log(req.body)
 
     if (errors.isEmpty()) {
 

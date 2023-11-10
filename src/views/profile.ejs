@@ -34,8 +34,16 @@
                         <% } %>
                     </div>
                     <div class="profile__main__box__formbox--campobox">
-                        <label for="address">Domicilio</label>
-                        <input class="profile__main__box__formbox--campo" type="text" name="address" id="address" placeholder="Domicilio" value="<%= user.address %>">
+                        <label for="city">Ciudad</label>
+                        <input class="profile__main__box__formbox--campo" type="text" name="city" id="city" placeholder="Ciudad" value="<%= user.address.city %>">
+                    </div>
+                    <div class="profile__main__box__formbox--campobox">
+                        <label for="province">Provincia</label>
+                        <input class="profile__main__box__formbox--campo" type="text" name="province" id="province" placeholder="Domicilio" value="<%= user.address.province %>">
+                    </div>
+                    <div class="profile__main__box__formbox--campobox">
+                        <label for="street">Calle</label>
+                        <input class="profile__main__box__formbox--campo" type="text" name="street" id="street" placeholder="Domicilio" value="<%= user.address.street %>">
                     </div>
                     <div class="profile__main__box__formbox--campobox">
                         <label for="birthdate">Fecha de nacimiento</label>

@@ -11,7 +11,7 @@
                 <h2>Creá tu cuenta</h2>
             </div>
             <div class="register__main__box--formbox">
-                <form class="register__main__box__formbox--form" action="/users/register" method="POST">
+                <form class="register__main__box__formbox--form" action="/users/registerOk" method="POST">
                     <div class="register__main__box__formbox--campobox">
                         <div class="form-box-reg">
                             <input class="register__main__box__formbox--campo" type="text" name="name" id="name" placeholder="Nombre" value="<%= locals.old && locals.old.name ? locals.old.name : '' %>">
@@ -42,6 +42,16 @@
                             <% if(locals.errors && locals.errors.email){ %>
                                 <div class="text-danger">
                                     <%= errors.email.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="register__main__box__formbox--campobox">
+                        <div class="form-box-reg">
+                            <input class="register__main__box__formbox--campo" type="password" name="password" id="password" placeholder="Contraseña">
+                            <% if(locals.errors && locals.errors.password){ %>
+                                <div class="text-danger">
+                                    <%= locals.errors.password.msg %>
                                 </div>
                             <% } %>
                         </div>

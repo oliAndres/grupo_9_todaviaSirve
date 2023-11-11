@@ -1,9 +1,20 @@
-const products = require('../../data/products.json');
 
-module.exports = (req, res) => {
-    const idParam = parseInt(req.params.id); 
-    const prodFind = products.find((p) => p.id === idParam); 
-    return res.render('productDetail', {
-        prodfind: prodFind
+const { Product, Image } = require('../../database/models');
+
+module.exports = async (req, res) => {
+  const idParam = parseInt(req.params.id);
+
+  try {
+    const prodFind = await Product.findByPk(idParam, {
+      include: [{ model: Image, as: 'images' }]
     });
+
+    if (prodFind) {
+      return res.render('productDetail', { prodfind: prodFind });    
+    } else {
+      res.status(404).send('Producto no encontrado');
+    }
+  } catch (error) {
+    res.status(500).send('Error en el servidor');
+  }
 };

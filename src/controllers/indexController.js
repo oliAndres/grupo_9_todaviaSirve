@@ -1,6 +1,4 @@
 const db = require('../database/models')
-const products= require('../data/products.json');
-const product = require('../database/models/product');
 
 module.exports = {
   index: (req, res) => {
@@ -16,15 +14,3 @@ module.exports = {
         
     }
 };
-
-
-// module.exports = {
-//     admin: (req, res) => {
-//         db.Product.findAll()
-//             .then(products => {
-//                 res.render('admin.ejs', {products})
-//             })
-    
-//         }
-    
-// } 

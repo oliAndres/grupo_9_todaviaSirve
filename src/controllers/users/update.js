@@ -47,7 +47,7 @@ if (errors.isEmpty()){
 
   req.session.userLogin.name= name.trim()
   res.locals.userLogin = req.session.userLogin
-  return res.render("/users/profile");
+  return res.redirect("/");
 
 } else{
 

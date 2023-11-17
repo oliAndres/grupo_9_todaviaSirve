@@ -24,7 +24,7 @@ exports.processLogin = [
           role: user.roleId,
         };
 
-        req.body.remember !== undefined && res.cookie('todaviaSirve', req.session.userLogin, {
+        req.body.remember !== undefined && res.cookie('todaviaSirve', req.session.userLogin.id, {
             maxAge: 1000 * 60
         });
 

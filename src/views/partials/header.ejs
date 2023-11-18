@@ -14,8 +14,13 @@
 <nav class="home__header__navbar">
     <ul>
         <li> <a href="#">Ofertas</a></li>
-        <li> <a href="/products/add">Vender</a></li>
+
+       
+       
         <% if (locals.userLogin) { %>
+            <% if (locals.userLogin.role === 2) { %>
+                <li> <a href="/products/add">Vender</a></li>
+            <% } %>
             <li> <a href="/users/profile/">Hola <%= locals.userLogin.name %> !</a></li>
             <li>
                 <div class="header__main__box__formbox--image">
@@ -23,7 +28,7 @@
                 </div>
             </li>
             <li> <a href="/users/logOut">Salir</a></li> 
-            <% if (locals.userLogin.role === 3) { %>
+            <% if (locals.userLogin.role === 1) { %>
                 <li> <a href="/admin">Admin</a></li>
             <% } %>
         <% } else { %>

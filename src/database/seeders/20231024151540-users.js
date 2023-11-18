@@ -12,9 +12,10 @@ module.exports = {
           email: "admin@gmail.com",
           password:
             "$2a$10$XTKMUTScdn6EH4lgdzUt6unZM/hiz4lN792TjO9oORLwj1klCuUTm",
-          role: 1,
           birthdate: null,
-          image: "user1.jpg",
+          roleId: 1,
+          addressId:1,
+          avatar: "user1.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -24,10 +25,10 @@ module.exports = {
             email: "user@gmail.com",
             password:
               "$2a$10$XTKMUTScdn6EH4lgdzUt6unZM/hiz4lN792TjO9oORLwj1klCuUTm",
-            
-            role: 2,
             birthdate: null,
-            image: "user3.jpg",
+            avatar: "user3.jpg",
+            roleId: 2,
+            addressId:2,
             createdAt: new Date(),
             updatedAt: new Date(),
           }

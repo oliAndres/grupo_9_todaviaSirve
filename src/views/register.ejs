@@ -11,47 +11,37 @@
                 <h2>Creá tu cuenta</h2>
             </div>
             <div class="register__main__box--formbox">
-                <form class="register__main__box__formbox--form" action="/users/register" method="POST">
+                <form class="register__main__box__formbox--form" action="/users/registerOk" method="POST">
                     <div class="register__main__box__formbox--campobox">
                         <div class="form-box-reg">
                             <input class="register__main__box__formbox--campo" type="text" name="name" id="name" placeholder="Nombre" value="<%= locals.old && locals.old.name ? locals.old.name : '' %>">
                             <% if(locals.errors && locals.errors.name){ %>
                                 <div class="text-danger">
-                                    <%= locals.errors.name.msg %>
+                                    <%= errors.name.msg %>
                                 </div>
-                            <% } %>
+                            <% } %>  
                         </div>
                     </div>
-                    <div class="register__main__box__formbox--campobox">
+                    <div class="register__main__box__formbox--campobox">                      
                         <div class="form-box-reg">
-                            <input class="register__main__box__formbox--campo" type="text" name="lastName" id="lastName" placeholder="Apellido" value="<%= locals.old && locals.old.lastName ? locals.old.lastName : '' %>">
+                            <input class="register__main__box__formbox--campo" type="text" name="lastName" id="lastName" placeholder="Apellido" value="<%= locals.old && old.lastName ? old.lastName : ''%>">
                             <div>
-                                <% if(locals.errors && locals.errors.lastName){ %>
+                                <% if(locals.errors && locals.errors.lastname){ %>
                                     <div class="text-danger">
-                                        <%= locals.errors.lastName.msg %>
+                                        <%= errors.lastname.msg %>
                                     </div>
                                 <% } %>
                             </div>
                         </div>
+                        
                     </div>
+                
                     <div class="register__main__box__formbox--campobox">
                         <div class="form-box-reg">
-                            <input class="register__main__box__formbox--campo" type="text" name="address" id="address" placeholder="Domicilio" value="<%= locals.old && locals.old.address ? locals.old.address : '' %>">
-                            <div>
-                                <% if(locals.errors && locals.errors.address){ %>
-                                    <div class="text-danger">
-                                        <%= locals.errors.address.msg %>
-                                    </div>
-                                <% } %>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="register__main__box__formbox--campobox">
-                        <div class="form-box-reg">
-                            <input class="register__main__box__formbox--campo" type="email" name="email" id="email" placeholder="Correo electrónico" value="<%= locals.old && locals.old.email ? locals.old.email : '' %>">
+                            <input class="register__main__box__formbox--campo" type="email" name="email" id="email" placeholder="Correo electrónico" value="<%= locals.old && old.email ? old.email : ''%>">
                             <% if(locals.errors && locals.errors.email){ %>
                                 <div class="text-danger">
-                                    <%= locals.errors.email.msg %>
+                                    <%= errors.email.msg %>
                                 </div>
                             <% } %>
                         </div>
@@ -66,26 +56,36 @@
                             <% } %>
                         </div>
                     </div>
+                
+                    </div>
+                    <p class="title_reg">Provincia:</p>
                     <div class="register__main__box__formbox--campobox">
                         <div class="form-box-reg">
-                            <input class="register__main__box__formbox--campo" type="password" name="passwordTwo" id="passwordTwo" placeholder="Repetir Contraseña">
-                            <% if(locals.errors && locals.errors.passwordTwo){ %>
+                            <select class="register__main__box__formbox--campo" type="text" name="province" id="province">
+                                <option value="" hidden selected>Elije tu provincia...</option>
+                            </select>
+                            <% if(locals.errors && errors.province){ %>
                                 <div class="text-danger">
-                                    <%= locals.errors.passwordTwo.msg %>
+                                    <%= errors.province.msg %>
                                 </div>
                             <% } %>
                         </div>
                     </div>
-                    <p class="title_reg">Fecha de Nacimiento</p>
+                    <p class="title_reg">Ciudad:</p>
                     <div class="register__main__box__formbox--campobox">
                         <div class="form-box-reg">
-                            <input class="register__main__box__formbox--campo" type="date" name="birthdate" id="birthdate" placeholder="Fecha de Nacimiento">
-                            <% if(locals.errors && locals.errors.birthdate){ %>
+                            <select class="register__main__box__formbox--campo" type="text" name="city" id="city">
+                                <option value="" hidden selected>Elije tu ciudad...</option>
+                            </select>
+                            <% if(locals.errors && errors.city){ %>
                                 <div class="text-danger">
-                                    <%= locals.errors.birthdate.msg %>
+                                    <%= errors.city.msg %>
                                 </div>
                             <% } %>
                         </div>
+                    </div>
+                    <div class="register__main__box__formbox--campobox">
+                        <input type="checkbox"><label for="">soy mayor de edad</label>
                     </div>
                     <div class="register__main__box__formbox--buttonbox">
                         <button type="submit" class="register__main__box__formbox--button">Crear</button>

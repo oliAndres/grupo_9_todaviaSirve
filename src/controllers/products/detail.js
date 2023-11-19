@@ -17,4 +17,8 @@ module.exports = async (req, res) => {
   } catch (error) {
     res.status(500).send('Error en el servidor');
   }
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> 6a65898fee2a0e52dc83625ea8f57b4c445536ea

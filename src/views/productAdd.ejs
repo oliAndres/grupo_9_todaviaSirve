@@ -31,7 +31,7 @@
                                 <label for="category" class="form-label">Categoría</label>
                                 <select id="categoryId" name="category">
                                     <% categories.forEach(category => { %>
-                                        <option value="<%= categories.name %>"><%= categories.name %></option>
+                                        <option value="<%= category.name %>"><%= category.name %></option>
                                     <% }); %>
                                 </select>
                                 

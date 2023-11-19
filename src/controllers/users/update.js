@@ -7,9 +7,9 @@ module.exports = (req, res) => {
 
 if (errors.isEmpty()){
 
-  const { name, lastName, address, birthdate } = req.body;
+  const { name, lastName, address,city,province, birthdate } = req.body;
 
-  const id = req.params.id;
+  const id =  req.session.userLogin.id;
 
   db.User.findByPk(id, {
     include : {
@@ -21,31 +21,25 @@ if (errors.isEmpty()){
       {
         name : name.trim(),
         lastName : lastName.trim(),
-        address : address,
-        birthdate
+        
       },
       {
         where : {
-          id : req.params.id
+          id : req.session.userLogin.id
         }
       }
     )
-    .then(() => {
-      if(req.files.image){
-        existsSync(`./public/images/users/${user.avatar.find(image => image).file}`) && 
-        unlinkSync(`./public/images/users/${user.avatar.find(image => image).file}`);
-        db.Image.destroy({
-            where : {
-                id : req.params.id,        
-            }
-        })
-        .then (() => {
-            db.Image.create({
-                file : req.files.image[0].filename,        
-                id : req.params.id
-            })
-        })
+    
+    .then((user) => {
+    db.Address.update(
+      {
+      city : city.trim(),
+      lastName : lastName.trim(),
+      street : street.trim()
+
     }
+      
+    )
     })
     .catch(error => console.log(error)) 
   })
@@ -53,11 +47,11 @@ if (errors.isEmpty()){
 
   req.session.userLogin.name= name.trim()
   res.locals.userLogin = req.session.userLogin
-  return res.render("/users/profile");
+  return res.redirect("/");
 
 } else{
 
-  const id = req.params.id;
+  const id = req.session.userLogin.id;
 
     const user = db.User.findByPk(id, {
         include : {

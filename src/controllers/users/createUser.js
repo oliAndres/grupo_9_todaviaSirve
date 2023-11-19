@@ -1,25 +1,46 @@
-
-const { readJSON, writeJSON } = require('../../data')
-const users = require('../../data/users.json')
-const bcrypt = require('bcryptjs');
-
+const db = require('../../database/models')
+const {hashSync} = require('bcryptjs');
+const {validationResult} = require('express-validator')
 
 module.exports = (req,res) => {
-   const hashPass = bcrypt.hashSync(req.body.password,10)
-   if (bcrypt.compareSync(req.body.passwordTwo,hashPass)){
-    const newUser = {
-        id: users.length + 1,
-        ...req.body,
-        password:hashPass,
-        image: "user2.jpg"
 
-        
+    const {name, lastName, city, province, email, password } = req.body
+    const errors = validationResult(req);
+    console.log(req.body)
+
+    if (errors.isEmpty()) {
+
+        db.Address.create({
+            city,
+            province
+        })
+            .then(address => {
+                db.User.create({
+                    name : name.trim(),
+                    lastName : lastName.trim(),
+                    email : email.trim(),
+                    password : hashSync(password, 10),
+                    roleId : 2,
+                    addressId : address.id
+                })
+                    .then(({name, lastName}) => {
+                        return res.render('registerOk', {
+                            user : {
+                                name,
+                                lastName
+                            }
+                        })
+                    })
+            }).catch(error => console.log(error))
+
+     
+    } else {
+        return res.render("register", {
+            errors: errors.mapped(),
+            old:req.body
+        });
     }
-    delete(req.body.passwordTwo)
 
-    users.push(newUser)
-    console.log(users)
-    writeJSON(users,'users.json')
-   }
-   return res.render('registerOk')
+   
+   
 }

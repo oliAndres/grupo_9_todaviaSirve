@@ -20,6 +20,7 @@ exports.processLogin = [
                     },
                 });
 
+<<<<<<< HEAD
                 if (user && user.authenticate(req.body.password)) {
                     req.session.userLogin = {
                         id: user.id,
@@ -27,6 +28,11 @@ exports.processLogin = [
                         role: user.roleId,
                         email: user.email,
                     };
+=======
+        req.body.remember !== undefined && res.cookie('todaviaSirve', req.session.userLogin.id, {
+            maxAge: 1000 * 60
+        });
+>>>>>>> 6a65898fee2a0e52dc83625ea8f57b4c445536ea
 
                     req.body.remember !== undefined && res.cookie('todaviaSirve', req.session.userLogin, {
                         maxAge: 1000 * 60,

@@ -5,7 +5,6 @@ module.exports = {
     loginProcess : require('./users/loginProcess'),
     showLoginPage : require('./users/loginProcess'),
     logOut : require('./users/logOut'),
-    register : require('./users/register'),
     register : (req,res) => {
         return res.render('register');
     },

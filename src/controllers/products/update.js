@@ -1,87 +1,89 @@
-const {existsSync, unlinkSync} = require('fs');
+const { existsSync, unlinkSync } = require('fs');
 const db = require('../../database/models');
 const { validationResult } = require('express-validator');
 
-module.exports = (req,res) => {
-    const errors = validationResult(req);
+module.exports = async (req, res) => {
+    try {
+        const errors = validationResult(req);
 
-    if (errors.isEmpty()){
+        if (errors.isEmpty()) {
+            const { name, brandId, price, categoryId, description } = req.body;
+            const productId = req.params.id;
 
-    const {name, brandId, price, categoryId, description} = req.body;
+            // Verifica que el producto existe antes de intentar actualizar
+            const product = await db.Product.findByPk(productId, {
+                include: ['images']
+            });
 
-    db.Product.findByPk(req.params.id,{
-        include : ['images']
-    })
-        .then(product => {
-            db.Product.update(
+            if (!product) {
+                return res.status(404).send('Producto no encontrado');
+            }
+
+            // Actualiza el producto
+            await db.Product.update(
                 {
-                    name : name.trim(),
-                    brandId : brandId,
+                    name: name.trim(),
+                    brandId: brandId,
                     price,
-                    categoryId : categoryId,
+                    categoryId: categoryId,
                     description
                 },
                 {
-                    where : {
-                        id : req.params.id
+                    where: {
+                        id: productId
                     }
                 }
-            )
-            .then(() => {
-                //Cambia imagenes secundarias
-                if(req.files.images){
-                    product.images.filter(image => !image.main).forEach((image) => {
-                        existsSync(`./public/images/productos/${image.file}`) && 
-                        unlinkSync(`./public/images/productos/${image.file}`);
-                    });
+            );
 
-                    db.Image.destroy({
-                        where : {
-                            productId : req.params.id,
-                            main : false
-                        }
-                    })
-                    .then(() => {
-                        const images = req.files.images.map(({filename}) => {
-                            return {
-                                name : filename,
-                                main : false,
-                                productId : product.id
-                            }
-                        })
-                        db.Image.bulkCreate(images,{
-                            validate : true
-                        }).then(result => console.log(result))
-                    })
-                }
-                
-            })
-            .catch(error => console.log(error))
-            .finally(() => {
-                return res.redirect("/admin");
-            })
-        })
-
-    } else {
-        const id = req.params.id;
-
-        const product = db.Product.findByPk(id, {
-            include : {
-                all : true
-            }
-        });
-        const categories = db.Product.findAll({
-            order : ['name']
-        });
-        
-        Promise.all([product, categories])
-            .then(([product, categories]) => {
-                return res.render('productEdit', {
-                    categories,
-                    ...product.dataValues,
-                    errors: errors.mapped()
+            // Cambia imágenes secundarias
+            if (req.files.images) {
+                product.images.filter(image => !image.main).forEach((image) => {
+                    existsSync(`./public/images/productos/${image.name}`) && 
+                    unlinkSync(`./public/images/productos/${image.name}`);
                 });
-            })
-            .catch(error => console.log(error))
+
+                await db.Image.destroy({
+                    where: {
+                        productId: req.params.id,
+                        main: false
+                    }
+                });
+
+                const images = req.files.images.map(({ filename }) => {
+                    return {
+                        name: filename,
+                        main: false,
+                        productId: product.id
+                    };
+                });
+
+                await db.Image.bulkCreate(images, {
+                    validate: true
+                });
+            }
+        } else {
+            const id = req.params.id;
+
+            const product = await db.Product.findByPk(id, {
+                include: {
+                    all: true
+                }
+            });
+
+            const categories = await db.Product.findAll({
+                order: ['name']
+            });
+
+            return res.render('productEdit', {
+                categories,
+                ...product.dataValues,
+                errors: errors.mapped()
+            });
+        }
+
+        return res.redirect("/admin");
+    } catch (error) {
+        console.error('Error en la edición del producto:', error);
+        return res.status(500).send('Error interno del servidor');
     }
-}
+};

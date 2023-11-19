@@ -94,5 +94,17 @@
       "role": "user",
       "birthdate": "2023-09-12",
       "image": "user2.jpg"
+   },
+   {
+      "id": 9,
+      "name": "Eric",
+      "lastName": "Mena",
+      "address": "General Pico 10631",
+      "email": "menaericdaniel@gmail.com",
+      "password": "$2a$10$TSVGyq628F06ZyC7S.O8Q.ssG0bwFY99mMtELy3lHk/3sDYOu92Ji",
+      "passwordTwo": "123123",
+      "role": "admin",
+      "birthdate": "1976-03-03",
+      "image": "user2.jpg"
    }
 ]

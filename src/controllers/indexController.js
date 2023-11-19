@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 const db = require('../database/models');
+=======
+const db = require('../database/models')
+>>>>>>> 6a65898fee2a0e52dc83625ea8f57b4c445536ea
 
 module.exports = {
     index : (req,res) => {   
@@ -18,6 +22,7 @@ module.exports = {
     },
     admin : (req,res)  => {
 
+<<<<<<< HEAD
         const products = db.Product.findAll({
             include : ['category','section','images']
         });
@@ -36,3 +41,15 @@ module.exports = {
        
     }
 }
+=======
+        db.Product.findAll({
+            include : ['images']
+        })
+            .then(products => {
+                return res.render('index', {products})
+            }).catch(error => console.log(error))
+        
+        
+    }
+};
+>>>>>>> 6a65898fee2a0e52dc83625ea8f57b4c445536ea

@@ -7,7 +7,7 @@ module.exports = (req, res) => {
 
 if (errors.isEmpty()){
 
-  const { name, lastName, address,city,province, birthdate } = req.body;
+  const { name, lastName, address, city, province, birthdate } = req.body;
 
   const id =  req.session.userLogin.id;
 
@@ -30,24 +30,23 @@ if (errors.isEmpty()){
       }
     )
     
-    .then((user) => {
+    /*.then((user) => {
     db.Address.update(
       {
       city : city.trim(),
       lastName : lastName.trim(),
       street : street.trim()
 
-    }
-      
+    }   
     )
-    })
+    })*/
     .catch(error => console.log(error)) 
   })
   
 
   req.session.userLogin.name= name.trim()
   res.locals.userLogin = req.session.userLogin
-  return res.render("/users/profile");
+  return res.render("profile");
 
 } else{
 

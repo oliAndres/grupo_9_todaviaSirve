@@ -10,14 +10,11 @@ const validateElement = (info, error, element) => {
   $(info).hidden = true
   if(!element.target.value.trim()){
       $(error).hidden = false
-  }
+  }  
 }
 
 window.onload = function () {
   const main = document.querySelector("main");
-
-  const formName = document.querySelector("#name");
-  const formBrand = document.querySelector("#brandId");
   const respuesta = confirm("Deseas editar un producto?");
   const formEdit = document.querySelector(".editProduct__main__form");
 
@@ -39,7 +36,12 @@ window.onload = function () {
   $("name").addEventListener("blur", function (e) {
     validateElement('msg-name', 'error-name', e)
   })
-
+  $("brandId").addEventListener("focus", (e) => {
+    show('msg-brand')
+  });
+  $("brandId").addEventListener("blur", () => {
+    $('msg-brand').hidden = true
+  });
 
   $("price").addEventListener("focus", (e) => {
     show('msg-price', 'error-price', e)
@@ -57,8 +59,12 @@ window.onload = function () {
     validateElement('msg-description', 'error-description', e)
   });
   $("categoryId").addEventListener("focus", (e) => {
-    show('msg-category', 'error-category', e)
+    show('msg-category')
   });
+  $("categoryId").addEventListener("blur", () => {
+    $('msg-category').hidden = true
+  });
+
 
   formEdit.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -67,10 +73,12 @@ window.onload = function () {
 
     for (let i = 0; i < elementsForm.length; i++) {
       if (elementsForm[i].value.trim() === "") {
-        msgErrors.push(`El campo ${elementsForm[i].name} no puede estar vacío`);
-        elementsForm[i].style.borderColor = 'red'
+        msgErrors.push(`El campo ${elementsForm[i].name} no puede estar vacío`)
+        elementsForm[i].classList.add('is-invalid')
+        elementsForm[i].classList.remove('is-valid')
       }else{
-        elementsForm[i].style.borderColor = 'inherit'
+        elementsForm[i].classList.remove('is-invalid')
+        elementsForm[i].classList.add('is-valid')
       }
     }
     

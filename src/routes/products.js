@@ -3,6 +3,7 @@ const productsController = require('../controllers/productsController');
 const upload = require('../middlewares/upload');
 const userCheck = require('../middlewares/userCheck');
 const adminCheck = require('../middlewares/adminCheck');
+const productEditValidator = require('../validations/productEditValidator');
 const router = express.Router();
 
 router.get('/detail/:id', productsController.detail);
@@ -15,7 +16,7 @@ router.put('/update/:id',upload.fields([
     {
         name : "images",
     },
-]), productsController.update);
+]), productEditValidator,productsController.update);
 
 router.get('/add',userCheck, productsController.add);
 

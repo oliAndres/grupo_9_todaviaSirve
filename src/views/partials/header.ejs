@@ -10,29 +10,6 @@
                <label for="menu">
                    <img src="/images/menu.png" class="menu-icono" alt="">
                </label>
-<<<<<<< HEAD
-               <nav class="home__header__navbar">
-                   <ul>
-                    <li> <a href="#">Ofertas</a></li>
-                    <li> <a href="/products/add">Vender</a></li>
-                    <% if (locals.userLogin) { %>
-                        <% if (user.role === 1) { %>
-                            <li> <a href="/admin">Admin</a></li>
-                        <% } %>
-                        <li> <a href="/users/profile/">Hola <%= user.name %> !</a></li>                        
-                        <li>
-                            <div class="header__main__box__formbox--image">
-                                <img width="100px" src="/images/productos/userImages/<%= userLogin.image || "Andres.jpg" %>"  alt="">
-                            </div>
-                        </li>
-                        <li> <a href="/users/logOut">Salir</a></li>     
-                    <% }else{ %>
-                    <li> <a href="/users/register">Registrarse</a></li>
-                    <li> <a href="/users/login">Ingresar</a></li>
-                    <% } %>
-                </ul>
-               </nav>
-=======
               <!-- ... -->
 <nav class="home__header__navbar">
     <ul>
@@ -62,7 +39,6 @@
 </nav>
 <!-- ... -->
 
->>>>>>> 6a65898fee2a0e52dc83625ea8f57b4c445536ea
            </div>
         </div>   
        </header>

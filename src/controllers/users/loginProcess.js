@@ -20,7 +20,6 @@ exports.processLogin = [
                     },
                 });
 
-<<<<<<< HEAD
                 if (user && user.authenticate(req.body.password)) {
                     req.session.userLogin = {
                         id: user.id,
@@ -28,11 +27,6 @@ exports.processLogin = [
                         role: user.roleId,
                         email: user.email,
                     };
-=======
-        req.body.remember !== undefined && res.cookie('todaviaSirve', req.session.userLogin.id, {
-            maxAge: 1000 * 60
-        });
->>>>>>> 6a65898fee2a0e52dc83625ea8f57b4c445536ea
 
                     req.body.remember !== undefined && res.cookie('todaviaSirve', req.session.userLogin, {
                         maxAge: 1000 * 60,
@@ -40,15 +34,11 @@ exports.processLogin = [
 
                     return res.redirect("/");
                 } else {
-                    errors.errors.push({ msg: 'Credenciales incorrectas' });
+                    errors.push({ msg: 'Credenciales incorrectas' });
                     return res.render('login', { errors, email: req.body.email });
                 }
             } catch (error) {
-                console.error(error);
-                return res.status(500).json({ error: 'Error en el servidor' });
+                return res.render('register', { errors, email: req.body.email });
             }
-        } else {
-            return res.render('login', { errors, email: req.body.email });
         }
-    },
-];
+}];

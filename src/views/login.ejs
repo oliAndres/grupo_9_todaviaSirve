@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('partials/head') %>
+    <%- include('partials/head') %>
 
 <body>
     <%- include('partials/header') %>
-    <div class="login-error">
+    <!--<div class="login-error">
         <% if (errors && errors.length > 0) { %>
             <div class="alert alert-danger">
                 <ul>
@@ -14,25 +14,31 @@
                 </ul>
             </div>
         <% } %>
-    </div>
+    </div>-->
     <main class="login--main">
         <div class="login__main--box">
             <div class="login__main__box--title">
                 <h2>Ingresá</h2>
             </div>
             <div class="login__main__box--formbox">
-                <form class="login__main__box__formbox--form" action="/users/Login" method="POST">
+                <form class="login__main__box__formbox--form" action="/users/login" method="POST">
                     <div class="login__main__box__formbox--campobox">
                         <label>
-                            <input class="login__main__box__formbox--campo" type="email" name="email" id="email"
+                            <input class="form-control" type="email" name="email" id="email"
                                 placeholder="Correo electrónico">
                         </label>
+                        <small class="text-danger ms-2" id="msgError-email">
+                            <%= locals.errors && (errors.email && errors.email.msg) %>
+                        </small>
                     </div>
                     <div class="login__main__box__formbox--campobox">
                         <label>
-                            <input class="login__main__box__formbox--campo" type="password" name="password" id="password"
+                            <input class="form-control" type="password" name="password" id="password"
                                 placeholder="Contraseña">
                         </label>
+                        <small class="text-danger ms-2" id="msgError-password">
+                            <%= locals.errors && (errors.password && errors.password.msg) %>
+                        </small>
                     </div>
                     <div>
                         <div class="login__main__box__formbox--form-check">
@@ -51,6 +57,7 @@
         </div>
     </main>
     <%- include('partials/footer') %>
+    <script src="/js/login.js"></script>
 </body>
 </html>
 

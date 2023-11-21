@@ -21,6 +21,7 @@ exports.processLogin = [
         req.session.userLogin = {
           id: user.id,
           name: user.name,
+          avatar: user.avatar,
           role: user.roleId,
         };
 

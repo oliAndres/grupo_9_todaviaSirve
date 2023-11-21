@@ -15,10 +15,15 @@
     background-color: white;
 }
 .profile__main__box--title {
+    background-image: linear-gradient(
+        90deg,
+        rgb(50, 173, 179) 25%,
+        rgb(64, 135, 179) 73%);
+    color: white;
     display: flex;
     justify-content: center;
     text-align: center;
-    padding: 15px;
+    padding: 10px;
     font-size: 16px;
     font-weight: 10px;
 }
@@ -26,16 +31,30 @@
     display: flex;
     justify-content: center;
 }
+.profile__main__box__formbox--formbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
 .profile__main__box__formbox--form {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 80%;
 }
 .profile__main__box__formbox--image {
+    background-image: linear-gradient(
+        90deg,
+        rgb(50, 173, 179) 25%,
+        rgb(64, 135, 179) 73%);
     text-align: center;
     flex-direction: column;
     width: 100%;
-    margin: 5px;
+    margin-bottom: 35px;
+    padding-bottom: 10px;
+    
+    
 }
 .profile__main__box__formbox--image img {
     border-radius: 50%;

@@ -1,26 +1,19 @@
-const db = require('../../database/models');
+const db = require('../../database/models')
 
-module.exports = async (req, res) => {
-    try {
-        // Obtenemos el id del perfil guardado en la session 
-        const id = req.session.userLogin.id;
+module.exports = (req,res) => {
 
-        const user = await db.User.findByPk(id, {
-            include: {
-                all: true,
-            },
-        });
-        //VERIFICO CON UN CONSOLE LOG QUE SE TRAIGAN TODOS LOS DATOS DE USUARIO   
-        // console.log('Datos del usuario:', user);
-
-        res.render('profile', {
-            //Al renderizar pasamos todos los datos del usuario
-            user: {
+    db.User.findByPk(req.session.userLogin.id, {
+        include : ['address']
+    })
+        .then(user => {
+            
+            const birthdate = new Date(user.birthdate).toISOString();
+            console.log(birthdate.split('T')[0]);
+            return res.render('profile',{
                 ...user.dataValues,
-            },
-        });
-    } catch (error) {
-        console.log(error);
-        res.status(500).send('Error interno del servidor');
-    }
-};
+                birthdate : birthdate.split('T')[0]
+            })
+        })
+        .catch(error => console.log(error))
+    
+}

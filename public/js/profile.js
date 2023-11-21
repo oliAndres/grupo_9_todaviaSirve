@@ -57,11 +57,11 @@ window.onload = async function (e) {
         this.classList.add("is-invalid");
         break;
       case birthDate.isAfter(currentDate):
-        $("msgError-birthdate").innerHTML = "Que sos, termitator??";
+        $("msgError-birthdate").innerHTML = "Venis del futuro??";
         this.classList.add("is-invalid");
         break;
       case birthDate.isBefore(minDate):
-        $("msgError-birthdate").innerHTML = "Tan viejo/a sos??";
+        $("msgError-birthdate").innerHTML = "Nadie puede ser tan viejo !!";
         this.classList.add("is-invalid");
         break;
       default:

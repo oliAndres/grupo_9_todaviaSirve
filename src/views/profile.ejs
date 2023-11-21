@@ -7,49 +7,56 @@
     <main class="profile--main">
         <div class="profile__main--box">
             <div class="profile__main__box--title">
-                <h2>Perfil de Usuario</h2>
+                <h2>Mi Perfil</h2>
             </div>
             <div class="profile__main__box--formbox">
-                <form class="profile__main__box__formbox--form" action="/users/update?_method=PUT" method="post" enctype="multipart/form-data">
+                <form class="profile__main__box__formbox--formbox" action="/users/update?_method=PUT" method="post" enctype="multipart/form-data">
 
                     <div class="profile__main__box__formbox--image">
                         <img width="100px" src="/images/productos/userImages/<%= avatar || "Andres.jpg" %>" alt="Imagen de perfil">
                     </div>
-                    <div class="profile__main__box__formbox--campobox">
+                    <div class="profile__main__box__formbox--form">
+                    <div class="col-11 col-md-5 mb-2">
                         <label for="name" class="form-label">Nombre</label>
-                        <input class="form-control" type="text" name="name" id="name" value="<%= user.name %>">
+                        <input class="form-control" type="text" name="name" id="name" value="<%= name %>">
                         <small class="text-danger ms-2" id="msgError-name">
                             <%= locals.errors && (errors.name && errors.name.msg) %>
                           </small>
                     </div>
-                    <div class="profile__main__box__formbox--campobox">
+                    <div class="col-11 col-md-5 mb-2">
                         <label for="lastName" class="form-label">Apellido</label>
-                        <input class="form-control" type="text" name="lastName" id="lastName" value="<%= user.lastName %>">
+                        <input class="form-control" type="text" name="lastName" id="lastName" value="<%= lastName %>">
                         <small class="text-danger ms-2" id="msgError-lastName">
                             <%= locals.errors && (errors.lastName && errors.lastName.msg) %>
                           </small>
                     </div>
-                    <div class="col-12 col-md-6 mb-3">
+                    <div class="col-11 col-md-5 mb-2">
                         <label for="province" class="form-label">Provincia</label>
                         <select type="text" class="form-select" id="province" name="province">
                             <option value="" hidden>Seleccione...</option>
+                            <% if (address.province) { %>
+                                <option value="<%= address.province %>" selected><%= address.province %></option>
+                            <% } %>
                         </select>
                     </div>
-                    <div class="col-12 col-md-6 mb-3">
+                    <div class="col-11 col-md-5 mb-2">
                         <label for="city" class="form-label">Ciudad</label>
                         <select type="text" class="form-select" id="city" name="city">
                             <option value="" hidden>Seleccione...</option>
+                            <% if (address.city) { %>
+                                <option value="<%= address.city %>" selected><%= address.city %></option>
+                            <% } %>
                         </select>
                     </div>
-                   <!-- <div class="profile__main__box__formbox--campobox">
-                        <label for="street">Calle</label>
-                        <input class="profile__main__box__formbox--campo" type="text" name="street" id="street" placeholder="Domicilio" value="<%= user.address.street %>">
-                    </div>-->
-                    <div class="profile__main__box__formbox--campobox">
+                    <div class="col-11 col-md-5 mb-2">
+                        <label class="form-label" for="street">Calle</label>
+                        <input class="form-control" type="text" name="street" id="street" placeholder="Domicilio" value="<%= address.street %>">
+                    </div>
+                    <div class="col-11 col-md-5 mb-2">
                         <label for="birthdate" class="form-label">Fecha de nacimiento</label>
-                        <input class="form-control" type="date" name="birthdate" id="birthdate" value="<%= user.birthdate %>">
-                        <small class="text-danger ms-2" id="msgError-birthday">
-                            <%= locals.errors && (errors.birthday && errors.birthday.msg) %>
+                        <input class="form-control" type="date" name="birthdate" id="birthdate" value="<%= birthdate %>">
+                        <small class="text-danger ms-2" id="msgError-birthdate">
+                            <%= locals.errors && (errors.birthdate && errors.birthdate.msg) %>
                         </small>
                     </div>
                     <div class="profile__main__box__formbox--buttonbox">
@@ -57,12 +64,14 @@
                             <button class="profile__main__box__formbox--button" type="submit">Guardar cambios</button>
                         </a>
                     </div>
+                    </div>
                 </form>
             </div>
         </div>
     </main>
 
     <%- include('partials/footer') %>
+    <%- include('partials/scripts') %>
     <script src="/js/profile.js"></script>
 </body>
 </html>

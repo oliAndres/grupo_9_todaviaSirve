@@ -5,9 +5,9 @@ const { compareSync } = require("bcryptjs");
 module.exports = [
   check("email")
     .notEmpty()
-    .withMessage("El email es obligatorio").bail()
+    .withMessage("El email es obligatorio")
     .isEmail()
-    .withMessage("El email no es valido"),
+    .withMessage("Formato inválido"),
   body("password")
     .custom((value, {req}) => {
         return db.User.findOne({
@@ -18,7 +18,8 @@ module.exports = [
             if(!user || !compareSync(value, user.password)){
                 return Promise.reject()
             }
-        }).catch(() => Promise.reject('El email o la contraseña son incorrectos'))
+        }).catch(() => Promise.reject('El email o la contraseña son incorrectas'))
     })
 
 ];
+

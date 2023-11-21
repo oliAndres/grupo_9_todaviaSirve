@@ -3,42 +3,40 @@ const db = require("../../database/models");
 
 // Función para mostrar la página de inicio de sesión
 exports.showLoginPage = (req, res) => {
-    res.render('login', { errors: [], email: '' });
+    res.render('login', { errors: [] }); // Paso un arreglo vacío de errores para que no se muestren errores al cargar la página
 };
 
 // Función para procesar el formulario de inicio de sesión
 exports.processLogin = [
-
-    async (req, res) => {
+    (req, res) => {
         const errors = validationResult(req);
 
-        if (errors.isEmpty()) {
-            try {
-                const user = await db.User.findOne({
-                    where: {
-                        email: req.body.email,
-                    },
-                });
+  if (errors.isEmpty()) {
+    db.User.findOne({
+      where: {
+        email: req.body.email,
+      },
+    })
+      .then((user) => {
+        req.session.userLogin = {
+          id: user.id,
+          name: user.name,
+          avatar: user.avatar,
+          role: user.roleId,
+        };
 
-                if (user && user.authenticate(req.body.password)) {
-                    req.session.userLogin = {
-                        id: user.id,
-                        name: user.name,
-                        role: user.roleId,
-                        email: user.email,
-                    };
+        req.body.remember !== undefined && res.cookie('todaviaSirve', req.session.userLogin.id, {
+            maxAge: 1000 * 60
+        });
 
-                    req.body.remember !== undefined && res.cookie('todaviaSirve', req.session.userLogin, {
-                        maxAge: 1000 * 60,
-                    });
 
-                    return res.redirect("/");
-                } else {
-                    errors.push({ msg: 'Credenciales incorrectas' });
-                    return res.render('login', { errors, email: req.body.email });
-                }
-            } catch (error) {
-                return res.render('register', { errors, email: req.body.email });
-            }
-        }
+        return res.redirect("/");
+      })
+      .catch((error) => console.log(error));
+  } else {
+
+    return res.render('login', {
+        errors : errors.mapped()
+    })
+  }
 }];

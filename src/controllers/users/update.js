@@ -5,22 +5,15 @@ module.exports = (req, res) => {
 
   const errors = validationResult(req)
 
-if (errors.isEmpty()){
+  if (errors.isEmpty()){
 
-  const { name, lastName, address,city,province, birthdate } = req.body;
+    const { name, lastName, street, city, province, birthdate } = req.body;
 
-  const id =  req.session.userLogin.id;
-
-  db.User.findByPk(id, {
-    include : {
-      all : true
-    }
-  })
-  .then(user => {
     db.User.update(
       {
         name : name.trim(),
         lastName : lastName.trim(),
+        birthdate
         
       },
       {
@@ -30,44 +23,45 @@ if (errors.isEmpty()){
       }
     )
     
-    .then((user) => {
-    db.Address.update(
-      {
-      city : city.trim(),
-      lastName : lastName.trim(),
-      street : street.trim()
+      .then( async () => {
+        req.session.userLogin.name = name;
+        res.locals.userLogin.name = name;
 
-    }
-      
-    )
-    })
-    .catch(error => console.log(error)) 
-  })
-  
+        if(req.cookies.todaviaSirve){
+            res.cookie("todaviaSirve", req.session.userLogin);
+        }
 
+        await db.Address.update(
+          {
+            province,
+            city,
+            street : street.trim()
+          },
+          {
+            where : {
+              id : req.session.userLogin.id
+            }
+          }   
+        )
+          return res.redirect('/')
+        })
+      .catch(error => console.log(error)) 
+    
+/*
   req.session.userLogin.name= name.trim()
   res.locals.userLogin = req.session.userLogin
   return res.redirect("/");
-
+*/
 } else{
+    db.User.findByPk(req.session.userLogin.id)
 
-  const id = req.session.userLogin.id;
-
-    const user = db.User.findByPk(id, {
-        include : {
-            all : true
-        }
-    });
-
-    Promise.all([user])
-        .then(([user]) => {
+        .then(user => {
             return res.render('profile', {
-                ...user,
+                ...user.dataValues,
                 errors : errors.mapped()
             });
         })
         .catch(error => console.log(error))
-
 
 }
   

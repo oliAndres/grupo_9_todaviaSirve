@@ -45,7 +45,9 @@
 .login__main__box__formbox--campobox {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 10px;
     border-radius: 5px;
 }

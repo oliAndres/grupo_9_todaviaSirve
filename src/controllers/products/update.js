@@ -73,10 +73,15 @@ module.exports = async (req, res) => {
             const categories = await db.Product.findAll({
                 order: ['name']
             });
+            const brands = await db.Brand.findAll({
+                order :['name']
+            });
+
 
             return res.render('productEdit', {
                 categories,
-                ...product.dataValues,
+                product,
+                brands,
                 errors: errors.mapped()
             });
         }

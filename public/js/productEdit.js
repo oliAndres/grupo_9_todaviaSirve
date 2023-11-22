@@ -1,4 +1,4 @@
-/*const $ = (id) => document.getElementById(id);
+const $ = (id) => document.getElementById(id);
 
 const show = (info, error, element) => {
   $(info).hidden = false
@@ -22,7 +22,7 @@ window.onload = function () {
   let elementsForm = formEdit.elements;
 
   
-   MUESTRA LO Q SE VA ESRIBIENDO EN LA CONSOLA 
+   //MUESTRA LO Q SE VA ESRIBIENDO EN LA CONSOLA 
   elementsForm[0].addEventListener("keydown", (e) => {
     console.log(e.key);
   });
@@ -83,8 +83,9 @@ window.onload = function () {
       }
     }
     
-    if(msgErrors.length) {
-      alert('Los campos señalados son obligatorios')
+    if (msgErrors.length) {
+      console.log(elementsForm)
+      alert(elementsForm)
     }else {
       this.submit()
     }
@@ -93,7 +94,7 @@ window.onload = function () {
 
 
 ///otra forma----///
-       $('name').addEventListener("blur", function (e) {
+      /* $('name').addEventListener("blur", function (e) {
         switch (true) {
           case !this.value.trim();
             $('nombre del id de error').innerHTML = "El nombre es obligatorio";

@@ -16,7 +16,7 @@ router.put('/update/:id',upload.fields([
     {
         name : "images",
     },
-]),productsController.update);
+]),productEditValidator,productsController.update);
 
 router.get('/add',userCheck, productsController.add);
 

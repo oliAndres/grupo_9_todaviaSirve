@@ -15,11 +15,11 @@
                         <input type="text" class="form-control" id="name" placeholder="Nombre Del Producto" name="name"
                             value="<%= product.name %>" />
 
-                        <small class="text-danger ms-2">
+                        <small class="text-danger ms-2" id="error-name" >
                             <%= locals.errors && (errors.name && errors.name.msg) %>
                         </small>
-                        <!--<p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-name">Complete el campo</p>    
-                <p hidden style="background-color:coral; color:brown;" id="error-name">Este campo no debe estar vacío</p>-->
+                        <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-name">Complete el campo</p>    
+               <!--  <p hidden style="background-color:coral; color:brown;" id="error-name">Este campo no debe estar vacío</p> -->
                         <br>
                         <div class="input-group mb-3">
                             <label for="brandId" class="form-label">Marca</label>
@@ -31,7 +31,7 @@
                                     </option>
                                     <% }) %>
                             </select>
-                            <!-- <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-brand">Seleccione una Marca</p>   -->
+                            <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-brand">Seleccione una Marca</p>   
 
                             <br>
                         </div>
@@ -42,8 +42,8 @@
                             <small class="text-danger ms-2">
                                 <%= locals.errors && (errors.price && errors.price.msg) %>
                               </small>
-                        <!--<p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-price">Complete el campo</p>    
-                    <p hidden style="background-color:coral; color:brown;" id="error-price">Este campo no debe estar vacío</p>  -->
+                        <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-price">Complete el campo</p>    
+                    <p hidden style="background-color:coral; color:brown;" id="error-price">Este campo no debe estar vacío</p>  
                         <br>
                     </div>
 
@@ -54,8 +54,8 @@
                             <small class="text-danger ms-2">
                                 <%= locals.errors && (errors.description && errors.description.msg) %>
                               </small>
-                        <!--<p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-description">Complete el campo</p>    
-                    <p hidden style="background-color:coral; color:brown;" id="error-description">Este campo no debe estar vacío</p> -->
+                        <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-description">Complete el campo</p>    
+                    <p hidden style="background-color:coral; color:brown;" id="error-description">Este campo no debe estar vacío</p> 
 
                     </div>
                     <div class="boxselect_categorias"></div>
@@ -69,7 +69,7 @@
                                 </option>
                                 <% }) %>
                         </select>
-                        <!--<p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-category">Seleccione una categoria</p>    -->
+                        <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-category">Seleccione una categoria</p>    
 
                         <br>
                     </div>

@@ -1,4 +1,4 @@
-const { check } = require("express-validator");
+const { check} = require("express-validator");
 const db = require('../database/models');
 
 module.exports = [
@@ -17,9 +17,11 @@ module.exports = [
     .isInt({
       gt: 1,
     })
+    
     .withMessage("Debe ser positivo"),
   check("description").isLength({
     min: 20,
     max: 500,
   }).withMessage('Debe tener entre 20 y 500 caracteres'),
+  
 ];

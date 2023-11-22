@@ -1,4 +1,4 @@
-const $ = (id) => document.getElementById(id);
+/*const $ = (id) => document.getElementById(id);
 
 const show = (info, error, element) => {
   $(info).hidden = false
@@ -22,7 +22,7 @@ window.onload = function () {
   let elementsForm = formEdit.elements;
 
   
-  /* MUESTRA LO Q SE VA ESRIBIENDO EN LA CONSOLA */
+   MUESTRA LO Q SE VA ESRIBIENDO EN LA CONSOLA 
   elementsForm[0].addEventListener("keydown", (e) => {
     console.log(e.key);
   });
@@ -36,6 +36,7 @@ window.onload = function () {
   $("name").addEventListener("blur", function (e) {
     validateElement('msg-name', 'error-name', e)
   })
+
   $("brandId").addEventListener("focus", (e) => {
     show('msg-brand')
   });
@@ -89,3 +90,29 @@ window.onload = function () {
     }
   })
 }
+
+
+///otra forma----///
+       $('name').addEventListener("blur", function (e) {
+        switch (true) {
+          case !this.value.trim();
+            $('nombre del id de error').innerHTML = "El nombre es obligatorio";
+            this.classList.add("is-invalid");
+            break
+          case this.value.length < 2 : 
+            $('nombre del id de error').innerHTML = "Mínimo dos caracteres";
+            this.classList.add("is-invalid");
+            break
+          default:
+            $('nombre del id de error').innerHTML = "Null";
+            this.classList.remove("is-invalid");
+            this.classList.add("is-valid");
+          break;
+
+        }
+      })
+    }  
+
+/////
+
+*/

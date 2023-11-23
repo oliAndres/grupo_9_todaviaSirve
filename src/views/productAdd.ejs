@@ -12,20 +12,20 @@
                         <label for=>Nombre del producto</label>
                         <input placeholder="Ingrese el nombre" class="form-control" type="text" name="name" id="name">
                         <p hidden style="background-color:rgb(54, 33, 216); color: #ff7f50;" id="msg-name">El campo es obligatorio</p>    
-                    <p hidden style="background-color:rgb(255, 68, 0); color:#ff4400;" id="error-name">Este campo no puede estar vacío</p>  
+                    <p hidden style="background-color:rgb(255, 68, 0); color:#f1f1f1;" id="error-name">Este campo no puede estar vacío</p>  
 
                         <label for="brand" class="form-label">Marca</label>
                         <input type="text" class="form-control" name="brand" placeholder="Ingrese la marca" id="brandId">
                         <p hidden style="background-color:rgb(54, 33, 216); color: #ff7f50;" id="msg-brandId">El campo es obligatorio</p>    
-                    <p hidden style="background-color:rgb(255, 68, 0); color:#ff4400;" id="error-brandId">Este campo no puede estar vacío</p>  
+                    <p hidden style="background-color:rgb(255, 68, 0); color:#f1f1f1;" id="error-brandId">Este campo no puede estar vacío</p>  
 
                         <label for="">Precio</label>    
                         <input placeholder="Ingrese el precio" type="number" name="price" id="price" class="form-control">
                         <p hidden style="background-color:rgb(54, 33, 216); color: #ff7f50;" id="msg-price">El campo es obligatorio</p>    
-                    <p hidden style="background-color:rgb(255, 68, 0); color:#ff4400;" id="error-price">Este campo no puede estar vacío</p>  
+                    <p hidden style="background-color:rgb(255, 68, 0); color:#f1f1f1;" id="error-price">Este campo no puede estar vacío</p>  
 
                         <label for="prodDescription" class="form-label">Breve descripción</label>
-                            <textarea class="form-control" name="description" id="description" rows="3">Describa su producto</textarea>
+                            <textarea class="form-control" name="description" id="description" rows="3" placeholder="Describa su producto"></textarea>
 
                             <section>
                                 <label for="category" class="form-label">Categoría</label>
@@ -34,19 +34,16 @@
                                         <option value="<%= category.name %>"><%= category.name %></option>
                                     <% }); %>
                                 </select>
-                                
-                            </section>
                             <p hidden style="background-color:rgb(54, 33, 216); color: #ff7f50;" id="msg-category">El campo es obligatorio</p>    
-                    <p hidden style="background-color:rgb(255, 68, 0); color:#ff4400;" id="error-category">Este campo no puede estar vacío</p>  
+                    <p hidden style="background-color:rgb(255, 68, 0); color:#ffffff;" id="error-category">Este campo no puede estar vacío</p>  
 
+                </section>
                             <div class="boximage_imgProduct">
                                 <label for="" class="form-label">Imagen del producto</label>
                                 <div class="input-group mb-3">
                                     <input type="file" class="form-control" multiple name="images" id="images" />
                                     <label class="input-group-text" for="images">Subir</label>
-                                </div>
-                                <p hidden style="background-color:rgb(54, 33, 216); color: #ff7f50;" id="msg-images">El campo es obligatorio</p>    
-                    <p hidden style="background-color:rgb(255, 68, 0); color:#ff4400;" id="error-images">Este campo no puede estar vacío</p>  
+                                </div> 
                             <div class="boxbutton">
                                 <div>
                                     <a href="/">
@@ -74,7 +71,7 @@
                             if (!allowedExt.includes(fileExt)) {
                                 fileField.classList.add("invalid");
                                 fileField.classList.add("errorFormat");
-                                fileField.nextElementSibling.innerText = "La extensión de el archivo no es válida";
+                                fileField.nextElementSibling.innerText = "La extensión del archivo no es válida";
                             } else {
                                 fileField.classList.remove("invalid");
                                 fileField.classList.remove("errorFormat");
@@ -83,7 +80,7 @@
                         }
                     });
                 </script>
-                
+                <script src="/js/addValidator.js"></script>
     </body>
 
 </html>

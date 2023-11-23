@@ -6,7 +6,7 @@ const show = (info, error, element) => {
   element.borderColor = 'inherit'
 }
 
-const adding = (info, error, element) => {
+const validate = (info, error, element) => {
   $(info).hidden = true
   if(!element.target.value.trim()){
       $(error).hidden = false
@@ -27,7 +27,7 @@ window.onload = function () {
   })
 
   $("name").addEventListener("blur", function (e) {
-    validateElement('msg-name', 'error-name', e)
+    validate('msg-name', 'error-name', e)
   })
 
 
@@ -36,7 +36,7 @@ window.onload = function () {
   });
 
   $("brandId").addEventListener("blur", function (e) {
-    validateElement('msg-brandId', 'error-brandId', e)
+    validate('msg-brandId', 'error-brandId', e)
   });
 
   $("price").addEventListener("focus", (e) => {
@@ -44,7 +44,7 @@ window.onload = function () {
   });
 
   $("price").addEventListener("blur", function (e) {
-    validateElement('msg-price', 'error-price', e)
+    validate('msg-price', 'error-price', e)
   });
 
   $("description").addEventListener("focus", (e) => {
@@ -52,7 +52,7 @@ window.onload = function () {
   });
 
   $("description").addEventListener("blur", function (e) {
-    validateElement('msg-description', 'error-description', e)
+    validate('msg-description', 'error-description', e)
   });
 
   $("categoryId").addEventListener("focus", (e) => {
@@ -60,17 +60,9 @@ window.onload = function () {
   });
   
   $("categoryId").addEventListener("blur", (e) => {
-    validateElement('msg-category', 'error-category', e)
+    validate('msg-category', 'error-category', e)
   });
 
-  
-  $("images").addEventListener("focus", (e) => {
-    show('msg-images', 'error-images', e)
-  });
-  
-  $("images").addEventListener("blur", (e) => {
-    validateElement('msg-images', 'error-images', e)
-  });
 
   formAdd.addEventListener("submit", (event) => {
     event.preventDefault();

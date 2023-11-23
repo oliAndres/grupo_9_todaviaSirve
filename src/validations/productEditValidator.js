@@ -1,4 +1,4 @@
-const { check} = require("express-validator");
+const { check,body} = require("express-validator");
 //const db = require('../database/models');
 
 module.exports = [
@@ -24,4 +24,21 @@ module.exports = [
     max: 500,
   }).withMessage('Debe tener entre 20 y 500 caracteres'),
   
-];
+  
+]; body('image')
+.custom((value,{req}) => {
+  if(!req.files.image && !req.fileValidatorError.image){
+    return false
+  }
+  return true
+}).withMessage('Debes subir una imagen principal'),
+body('images')
+.custom((value,{req}) => {
+  if(req.files.images.length > 3){
+    req.files.images.forEach(file => {
+      existsSync(`./public/img/products/${file.filename}`) && unlinkSync(`./public/img/products/${file.filename}`)
+    });
+    return false
+  }
+  return true
+}).withMessage('Solo se permiten 3 imágenes')

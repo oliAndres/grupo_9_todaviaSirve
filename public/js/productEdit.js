@@ -6,12 +6,12 @@ const show = (info, error, element) => {
   element.borderColor = 'inherit'
 }
 
-const validateElement = (info, error, element) => {
+/*const validateElement = (info, error, element) => {
   $(info).hidden = true
   if(!element.target.value.trim()){
       $(error).hidden = false
   }  
-}
+}*/
 
 window.onload = function () {
   const main = document.querySelector("main");
@@ -26,16 +26,16 @@ window.onload = function () {
   elementsForm[0].addEventListener("keydown", (e) => {
     console.log(e.key);
   });
- $("name").focus();
+ 
  
 
-  $("name").addEventListener("focus", (e) => {
+  /*$("name").addEventListener("focus", (e) => {
     show('msg-name', 'error-name', e)
   })
 
   $("name").addEventListener("blur", function (e) {
     validateElement('msg-name', 'error-name', e)
-  })
+  })*/
 
   $("brandId").addEventListener("focus", (e) => {
     show('msg-brand')
@@ -44,7 +44,7 @@ window.onload = function () {
     $('msg-brand').hidden = true
   });
 
-  $("price").addEventListener("focus", (e) => {
+ /* $("price").addEventListener("focus", (e) => {
     show('msg-price', 'error-price', e)
   });
 
@@ -58,7 +58,7 @@ window.onload = function () {
 
   $("description").addEventListener("blur", function (e) {
     validateElement('msg-description', 'error-description', e)
-  });
+  });*/
   $("categoryId").addEventListener("focus", (e) => {
     show('msg-category')
   });
@@ -72,7 +72,7 @@ window.onload = function () {
 
     const msgErrors = [];
 
-    for (let i = 0; i < elementsForm.length; i++) {
+   /* for (let i = 0; i < elementsForm.length -3; i++) {
       if (elementsForm[i].value.trim() === "") {
         msgErrors.push(`El campo ${elementsForm[i].name} no puede estar vacío`)
         elementsForm[i].classList.add('is-invalid')
@@ -81,39 +81,78 @@ window.onload = function () {
         elementsForm[i].classList.remove('is-invalid')
         elementsForm[i].classList.add('is-valid')
       }
-    }
+    }*/
     
-    if (msgErrors.length) {
-      console.log(elementsForm)
-      alert(elementsForm)
-    }else {
-      this.submit()
+    if (!msgErrors.length){
+      formEdit.submit()
     }
   })
 }
+ 
+
+ 
 
 
 ///otra forma----///
-      /* $('name').addEventListener("blur", function (e) {
+      $('name').addEventListener("blur", function (e) {
         switch (true) {
-          case !this.value.trim();
-            $('nombre del id de error').innerHTML = "El nombre es obligatorio";
+          case !this.value.trim():
+            $('error-name').innerHTML = "El nombre es obligatorio";
             this.classList.add("is-invalid");
             break
           case this.value.length < 2 : 
-            $('nombre del id de error').innerHTML = "Mínimo dos caracteres";
+            $('error-name').innerHTML = "Mínimo dos caracteres";
             this.classList.add("is-invalid");
             break
           default:
-            $('nombre del id de error').innerHTML = "Null";
+            $('error-name').innerHTML = "";
             this.classList.remove("is-invalid");
             this.classList.add("is-valid");
           break;
 
         }
       })
-    }  
+    
+      $('price').addEventListener("blur", function (e) {
+        switch (true) {
+          case !this.value.trim():
+            $('error-price').innerHTML = "El precio es obligatorio";
+            this.classList.add("is-invalid");
+            break
+          case !/^\d+(\.\d{1,2})?$/.test(this.value): 
+            $('error-price').innerHTML = "Se aceptan solo números";
+            this.classList.add("is-invalid");
+            break
+          case this.value.length < 2 : 
+            $('error-price').innerHTML = "Mínimo dos caracteres";
+            this.classList.add("is-invalid");
+            break
+          default:
+            $('error-price').innerHTML = "";
+            this.classList.add("is-valid");
+            this.classList.remove("is-invalid");
+            
+          break;
 
-/////
+        }
+      })
+      $('description').addEventListener("blur", function (e) {
+        switch (true) {
+          case !this.value.trim():
+            $('error-description').innerHTML = "La descripción es obligatoria";
+            this.classList.add("is-invalid");
+            break
+          case this.value.length < 2 : 
+            $('error-description').innerHTML = "Mínimo 20 caracteres";
+            this.classList.add("is-invalid");
+            break
+          default:
+            $('error-description').innerHTML = "";           
+            this.classList.add("is-valid");
+            this.classList.remove("is-invalid");
+          break;
 
-*/
+        }
+      })
+    
+

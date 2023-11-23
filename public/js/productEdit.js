@@ -72,7 +72,7 @@ window.onload = function () {
 
     const msgErrors = [];
 
-    for (let i = 0; i < elementsForm.length; i++) {
+    for (let i = 0; i < elementsForm.length -3; i++) {
       if (elementsForm[i].value.trim() === "") {
         msgErrors.push(`El campo ${elementsForm[i].name} no puede estar vacío`)
         elementsForm[i].classList.add('is-invalid')
@@ -83,11 +83,8 @@ window.onload = function () {
       }
     }
     
-    if (msgErrors.length) {
-      console.log(elementsForm)
-      alert(elementsForm)
-    }else {
-      this.submit()
+    if (!msgErrors.length){
+      formEdit.submit()
     }
   })
 }

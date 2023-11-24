@@ -2,99 +2,114 @@
 <html lang="en">
 <%- include('partials/head') %>
 
-<body>
-    <%- include('partials/header') %>
+    <body>
+        <%- include('partials/header') %>
 
-    <main class="">
+            <main class="">
 
-        <form class="editProduct__main__form" action="/products/update/<%= product.id %>?_method=PUT" method="POST"
-            enctype="multipart/form-data">
-            <h3 class="editProduct__main__form--titulo">Edición De Producto</h3>
-            <div class="mb-3">
-                <label for="">Nombre </label>
-                <input type="text" class="form-control" id="name" placeholder="Nombre Del Producto" name="name"
-                    value="<%= product.name %>" />
-                <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-name">Complete el campo</p>    
-                <p hidden style="background-color:coral; color:brown;" id="error-name">Este campo no debe estar vacío</p>  
-                <br>
-                <div class="input-group mb-3">
-                  <label for="brandId" class="form-label">Marca</label>
-                  <select class="form-select form-select-sm" aria-label="Default select example" name="brandId" id="brandId">
-                      <% brands.forEach(brand => { %>
-                          <option <%= brand.id === product.brandId && 'selected' %> value="<%= brand.id %>"><%= brand.name %></option>
-                      <% }) %>
-                  </select>
-                </div>
+                <form class="editProduct__main__form" action="/products/update/<%= product.id %>?_method=PUT"
+                    method="POST" enctype="multipart/form-data">
+                    <h3 class="editProduct__main__form--titulo">Edición De Producto</h3>
+                    <div class="mb-3">
+                        <label for="">Nombre </label>
+                        <input type="text" class="form-control <%= locals.errors && (errors.name && 'is-invalid') %>" id="name" placeholder="Nombre Del Producto" name="name" value="<%= product.name %>" />
 
-                <label for="" class="form-label">Precio</label>
-                <input type="text" class="form-control" id="price" placeholder="Precio Del Producto" name="price"
-                    value="<%= product.price %>" />
+                        <small class="text-danger ms-2" id="error-name" >
+                            <%= locals.errors && (errors.name && errors.name.msg) %>
+                        </small>
+                        <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-name">Complete el campo</p>    
+                 <p hidden style="background-color:coral; color:brown;" id="error-name">Este campo no debe estar vacío</p> 
+                        <br>
+                        <div class="input-group mb-3">
+                            <label for="brandId" class="form-label">Marca</label>
+                            <select class="form-select form-select-sm" aria-label="Default select example"
+                                name="brandId" id="brandId">
+                                <% brands.forEach(brand=> { %>
+                                    <option <%=brand.id===product.brandId && 'selected' %> value="<%= brand.id %>"><%=
+                                                brand.name %>
+                                    </option>
+                                    <% }) %>
+                            </select>
+                            <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-brand">Seleccione una Marca</p>   
 
-                    <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-price">Complete el campo</p>    
-                    <p hidden style="background-color:coral; color:brown;" id="error-price">Este campo no debe estar vacío</p>  
-                    <br>    
-            </div>
+                            <br>
+                        </div>
 
-            <div class="mb-5">
-                <label for="" class="form-label">Descripción</label>
-                <textarea name="description" class="form-control" id="description" rows="3"><%= product.description %></textarea>
-                <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-description">Complete el campo</p>    
-                    <p hidden style="background-color:coral; color:brown;" id="error-description">Este campo no debe estar vacío</p>  
-                    <br>    
-            </div>
-            <div class="boxselect_categorias"></div>
-            <div class="input-group mb-3">
-              <label for="categoryId" class="form-label">Categoría</label>
-              <select class="form-select form-select-sm" aria-label="Default select example" name="categoryId" id="categoryId">
-                  <% categories.forEach(category => { %>
-                      <option <%= category.id === product.categoryId && 'selected' %> value="<%= category.id %>"><%= category.name %></option>
-                  <% }) %>                
-              </select>
-              <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-category">Seleccione una categoria</p>    
-              
-              <br>    
-            </div>
-            <br />
+                        <label for="" class="form-label">Precio</label>
+                        <input type="text" class="form-control <%= locals.errors && (errors.price && 'is-invalid') %>" id="price" placeholder="Precio Del Producto"
+                            name="price" value="<%= product.price %>" />
+                            <small class="text-danger ms-2" id="error-price">
+                                <%= locals.errors && (errors.price && errors.price.msg) %>
+                              </small>
+                        <!-- <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-price">Complete el campo</p>    
+                    <p hidden style="background-color:coral; color:brown;" id="error-price">Este campo no debe estar vacío</p>   -->
+                        <br>
+                    </div>
 
-            <hr>
-            <div class="boximage_imgProduct">
-              <label for="" class="form-label">Imágenes del producto</label>
-          
-              <div class="col-12 col-md-6 mx-auto d-flex gap-3">
-                  <% product.images.forEach(image => { %>
-                      <img width="100px" src="/images/productos/<%= image.name %>" alt="">
-                  <% }) %>
-              </div>
-          
-              <br>
+                    <div class="mb-5">
+                        <label for="" class="form-label">Descripción</label>
+                        <textarea name="description" class="form-control <%= locals.errors && (errors.description && 'is-invalid') %>" id="description"
+                            rows="3"><%= product.description %></textarea>
+                            <small class="text-danger ms-2" id="error-description">
+                                <%= locals.errors && (errors.description && errors.description.msg) %>
+                              </small>
+                       <!--  <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-description">Complete el campo</p>    
+                    <p hidden style="background-color:coral; color:brown;" id="error-description">Este campo no debe estar vacío</p> --> 
 
-                <div class="input-group mb-3 gap-2 d-flex justify-content-center">
-                    <label class="btn btn-secondary" for="images">Cambiar imágenes</label>
-                    <input hidden class="form-control" type="file" id="images" name="images" multiple>
-                </div>
-            </div>
-            <hr>
-            <br>
-            <ul id="box-errors">
+                    </div>
+                    <div class="boxselect_categorias"></div>
+                    <div class="input-group mb-3">
+                        <label for="categoryId" class="form-label">Categoría</label>
+                        <select class="form-select form-select-sm" aria-label="Default select example" name="categoryId"
+                            id="categoryId">
+                            <% categories.forEach(category=> { %>
+                                <option <%=category.id===product.categoryId && 'selected' %> value="<%= category.id %>">
+                                        <%= category.name %>
+                                </option>
+                                <% }) %>
+                        </select>
+                        <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-category">Seleccione una categoria</p>    
 
-            </ul>
+                        <br>
+                    </div>
+                    <br />
 
-            <div class="boxbutton">
-                <div>
-                    <a href="/">
-                        <button type="submit" class="guardar_Cambios">Guardar Cambios</button>
-                    </a>
-                </div>
-                <div>
-                    <button type="reset" class="Borrar">Borrar</button>
-                </div>
-            </div>
-        </form>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="/js/productEditValidation.js"></script>
-    </main>
-    <%- include('partials/footer') %>
-   
-</body>
+                    <hr>
+                    <div class="boximage_imgProduct">
+                        <label for="" class="form-label <%= (locals.errors && errors.image) ? 'btn-danger' : 'btn-secundary'%>" >Imágenes del producto</label>
+
+                        <div class="col-12 col-md-6 mx-auto d-flex gap-3">
+                            <% product.images.forEach(image=> { %>
+                                <img width="100px" src="/images/productos/<%= image.name %>" alt="">
+                                <% }) %>
+                        </div>
+
+                        <br>
+
+                        <div class="input-group mb-3 gap-2 d-flex justify-content-center">
+                            <label class="btn btn-secondary" for="images">Cambiar imágenes</label>
+                            <input class="form-control" type="file" id="images" name="images" multiple>
+                        </div>
+                    </div>
+                    <hr>
+                    <br>
+
+                    <div class="boxbutton">
+                        <div>
+                            <a href="/">
+                                <button type="submit" class="guardar_Cambios">Guardar Cambios</button>
+                            </a>
+                        </div>
+                        <div>
+                            <button type="reset" class="Borrar">Borrar</button>
+                        </div>
+                    </div>
+                </form>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                <script src="/js/productEdit.js"></script>
+            </main>
+            <%- include('partials/footer') %>
+
+    </body>
 
 </html>

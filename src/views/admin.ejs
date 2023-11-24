@@ -36,30 +36,6 @@
               <td><%= producto.category.name %></td>
               <td><%= producto.description %></td>
 
-<<<<<<< HEAD
-              <td>
-                <a
-                  href="/products/edit/<%= producto.id %>"
-                  class="btn btn-outline-primary btn-sm btn-action"
-                  >EDITAR</a
-                >
-                <button
-                  type="button"
-                  class="btn btn-outline-danger"
-                  data-bs-toggle="modal"
-                  data-bs-target="#deleteModalProducts<%= producto.id %>"
-                >
-                  Eliminar
-                </button>
-                <%- include('partials/modalDelete', { id: producto.id, name:
-                producto.name }) %>
-              </td>
-            </tr>
-            <% }); %>
-          </tbody>
-        </table>
-      </div>
-=======
               <tr class="bg-primary text-white">
                 <th scope="col">ID</th>
                 <th scope="col">Nombre</th>
@@ -103,7 +79,6 @@
             </tbody>
           </table>
         </div>
->>>>>>> 6a65898fee2a0e52dc83625ea8f57b4c445536ea
     </main>
     <%- include('partials/footer') %>
   </body>

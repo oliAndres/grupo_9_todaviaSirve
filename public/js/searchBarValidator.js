@@ -5,6 +5,8 @@ $('search').addEventListener('click', function (event) {
     if (!this.value.trim()) {
         $('searchBar').placeholder = 'Su busqueda está vacia';
         event.preventDefault();
+    }else{
+        event.submit()
     }
 })
 

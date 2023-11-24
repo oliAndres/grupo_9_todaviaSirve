@@ -67,7 +67,7 @@
                         const files = e.target.files;
                         for (let i = 0; i < files.length; i++) {
                             const fileExt = files[i].name.split(".").pop().toLowerCase();
-                            const allowedExt = ["jpg", "jpeg", "png", "gif"];
+                            const allowedExt = ["jpg", "jpeg", "png","webp"];
                             if (!allowedExt.includes(fileExt)) {
                                 fileField.classList.add("invalid");
                                 fileField.classList.add("errorFormat");

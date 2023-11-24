@@ -27,58 +27,38 @@
             </tr>
           </thead>
           <tbody>
-            <% products.forEach(producto=> { %>
-            <tr>
-              <td><%= producto.id %></td>
-              <td><%= producto.name %></td>
-              <td><%= producto.brand.name%></td>
-              <td><%= producto.price %></td>
-              <td><%= producto.category.name %></td>
-              <td><%= producto.description %></td>
+            <% products.forEach(product=> { %>
+              <tr>
+                <td>
+                  <%= product.id %>
+                </td>
+                <td>
+                  <%= product.name %>
+                </td>
+                <td>
+                  <%= product.brand.name%>
+                </td>
+                <td>
+                  <%= product.price %>
+                </td>
+                <td>
+                  <%= product.category.name %>
+                </td>
+                <td>
+                  <%= product.description %>
+                </td>
 
-              <tr class="bg-primary text-white">
-                <th scope="col">ID</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Marca</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Categoria</th>
-                <th scope="col">Descripcion</th>
-                <th scope="col">Acciones</th>
+                <td>
+                  <a href="/products/edit/<%= product.id %>" class="btn btn-outline-primary btn-sm btn-action">EDITAR</a>
+                  <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                    data-bs-target="#deleteModalProducts<%= product.id %>"> Eliminar</button>
+                  <%- include('partials/modalDelete', { id: product.id, name: product.name }) %>
+                </td>
               </tr>
-            </thead>
-            <tbody>
-              <% products.forEach(product=> { %>
-                <tr>
-                  <td>
-                    <%= product.id %>
-                  </td>
-                  <td>
-                    <%= product.name %>
-                  </td>
-                  <td>
-                    <%= product.brand.name%>
-                  </td>
-                  <td>
-                    <%= product.price %>
-                  </td>
-                  <td>
-                    <%= product.category.name %>
-                  </td>
-                  <td>
-                    <%= product.description %>
-                  </td>
-
-                  <td>
-                    <a href="/products/edit/<%= product.id %>" class="btn btn-outline-primary btn-sm btn-action">EDITAR</a>
-                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                      data-bs-target="#deleteModalProducts<%= product.id %>"> Eliminar</button>
-                    <%- include('partials/modalDelete', { id: product.id, name: product.name }) %>
-                  </td>
-                </tr>
-                <% }); %>
-            </tbody>
-          </table>
-        </div>
+              <% }); %>
+          </tbody>
+        </table>
+      </div>
     </main>
     <%- include('partials/footer') %>
   </body>

@@ -1,15 +1,15 @@
-const $ = (id) => document.getElementById(id);
+const $valEdit = (id) => document.getElementById(id);
 
 const show = (info, error, element) => {
-  $(info).hidden = false
-  $(error).hidden = true
+  $valEdit(info).hidden = false
+  $valEdit(error).hidden = true
   element.borderColor = 'inherit'
 }
 
 /*const validateElement = (info, error, element) => {
-  $(info).hidden = true
+  $valEdit(info).hidden = true
   if(!element.target.value.trim()){
-      $(error).hidden = false
+      $valEdit(error).hidden = false
   }  
 }*/
 
@@ -29,83 +29,24 @@ window.onload = function () {
  
  
 
-  /*$("name").addEventListener("focus", (e) => {
-    show('msg-name', 'error-name', e)
-  })
-
-  $("name").addEventListener("blur", function (e) {
-    validateElement('msg-name', 'error-name', e)
-  })*/
-
-  $("brandId").addEventListener("focus", (e) => {
-    show('msg-brand')
-  });
-  $("brandId").addEventListener("blur", () => {
-    $('msg-brand').hidden = true
-  });
-
- /* $("price").addEventListener("focus", (e) => {
-    show('msg-price', 'error-price', e)
-  });
-
-  $("price").addEventListener("blur", function (e) {
-    validateElement('msg-price', 'error-price', e)
-  });
-
-  $("description").addEventListener("focus", (e) => {
-    show('msg-description', 'error-description', e)
-  });
-
-  $("description").addEventListener("blur", function (e) {
-    validateElement('msg-description', 'error-description', e)
-  });*/
-  $("categoryId").addEventListener("focus", (e) => {
-    show('msg-category')
-  });
-  $("categoryId").addEventListener("blur", () => {
-    $('msg-category').hidden = true
-  });
-
-
-  formEdit.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const msgErrors = [];
-
-   /* for (let i = 0; i < elementsForm.length -3; i++) {
-      if (elementsForm[i].value.trim() === "") {
-        msgErrors.push(`El campo ${elementsForm[i].name} no puede estar vacío`)
-        elementsForm[i].classList.add('is-invalid')
-        elementsForm[i].classList.remove('is-valid')
-      }else{
-        elementsForm[i].classList.remove('is-invalid')
-        elementsForm[i].classList.add('is-valid')
-      }
-    }*/
-    
+      
     if (!msgErrors.length){
       formEdit.submit()
     }
-  })
-}
- 
+  }
 
- 
-
-
-///otra forma----///
-      $('name').addEventListener("blur", function (e) {
+      $valEdit('name').addEventListener("blur", function (e) {
         switch (true) {
           case !this.value.trim():
-            $('error-name').innerHTML = "El nombre es obligatorio";
+            $valEdit('error-name').innerHTML = "El nombre es obligatorio";
             this.classList.add("is-invalid");
             break
           case this.value.length < 2 : 
-            $('error-name').innerHTML = "Mínimo dos caracteres";
+            $valEdit('error-name').innerHTML = "Mínimo dos caracteres";
             this.classList.add("is-invalid");
             break
           default:
-            $('error-name').innerHTML = "";
+            $valEdit('error-name').innerHTML = "";
             this.classList.remove("is-invalid");
             this.classList.add("is-valid");
           break;
@@ -113,22 +54,22 @@ window.onload = function () {
         }
       })
     
-      $('price').addEventListener("blur", function (e) {
+      $valEdit('price').addEventListener("blur", function (e) {
         switch (true) {
           case !this.value.trim():
-            $('error-price').innerHTML = "El precio es obligatorio";
+            $valEdit('error-price').innerHTML = "El precio es obligatorio";
             this.classList.add("is-invalid");
             break
           case !/^\d+(\.\d{1,2})?$/.test(this.value): 
-            $('error-price').innerHTML = "Se aceptan solo números";
+            $valEdit('error-price').innerHTML = "Se aceptan solo números";
             this.classList.add("is-invalid");
             break
           case this.value.length < 2 : 
-            $('error-price').innerHTML = "Mínimo dos caracteres";
+            $valEdit('error-price').innerHTML = "Mínimo dos caracteres";
             this.classList.add("is-invalid");
             break
-          default:
-            $('error-price').innerHTML = "";
+          default :
+            $valEdit('error-price').innerHTML = "";
             this.classList.add("is-valid");
             this.classList.remove("is-invalid");
             
@@ -136,23 +77,68 @@ window.onload = function () {
 
         }
       })
-      $('description').addEventListener("blur", function (e) {
+      $valEdit('description').addEventListener("blur", function (e) {
         switch (true) {
           case !this.value.trim():
-            $('error-description').innerHTML = "La descripción es obligatoria";
+            $valEdit('error-description').innerHTML = "La descripción es obligatoria";
             this.classList.add("is-invalid");
             break
           case this.value.length < 2 : 
-            $('error-description').innerHTML = "Mínimo 20 caracteres";
+            $valEdit('error-description').innerHTML = "Mínimo 20 caracteres";
             this.classList.add("is-invalid");
             break
           default:
-            $('error-description').innerHTML = "";           
+            $valEdit('error-description').innerHTML = "";           
             this.classList.add("is-valid");
             this.classList.remove("is-invalid");
           break;
 
         }
+        
       })
     
+      $valEdit("brandId").addEventListener("focus", (e) => {
+        show('msg-brand')
+      });
 
+      $valEdit('brandId').addEventListener("blur", function (e) {
+        if (this.value.trim() !== "") {
+            $valEdit('error-brandId').innerHTML = "";
+            this.classList.add("is-valid");
+            this.classList.remove("is-invalid");
+        } else {
+          $valEdit("brandId").addEventListener("blur", () => {
+            $valEdit('msg-brand').hidden = true
+          });
+        }
+    });
+    $valEdit("categoryId").addEventListener("focus", (e) => {
+      show('msg-category')
+    });
+        $valEdit('categoryId').addEventListener("blur", function (e) {
+          if (this.value.trim() !== "") {
+              $valEdit('error-categoryId').innerHTML = "";
+              this.classList.add("is-valid");
+              this.classList.remove("is-invalid");
+          } else {
+            $valEdit("categoryId").addEventListener("blur", () => {
+              $valEdit('msg-category').hidden = true
+            });
+          }
+      });
+      $valEdit("images").addEventListener("focus", (e) => {
+        show('msg-images')
+      });
+     
+          $valEdit('images').addEventListener("blur", function (e) {
+            if (this.value.trim() !== "") {
+                $valEdit('error-images').innerHTML = "";
+                this.classList.add("is-valid");
+                this.classList.remove("is-invalid");
+            } else {
+              $valEdit("images").addEventListener("blur", () => {
+                $valEdit('msg-images').hidden = true
+              });
+            }
+        });
+      

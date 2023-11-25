@@ -22,14 +22,17 @@
                         <br>
                         <div class="input-group mb-3">
                             <label for="brandId" class="form-label">Marca</label>
-                            <select class="form-select form-select-sm" aria-label="Default select example"
+                            <select class="form-select form-select-sm <%= locals.errors && (errors.brandId && 'is-invalid') %>" aria-label="Default select example"
                                 name="brandId" id="brandId">
+                                <option value="" selected hidden>... </option>
                                 <% brands.forEach(brand=> { %>
-                                    <option <%=brand.id===product.brandId && 'selected' %> value="<%= brand.id %>"><%=
-                                                brand.name %>
+                                    <option <%=locals.old && (locals.old.brand.id===product.brandId && 'selected') %> value="<%= brand.id %>"><%=brand.name %>
                                     </option>
                                     <% }) %>
                             </select>
+                            <small class="text-danger ms-2" id="error-brandId" >
+                                <%= locals.errors && (errors.brandId && errors.brandId.msg) %>
+                            </small>
                             <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-brand">Seleccione una Marca</p>   
 
                             <br>
@@ -59,15 +62,19 @@
                     </div>
                     <div class="boxselect_categorias"></div>
                     <div class="input-group mb-3">
-                        <label for="categoryId" class="form-label">Categoría</label>
-                        <select class="form-select form-select-sm" aria-label="Default select example" name="categoryId"
+                        <label for="categoryId" class="form-label ">Categoría</label>
+                        <select class="form-select form-select-sm <%= locals.errors && (errors.categoryId && 'is-invalid') %>" aria-label="Default select example" name="categoryId"
                             id="categoryId">
+                            <option value="" selected hidden>... </option>
                             <% categories.forEach(category=> { %>
-                                <option <%=category.id===product.categoryId && 'selected' %> value="<%= category.id %>">
+                                <option <%=locals.old && (locals.category.id===product.categoryId && 'selected') %> value="<%= category.id %>">
                                         <%= category.name %>
                                 </option>
                                 <% }) %>
                         </select>
+                        <small class="text-danger ms-2" id="error-categoryId">
+                            <%= locals.errors && (errors.categoryId && errors.categoryId.msg) %>
+                          </small>
                         <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-category">Seleccione una categoria</p>    
 
                         <br>
@@ -76,7 +83,8 @@
 
                     <hr>
                     <div class="boximage_imgProduct">
-                        <label for="" class="form-label <%= (locals.errors && errors.image) ? 'btn-danger' : 'btn-secundary'%>" >Imágenes del producto</label>
+                        
+                        <label for="image" class="form-label <%= (locals.errors && errors.image) ? 'btn-danger' : 'btn-secundary'%>" >Imágenes del producto</label>
 
                         <div class="col-12 col-md-6 mx-auto d-flex gap-3">
                             <% product.images.forEach(image=> { %>
@@ -87,9 +95,13 @@
                         <br>
 
                         <div class="input-group mb-3 gap-2 d-flex justify-content-center">
+                           
                             <label class="btn btn-secondary" for="images">Cambiar imágenes</label>
-                            <input class="form-control" type="file" id="images" name="images" multiple>
+                            <input class="form-control <%= locals.errors && (errors.images && 'is-invalid') %>" type="file" id="images" name="images" multiple>
                         </div>
+                        <small class="text-danger ms-2" id="error-images">
+                            <%= locals.errors && (errors.images && errors.images.msg) %>
+                          </small>
                     </div>
                     <hr>
                     <br>

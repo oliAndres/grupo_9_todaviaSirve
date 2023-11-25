@@ -49,5 +49,5 @@ module.exports = [
         return false
       }
       return true
-    }).withMessage('Solo se permiten 3 imágenes')
+    }).withMessage('Debe seleccionar imágenes')
 ]; 

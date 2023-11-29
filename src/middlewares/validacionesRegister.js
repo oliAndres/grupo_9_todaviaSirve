@@ -19,12 +19,6 @@ const arrayValidaciones = [
         .isAlpha()
         .withMessage("El apellido debe contener solo caracteres alfabéticos"),
     
-    body('address')
-        .notEmpty()
-        .withMessage("El campo direccion no debe estar vacio")
-        .isLength({ min: 3 })
-        .withMessage("El direccion debe tener minimo 3 caracteres"),    
-        
     body("email")
         .notEmpty()
         .withMessage("El email es obligatorio")
@@ -47,20 +41,8 @@ const arrayValidaciones = [
     body("password").isLength({
             min: 4,
           })
-        .withMessage("Tu constraseña debe tener minimo 4 caracteres")  ,
-    body('passwordTwo')
-            .custom((value,{req}) => {
-                if(value !== req.body.password){
-                    return false
-                }
-                return true
-            }).withMessage('Las contraseñas no coinciden'),
-         
-    
-    body("birthdate")
-            .notEmpty()
-            .withMessage("El campo fecha de nacimiento no debe estar vacío")
-      
+        .withMessage("Tu constraseña debe tener minimo 4 caracteres")
+          
 
 ];
 

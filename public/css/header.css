@@ -17,8 +17,8 @@
     padding: 30px 0;
     background-image: linear-gradient(
         90deg,
-        rgb(50, 173, 179) 25%,
-        rgb(64, 135, 179) 73%);
+        #3B89C7  25%,
+        #048cae 73%);
 }
 
 .menu{
@@ -55,7 +55,7 @@ input{
 }
 
 button{
-    background-color: #2A394F;
+    background-color: #374f73;
     padding: 10px;
     position: relative;
     border: 0;

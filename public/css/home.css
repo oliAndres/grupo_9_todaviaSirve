@@ -48,8 +48,8 @@
 
 .card-section {
     display: grid;
-    gap: 1.75rem;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+    grid-template-areas:"a a a";
 }
 
 .card {

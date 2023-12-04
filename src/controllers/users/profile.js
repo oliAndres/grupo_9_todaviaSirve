@@ -1,19 +1,22 @@
-const db = require('../../database/models')
+const { User, Avatars } = require('../../database/models')
 
-module.exports = (req,res) => {
+module.exports = async (req,res) => {
+    try {      
+        const user = await User.findByPk(req.session.userLogin.id, {
+            include : ['address']
+        });
 
-    db.User.findByPk(req.session.userLogin.id, {
-        include : ['address']
-    })
-        .then(user => {
-            
-            const birthdate = new Date(user.birthdate).toISOString();
+        const avatars = await Avatars.findAll();
+
+        const birthdate = new Date(user.birthdate).toISOString();
             console.log(birthdate.split('T')[0]);
+
             return res.render('profile',{
                 ...user.dataValues,
-                birthdate : birthdate.split('T')[0]
+                birthdate : birthdate.split('T')[0],
+                avatars: avatars
             })
-        })
-        .catch(error => console.log(error))
-    
+    } catch (error) {
+        res.status(500).send('Error en el servidor');
+      }
 }

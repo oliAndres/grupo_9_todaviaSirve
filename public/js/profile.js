@@ -101,7 +101,21 @@ window.onload = async function (e) {
 
         } catch (error) {
             console.error(error); 
-        }
-     
-    })
+        }     
+    });
+
+    let avatarProfile = document.getElementById("avatarProfile");
+    let avatarInput = document.getElementById("avatarInput");
+
+    const modalImages = document.querySelectorAll("#exampleModal .modal-body img");
+    modalImages.forEach(img => {
+        img.addEventListener("click", function () {
+          var selectedAvatar = img.getAttribute("data-avatar");
+
+          avatarProfile.src = "/images/productos/userImages/" + selectedAvatar;
+
+          avatarInput.value = selectedAvatar;
+          
+        });
+      })
 };

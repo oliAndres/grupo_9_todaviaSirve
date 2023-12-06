@@ -12,38 +12,44 @@
                     <h3 class="editProduct__main__form--titulo">Edición De Producto</h3>
                     <div class="mb-3">
                         <label for="">Nombre </label>
-                        <input type="text" class="form-control <%= locals.errors && (errors.name && 'is-invalid') %>" id="name" placeholder="Nombre Del Producto" name="name" value="<%= product.name %>" />
+                        <input type="text" class="form-control <%= locals.errors && (errors.name && 'is-invalid') %>"
+                            id="name" placeholder="Nombre Del Producto" name="name" value="<%= product.name %>" />
 
-                        <small class="text-danger ms-2" id="error-name" >
+                        <small class="text-danger ms-2" id="error-name">
                             <%= locals.errors && (errors.name && errors.name.msg) %>
                         </small>
-                        <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-name">Complete el campo</p>    
-                 <p hidden style="background-color:coral; color:brown;" id="error-name">Este campo no debe estar vacío</p> 
+                        <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-name">Complete el campo
+                        </p>
+                        <p hidden style="background-color:coral; color:brown;" id="error-name">Este campo no debe estar
+                            vacío</p>
                         <br>
                         <div class="input-group mb-3">
                             <label for="brandId" class="form-label">Marca</label>
-                            <select class="form-select form-select-sm <%= locals.errors && (errors.brandId && 'is-invalid') %>" aria-label="Default select example"
-                                name="brandId" id="brandId">
+                            <select
+                                class="form-select form-select-sm <%= locals.errors && (errors.brandId && 'is-invalid') %>"
+                                aria-label="Default select example" name="brandId" id="brandId">
                                 <option value="" selected hidden>... </option>
                                 <% brands.forEach(brand=> { %>
-                                    <option <%=locals.old && (locals.old.brand.id===product.brandId && 'selected') %> value="<%= brand.id %>"><%=brand.name %>
+                                    <option <%=brand.id===product.brandId && 'selected'  %>
+                                        value="<%= brand.id %>"><%=brand.name %>
                                     </option>
                                     <% }) %>
                             </select>
-                            <small class="text-danger ms-2" id="error-brandId" >
+                            <small class="text-danger ms-2" id="error-brandId">
                                 <%= locals.errors && (errors.brandId && errors.brandId.msg) %>
                             </small>
-                            <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-brand">Seleccione una Marca</p>   
+                            <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-brand">Seleccione una
+                                Marca</p>
 
                             <br>
                         </div>
 
                         <label for="" class="form-label">Precio</label>
-                        <input type="text" class="form-control <%= locals.errors && (errors.price && 'is-invalid') %>" id="price" placeholder="Precio Del Producto"
-                            name="price" value="<%= product.price %>" />
-                            <small class="text-danger ms-2" id="error-price">
-                                <%= locals.errors && (errors.price && errors.price.msg) %>
-                              </small>
+                        <input type="text" class="form-control <%= locals.errors && (errors.price && 'is-invalid') %>"
+                            id="price" placeholder="Precio Del Producto" name="price" value="<%= product.price %>" />
+                        <small class="text-danger ms-2" id="error-price">
+                            <%= locals.errors && (errors.price && errors.price.msg) %>
+                        </small>
                         <!-- <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-price">Complete el campo</p>    
                     <p hidden style="background-color:coral; color:brown;" id="error-price">Este campo no debe estar vacío</p>   -->
                         <br>
@@ -51,31 +57,35 @@
 
                     <div class="mb-5">
                         <label for="" class="form-label">Descripción</label>
-                        <textarea name="description" class="form-control <%= locals.errors && (errors.description && 'is-invalid') %>" id="description"
-                            rows="3"><%= product.description %></textarea>
-                            <small class="text-danger ms-2" id="error-description">
-                                <%= locals.errors && (errors.description && errors.description.msg) %>
-                              </small>
-                       <!--  <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-description">Complete el campo</p>    
-                    <p hidden style="background-color:coral; color:brown;" id="error-description">Este campo no debe estar vacío</p> --> 
+                        <textarea name="description"
+                            class="form-control <%= locals.errors && (errors.description && 'is-invalid') %>"
+                            id="description" rows="3"><%= product.description %></textarea>
+                        <small class="text-danger ms-2" id="error-description">
+                            <%= locals.errors && (errors.description && errors.description.msg) %>
+                        </small>
+                        <!--  <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-description">Complete el campo</p>    
+                    <p hidden style="background-color:coral; color:brown;" id="error-description">Este campo no debe estar vacío</p> -->
 
                     </div>
                     <div class="boxselect_categorias"></div>
                     <div class="input-group mb-3">
                         <label for="categoryId" class="form-label ">Categoría</label>
-                        <select class="form-select form-select-sm <%= locals.errors && (errors.categoryId && 'is-invalid') %>" aria-label="Default select example" name="categoryId"
-                            id="categoryId">
+                        <select
+                            class="form-select form-select-sm <%= locals.errors && (errors.categoryId && 'is-invalid') %>"
+                            aria-label="Default select example" name="categoryId" id="categoryId">
                             <option value="" selected hidden>... </option>
                             <% categories.forEach(category=> { %>
-                                <option <%=locals.old && (locals.category.id===product.categoryId && 'selected') %> value="<%= category.id %>">
+                                <option <%=category.id===product.categoryId && 'selected'  %>
+                                    value="<%= category.id %>">
                                         <%= category.name %>
                                 </option>
                                 <% }) %>
                         </select>
                         <small class="text-danger ms-2" id="error-categoryId">
                             <%= locals.errors && (errors.categoryId && errors.categoryId.msg) %>
-                          </small>
-                        <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-category">Seleccione una categoria</p>    
+                        </small>
+                        <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-category">Seleccione una
+                            categoria</p>
 
                         <br>
                     </div>
@@ -83,25 +93,35 @@
 
                     <hr>
                     <div class="boximage_imgProduct">
-                        
-                        <label for="image" class="form-label <%= (locals.errors && errors.image) ? 'btn-danger' : 'btn-secundary'%>" >Imágenes del producto</label>
 
-                        <div class="col-12 col-md-6 mx-auto d-flex gap-3">
-                            <% product.images.forEach(image=> { %>
-                                <img width="100px" src="/images/productos/<%= image.name %>" alt="">
+                        <label for="image"
+                            class="form-label <%= (locals.errors && errors.image) ? 'btn-danger' : 'btn-secundary'%>">Imágenes
+                            del producto</label>
+
+                        <div class="col-12 d-flex gap-3 flex-wrap">
+                            <% product.images.forEach((image, index)=> { %>
+                                <div class="position-relative">
+                                    <img style="object-fit: cover; width: 200px; height: 200px;"
+                                        src="/images/productos/<%= image.name %>" alt="" id="preview<%= index %>">
+                                    <label class="btn btn-secondary position-absolute top-0 start-0 "
+                                        for="image<%= index %>"><i class="fa-solid fa-pencil"></i> </label>
+                                        <input type="text" value="<%= image.id %>" name="image<%= index %>" hidden>
+                                    <input class="form-control <%= locals.errors && (errors.images && 'is-invalid') %>"
+                                        type="file" hidden id="image<%= index %>" name="image<%= index %>" onchange="inputChangeImage(event,'<%=index%>')">
+                                </div>
+
                                 <% }) %>
                         </div>
 
                         <br>
 
                         <div class="input-group mb-3 gap-2 d-flex justify-content-center">
-                           
-                            <label class="btn btn-secondary" for="images">Cambiar imágenes</label>
-                            <input class="form-control <%= locals.errors && (errors.images && 'is-invalid') %>" type="file" id="images" name="images" multiple>
+
+
                         </div>
                         <small class="text-danger ms-2" id="error-images">
                             <%= locals.errors && (errors.images && errors.images.msg) %>
-                          </small>
+                        </small>
                     </div>
                     <hr>
                     <br>
@@ -121,6 +141,17 @@
                 <script src="/js/productEdit.js"></script>
             </main>
             <%- include('partials/footer') %>
+
+<script>
+
+const inputChangeImage = (event,index) => {
+    let reader = new FileReader();
+    reader.readAsDataURL(event.target.files[0]);
+    reader.onload = () => document.getElementById('preview' + index).src = reader.result
+}
+
+
+</script>
 
     </body>
 

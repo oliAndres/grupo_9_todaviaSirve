@@ -15,7 +15,6 @@ const show = (info, error, element) => {
 
 window.onload = function () {
   const main = document.querySelector("main");
-  const respuesta = confirm("Deseas editar un producto?");
   const formEdit = document.querySelector(".editProduct__main__form");
 
   
@@ -98,7 +97,7 @@ window.onload = function () {
       })
     
       $valEdit("brandId").addEventListener("focus", (e) => {
-        show('msg-brand')
+        show('msg-brandId')
       });
 
       $valEdit('brandId').addEventListener("blur", function (e) {
@@ -108,7 +107,7 @@ window.onload = function () {
             this.classList.remove("is-invalid");
         } else {
           $valEdit("brandId").addEventListener("blur", () => {
-            $valEdit('msg-brand').hidden = true
+            $valEdit('msg-brandId').hidden = true
           });
         }
     });
@@ -132,7 +131,7 @@ window.onload = function () {
      
           $valEdit('images').addEventListener("blur", function (e) {
             if (this.value.trim() !== "") {
-                $valEdit('error-images').innerHTML = "";
+                $valEdit('error-images').innerHTML = "Debe cargar imágen";
                 this.classList.add("is-valid");
                 this.classList.remove("is-invalid");
             } else {

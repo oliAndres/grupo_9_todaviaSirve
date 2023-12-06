@@ -1,9 +1,10 @@
 const db = require('../database/models')
 const { check, body  } = require("express-validator");
-const users = require('../data/users.json');
+
 
 /* Validaciones */
-module.exports = [
+const validacionesRegister = [
+
     body('name')
         .notEmpty()
         .withMessage("El campo nombre no debe estar vacio")
@@ -45,3 +46,4 @@ module.exports = [
       
 
 ];
+module.exports = validacionesRegister;

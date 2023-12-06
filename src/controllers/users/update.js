@@ -7,13 +7,14 @@ module.exports = (req, res) => {
 
   if (errors.isEmpty()){
 
-    const { name, lastName, street, city, province, birthdate } = req.body;
+    const { name, lastName, street, city, province, birthdate, avatar } = req.body;
 
     db.User.update(
       {
         name : name.trim(),
         lastName : lastName.trim(),
-        birthdate
+        birthdate,
+        avatar
         
       },
       {
@@ -26,6 +27,7 @@ module.exports = (req, res) => {
       .then( async () => {
         req.session.userLogin.name = name;
         res.locals.userLogin.name = name;
+        res.locals.userLogin.avatar = avatar;
 
         if(req.cookies.todaviaSirve){
             res.cookie("todaviaSirve", req.session.userLogin);

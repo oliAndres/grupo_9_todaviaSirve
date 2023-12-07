@@ -1,0 +1,54 @@
+.SearchResults_title{
+    display: block;
+    text-align: center;
+    margin: 20px 0px 30px 0px;
+}
+
+.SearchResults_container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 15px
+}
+
+.SearchResults_card {
+    width: 250px; 
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fafafa;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    transition: all 400ms ease;
+    margin-bottom: 20px; 
+}
+
+.SearchResults_card:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3%);
+}
+
+.SearchResults_card img {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover;
+    object-position: center center; 
+}
+
+.SearchResults_card .SearchResults_card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.card .card-content p {
+    line-height: 1.5;
+    color: #010101;
+}
+
+.SearchResults_card .SearchResults_card-content h4 {
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.SearchResults_card a {
+    color: #010101;
+}

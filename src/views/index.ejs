@@ -13,33 +13,24 @@
           <button><p> <a href="/products/add">Publicar</a></p></button>
         </div>
       </div>
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <% products.forEach(producto => { %>
-            <div class="swiper-slide">
-              <img src="/images/productos/<%= producto.images[1].name %>" alt="" class="product-image">
-            </div>
-          <% }); %>
-        </div>
-      </div>
       
       <div class="card-container">
-        <div class="card-section">
           <% products.forEach(producto => { %>
             <div class="card">
               <a href="/products/detail/<%= producto.id %>">
                 <% if (producto.images && producto.images.length > 0) { %>
-                  <img src="/images/productos/<%= producto.images[0].name %>" alt="" style="width:100%">
+                  <img src="/images/productos/<%= producto.images[0].name %>" alt="">
                 <% } else { %>
                   <p>No image available</p>
                 <% } %>
               </a>
+              <div class="card-content">
               <p class="card-name"><%= producto.name %></p>
-              <p class="price"><%= producto.price %></p>
+              <p class="price">$<%= producto.price.toLocaleString('es-ES') %></p>
               <p class="card-descripcion"><%= producto.description %></p>
             </div>
+            </div>
           <% }); %>
-        </div>
       </div>
     </main>
     <%- include('partials/footer') %> 
@@ -69,4 +60,5 @@
         </body>
   
         </html>
+       
   

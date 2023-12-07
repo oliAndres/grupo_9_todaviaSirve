@@ -7,10 +7,49 @@
     background-color: #ffff;
 }
 
+.card-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    object-fit: cover;
+}
+.card{
+    margin: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fafafa;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    transition: all 400ms ease;
+}
+.card:hover{
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3%);
+}
+.card img{
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+}
+.card .card-content{
+    padding: 15px;
+    text-align: center;
+}
+.card .card-content p{
+    line-height: 1.5;
+    color: #010101;
+}
+.card .card-content h3{
+    font-weight: 400;
+    margin-bottom: 15px;}
+
+.card a{
+    color: #010101;
+}*
+
 
 
 /* HERO IMAGE */
-.hero-image {
+ .hero-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     width: 90vw;
     height: 90vh;
@@ -41,63 +80,16 @@
     margin-bottom: 0;
 }
 
-
-.card-container {
-    padding: 4rem;
-}
-
-.card-section {
-    display: grid;
-    gap: 15px;
-    grid-template-areas:"a a a";
-}
-
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    /* max-width: 300px; */
-    margin: auto;
-    text-align: center;
-    font-family: arial;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.card-name {
-    font-size: 1.5rem;
-    margin: 4px;
-}
-
-.card-descripcion{
-    margin-bottom: 5px;
-    margin-left: 5px;
-}
-.card img {
-    object-fit: cover;
-    width: 250px;
-    height: 250px;
-
-}
-
-.card a {
-    text-decoration: none;
-    color: #010101;
-    width: -webkit-fill-available;
-}
-
-.price {
-    margin-left: 1rem;
-    margin-top: 5px;
-    font-size: 1.3rem;
-}
-
 @media(max-width: 768px) {
-    .card-name {
-        font-size: 1.4rem;
+    .card-container{
+    grid-template-columns: auto auto auto ;
     }
 }
 
 @media(max-width: 420px) {
     .card-container {
-        padding: 3.5rem 0;
+        .card-container{
+            grid-template-columns: auto auto;
+        }
     }
-}
+}  

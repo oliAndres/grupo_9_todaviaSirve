@@ -15,7 +15,6 @@ const show = (info, error, element) => {
 
 window.onload = function () {
   const main = document.querySelector("main");
-  const respuesta = confirm("Deseas editar un producto?");
   const formEdit = document.querySelector(".editProduct__main__form");
 
   

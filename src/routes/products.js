@@ -8,13 +8,16 @@ const router = express.Router();
 
 router.get('/detail/:id', productsController.detail);
 
-router.get('/edit/:id',adminCheck, productsController.edit); 
+router.get('/edit/:id', productsController.edit); 
 router.put('/update/:id',upload.fields([
     {
-        name : "image",
+        name : "image0",
     },
     {
-        name : "images",
+        name : "image1",
+    },
+    {
+        name : "image2",
     },
 ]),productEditValidator,productsController.update);
 

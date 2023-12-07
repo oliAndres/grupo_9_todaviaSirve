@@ -7,8 +7,32 @@
     <main>
         <div class="table--container">
           <h1 class="title-table">Administrador de Productos</h1>
-          <a href="/products/add" class="btn btn-outline-primary mt-4 button-agregar"><i class='bx bxs-plus-circle bx-md' ></i></a>
-          <table class="table table-bordered table-striped text-center mt-4  small-table table-shadow">
+          <br>
+          <!--<a href="/products/add" class="btn btn-outline-primary mt-4 button-agregar"><i class='bx bxs-plus-circle bx-md' ></i></a>-->
+
+          <div class="col-12 col-md-10 mx-auto mt-3">
+          <div class="card">
+            <div class="card-header">
+
+              <div class="pagination">    
+                <ul class="pagination"> 
+        
+                    <% if (pages && pages != 1) { %>
+                        <% pages.forEach(page => { %>
+                            <li class="page-number">
+                                <a href="<%= page.url %>" class="page-link <%= page.number === currentPage && 'active' %>">
+                                    <%= page.number %></a>
+                            </li>
+                        <% }) %>
+        
+                    <% } %>
+        
+                </ul>
+            </div>
+
+            </div>
+          <table class="table">
+            
             <thead class="thead-dark">
 
               <tr class="bg-primary text-white">
@@ -52,7 +76,10 @@
               </tr>
               <% }); %>
           </tbody>
+        
         </table>
+      </div>
+    </div>
       </div>
     </main>
     <%- include('partials/footer') %>

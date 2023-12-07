@@ -4,7 +4,7 @@ const adminCheck = require('../middlewares/adminCheck');
 const router = express.Router();
 
 
-router.get('/',adminCheck, adminController.admin);
+router.get('/', adminController.admin);
 
 
 module.exports = router;

@@ -40,14 +40,4 @@ module.exports = [
       return true
     }).withMessage('Debes subir una imagen principal'),*/
 
-    body('images')
-    .custom((value,{req}) => {
-      if(req.files.images.length > 3){
-        req.files.images.forEach(file => {
-          existsSync(`./public/img/products/${file.filename}`) && unlinkSync(`./public/img/products/${file.filename}`)
-        });
-        return false
-      }
-      return true
-    }).withMessage('Debe seleccionar imágenes')
 ]; 

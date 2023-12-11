@@ -6,3 +6,15 @@
     display: flex;
     text-align: start;
 }
+.card{
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: 650px;
+}
+.btn-dark{
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #4087b3;
+    --bs-btn-border-color: #067bf0;
+    --bs-btn-hover-color: #fff;
+
+}

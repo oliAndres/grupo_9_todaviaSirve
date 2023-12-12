@@ -54,6 +54,7 @@
 .form-check-input[type=checkbox]{
     padding: 10px;
     margin: 2px;
+
 }
 .login__main__box__formbox--placeholder {
     position: absolute;
@@ -92,7 +93,7 @@
 }
 .login__main__box__formbox--form-check{
     display: flex;
-    flex-direction: row-reverse;
+    justify-content: center;
 }
 
 .login__main__box__formbox--button:hover {

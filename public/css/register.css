@@ -9,7 +9,7 @@
 .card{
     display: flex;
     flex-wrap: nowrap;
-    max-width: 650px;
+    
 }
 .btn-dark{
     --bs-btn-color: #fff;

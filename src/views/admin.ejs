@@ -5,15 +5,44 @@
 <body>
     <%- include('partials/header') %>
     <main>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            
+              
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Secciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/products/add">Producto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/categories">Categoria</a>
+        </li>
+       
+    </ul>
+        </div>
+     
+    </nav>
         <div class="table--container">
-          <h1 class="title-table">Administrador de Productos</h1>
+          <h1 class="title-table">Bienvenidos al Administrador</h1>
           <br>
-          <!--<a href="/products/add" class="btn btn-outline-primary mt-4 button-agregar"><i class='bx bxs-plus-circle bx-md' ></i></a>-->
+         
+        
 
           <div class="col-12 col-md-10 mx-auto mt-3">
           <div class="card">
-            <div class="card-header">
-
+            <div class="card-header d-flex align-items-center justify-content-between">
+              <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <div>
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    
+                      <li class="breadcrumb-item active" aria-current="page" > Productos </></li> 
+                      
+                  </ol>
+                </div>
+              </nav>
               <div class="pagination">    
                 <ul class="pagination"> 
         

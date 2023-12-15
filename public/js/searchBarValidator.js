@@ -24,3 +24,21 @@ $('searchBar').addEventListener('change', function (event) {
     }, 750);
     }
 });
+// MODAL NAVIDEÑO
+document.addEventListener('DOMContentLoaded', function() {
+    // Se ejecutará cuando el documento HTML se haya cargado completamente
+    openModal(); // Llama a la función para abrir el modal
+});
+
+function openModal() {
+    var modal = document.getElementById('myModal');
+    modal.style.display = 'flex';
+    modal.style.justifyContent = 'center';
+    modal.style.height = '30%';
+    modal.style.width = '30%';
+}
+
+function closeModal() {
+    var modal = document.getElementById('myModal');
+    modal.style.display = 'none';
+}

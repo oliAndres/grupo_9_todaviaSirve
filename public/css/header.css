@@ -35,8 +35,10 @@
 
 
 .logo img{
-    width: 120px;
+    width: 80px;
     border-radius: 10%;
+    margin-bottom: 6px;
+    margin-top: -5px;
 }
 
 .home__header__search{

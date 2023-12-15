@@ -26,9 +26,10 @@
     transform: translateY(-3%);
 }
 .card img{
-    width: 280px;
+    width: 100%;
     height: 280px;
-    object-fit: cover;
+    object-fit:contain;
+    padding: 10px;
 }
 .card .card-content{
     padding: 15px;
@@ -83,6 +84,9 @@
 @media(max-width: 768px) {
     .card-container{
     grid-template-columns: auto auto auto ;
+    }
+    .card{
+        margin: 5px;
     }
 }
 

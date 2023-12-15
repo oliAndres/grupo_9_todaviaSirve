@@ -13,8 +13,29 @@
                 <form class="profile__main__box__formbox--formbox" action="/users/update?_method=PUT" method="post" enctype="multipart/form-data">
 
                     <div class="profile__main__box__formbox--image">
-                        <img width="100px" src="/images/productos/userImages/<%= avatar || "Andres.jpg" %>" alt="Imagen de perfil">
+                        <img id="avatarProfile" width="100px" src="/images/productos/userImages/<%= avatar || "Andres.jpg" %>" alt="Imagen de perfil" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer;">
                     </div>
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">Avatares</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                    <% avatars.forEach(avatar => { %>                                        
+                                            <img id="avatarModal" width="100px" src="/images/productos/userImages/<%= avatar.name %>" alt="Avatar" style="cursor: pointer; border-radius: 50%;" data-avatar="<%= avatar.name %>">                                        
+                                    <% }); %>
+                                    <input type="hidden" id="avatarInput" name="avatar" value="<%= avatar || "Andres.jpg" %>">
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
                     <div class="profile__main__box__formbox--form">
                     <div class="col-11 col-md-5 mb-2">
                         <label for="name" class="form-label">Nombre</label>

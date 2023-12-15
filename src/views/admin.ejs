@@ -5,10 +5,66 @@
 <body>
     <%- include('partials/header') %>
     <main>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            
+              
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Secciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/products/add">Producto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/category">Categoria</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/">Marca</a>
+        </li>
+       
+    </ul>
+        </div>
+     
+    </nav>
         <div class="table--container">
-          <h1 class="title-table">Administrador de Productos</h1>
-          <a href="/products/add" class="btn btn-outline-primary mt-4 button-agregar"><i class='bx bxs-plus-circle bx-md' ></i></a>
-          <table class="table table-bordered table-striped text-center mt-4  small-table table-shadow">
+          <h1 class="title-table">Bienvenidos al Administrador</h1>
+          <br>
+         
+        
+
+          <div class="col-12 col-md-10 mx-auto mt-3">
+          <div class="card">
+            <div class="card-header d-flex align-items-center justify-content-between">
+              <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <div>
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    
+                      <li class="breadcrumb-item active" aria-current="page" > Productos </></li> 
+                      
+                  </ol>
+                </div>
+              </nav>
+              <div class="pagination">    
+                <ul class="pagination"> 
+        
+                    <% if (pages && pages != 1) { %>
+                        <% pages.forEach(page => { %>
+                            <li class="page-number">
+                                <a href="<%= page.url %>" class="page-link <%= page.number === currentPage && 'active' %>">
+                                    <%= page.number %></a>
+                            </li>
+                        <% }) %>
+        
+                    <% } %>
+        
+                </ul>
+            </div>
+
+            </div>
+          <table class="table">
+            
             <thead class="thead-dark">
 
               <tr class="bg-primary text-white">
@@ -43,17 +99,20 @@
                     <%= product.description %>
                   </td>
 
-                  <td>
-                    <a href="/products/edit/<%= product.id %>" class="btn btn-outline-primary btn-sm btn-action">EDITAR</a>
-                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                      data-bs-target="#deleteModalProducts<%= product.id %>"> Eliminar</button>
-                    <%- include('partials/modalDelete', { id: product.id, name: product.name }) %>
-                  </td>
-                </tr>
-                <% }); %>
-            </tbody>
-          </table>
-        </div>
+                <td>
+                  <a href="/products/edit/<%= product.id %>" class="btn btn-outline-primary btn-sm btn-action">EDITAR</a>
+                  <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                    data-bs-target="#deleteModalProducts<%= product.id %>"> Eliminar</button>
+                  <%- include('partials/modalDelete', { id: product.id, name: product.name }) %>
+                </td>
+              </tr>
+              <% }); %>
+          </tbody>
+        
+        </table>
+      </div>
+    </div>
+      </div>
     </main>
     <%- include('partials/footer') %>
 </body>

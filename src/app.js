@@ -13,6 +13,7 @@ var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 var carritoRouter = require('./routes/carrito');
 var adminRouter = require('./routes/admin');
+var categRouter = require('./routes/category');
 const userSessionCheck = require('./middlewares/userSessionCheck');
 const cookieCheck = require('./middlewares/cookieCheck');
 
@@ -52,8 +53,10 @@ app.use('/products', productsRouter);
 app.use('/carrito', carritoRouter);
 app.use('/add', productsRouter);
 app.use('/admin', adminRouter);
-app.use('/api',apisRouter)
+app.use('/api',apisRouter);
 
+
+app.use('/category',categRouter);
 
 
 

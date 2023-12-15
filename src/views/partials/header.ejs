@@ -1,11 +1,15 @@
     <header class="home__header">
         <div class="home__header__back">
            <div class="menu container">
-               <a href="/" class="logo"><img src="/images/ts3.png" alt=""></a>
-               <div class="home__header__search">
-                   <input type="text" placeholder="¿Que productos buscas....?">
-                   <button><i class="fi fi-rr-search"></i></button>
+               <a href="/products/search" method=GET class="logo"><img src="/images/ts3.png" alt=""></a>
+               <div class="home__header__search">             
+                   <input type="text" name="keyword" id="searchBar" placeholder="¿Que productos buscas....?">
+                   <button type="submit" id="search"><i class="fi fi-rr-search"></i></button>
+                   <small class="text-danger ms-2" id="msgError"></small>
                </div>
+               
+
+                </small>
                <input type="checkbox" id="menu">
                <label for="menu">
                    <img src="/images/menu.png" class="menu-icono" alt="">
@@ -42,4 +46,5 @@
            </div>
         </div>   
        </header>
+       <script src="/js/searchBarValidator.js"></script>
  

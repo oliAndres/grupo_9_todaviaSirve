@@ -53,7 +53,28 @@
               <th scope="col">Imágen</th>
             </tr>
           </thead>
-      <tbody>
+          <tbody>
+            <% categories.forEach(category=> { %>
+              <tr>
+                <td>
+                  <%= category.id %>
+                </td>
+                <td>
+                  <%= category.name %>
+                </td>
+                <td>
+                  <%= category.image %>
+                </td>
+
+              <td>
+                <a href="/products/edit/<%= category.id %>" class="btn btn-outline-primary btn-sm btn-action">EDITAR</a>
+                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                  data-bs-target="#deleteModalcateogries<%= category.id %>"> Eliminar</button>
+                <%- include('partials/modalDelete', { id: category.id, name: category.name }) %>
+              </td>
+            </tr>
+            <% }); %>
+        </tbody>
       
           
       

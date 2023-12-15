@@ -56,7 +56,7 @@ app.use('/admin', adminRouter);
 app.use('/api',apisRouter);
 
 
-app.use('/category',categRouter);
+app.use('/categories',categRouter);
 
 
 

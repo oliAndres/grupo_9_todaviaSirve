@@ -5,8 +5,8 @@ const db = require('../database/models')
     }
 }*/
 module.exports= { 
-add : require('./categories/add'),
-create : require('./categories/create')
+index : require('./categories/indexCateg'),
+add : require('./categories/add')
 }
 
 

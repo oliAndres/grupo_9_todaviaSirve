@@ -15,7 +15,7 @@
         </li>
         
         <li class="nav-item">
-          <a class="nav-link" href="/categories/add">Categoria</a>
+          <a class="nav-link" href="/categories/add">Nueva Categoria</a>
         </li>
        
     </ul>
@@ -67,10 +67,12 @@
                 </td>
 
               <td>
-                <a href="/products/edit/<%= category.id %>" class="btn btn-outline-primary btn-sm btn-action">EDITAR</a>
-                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                  data-bs-target="#deleteModalcateogries<%= category.id %>"> Eliminar</button>
-                <%- include('partials/modalDelete', { id: category.id, name: category.name }) %>
+                <a href="/categories/edit/<%= category.id %>" class="btn btn-outline-primary btn-sm btn-action">EDITAR</a>
+                <form action="/categories/remove/<%= category.id %>?_method=DELETE" method="POST">
+                  <button class="btn btn-outline-danger">
+                    Eliminar producto
+                </button>
+              </form>
               </td>
             </tr>
             <% }); %>

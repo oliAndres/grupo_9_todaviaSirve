@@ -27,7 +27,7 @@
           <br>
         <div class="category-box"> 
           <div class="row">
-            <form action="/categories/add" method="POST" class="newCategory__main__form" enctype="multipart/form-data">
+            <form action="/categories/update/<%= category.id %>?_method=PUT" method="POST" class="newCategory__main__form" enctype="multipart/form-data" >
                 <h3 class="newCategory__main__form--title">Agregar Categoria</h3>
                 <br>
                 <div class="mb-3">

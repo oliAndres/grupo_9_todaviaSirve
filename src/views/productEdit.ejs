@@ -15,14 +15,6 @@
                         <input type="text" class="form-control <%= locals.errors && (errors.name && 'is-invalid') %>"
                             id="name" placeholder="Nombre Del Producto" name="name" value="<%= product.name %>" />
 
-<<<<<<< HEAD
-                        <small  class="text-danger ms-2">
-                            <%= locals.errors && (errors.name && errors.name.msg) %>
-                        </small>
-                        
-                        <p hidden style="background-color:lightgreen; color: #ff7f50;" id="msg-name">Complete el campo</p>    
-                 <p hidden style="background-color:coral; color:brown;" id="error-name">Este campo no debe estar vacío</p>
-=======
                         <small class="text-danger ms-2" id="error-name">
                             <%= locals.errors && (errors.name && errors.name.msg) %>
                         </small>
@@ -30,7 +22,6 @@
                         </p>
                         <p hidden style="background-color:coral; color:brown;" id="error-name">Este campo no debe estar
                             vacío</p>
->>>>>>> 1161653b595e4b790f1e9c4202bf79096d50156c
                         <br>
                         <div class="input-group mb-3">
                             <label for="brandId" class="form-label">Marca</label>

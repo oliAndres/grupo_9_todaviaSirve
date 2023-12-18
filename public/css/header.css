@@ -11,10 +11,11 @@
     display: flex;
     width: 100vw;
     margin: 0 auto;
+    padding-top: 10px;
 }
 
 .home__header__back{
-    padding: 30px 0;
+    padding: 40px 0;
     background-image: linear-gradient(
         90deg,
         #3B89C7  25%,
@@ -45,7 +46,7 @@ display: flex;
 
 }
 
-input{
+#searchBar{
     padding: 5%;
     padding-right: 40px;
     border-radius: 5px 0 0 5px;
@@ -59,7 +60,7 @@ button{
     padding: 10px;
     position: relative;
     border: 0;
-    margin-left: auto;
+    
     border-radius: 0 5px 5px 0;
     color: white;
     cursor: pointer;

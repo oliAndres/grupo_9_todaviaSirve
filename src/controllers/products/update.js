@@ -3,8 +3,11 @@ const db = require('../../database/models');
 const { validationResult } = require('express-validator');
 
 module.exports = async (req, res) => {
+
     try {
         const errors = validationResult(req);
+
+       
 
         if (errors.isEmpty()) {
             const { name, brandId, price, categoryId, description } = req.body;
@@ -34,9 +37,24 @@ module.exports = async (req, res) => {
                     }
                 }
             );
+            
+          for (const key in req.files) {
+              
+            const data = req.files[key][0]
 
-            // Cambia imágenes secundarias
-            if (req.files.images) {
+            await db.Image.update(
+                {
+                    name : data.filename
+                },
+                {
+                    where : {
+                        id : req.body[data.fieldname]
+                    }
+                }
+            )
+        }
+
+          /*   if (req.files.images) {
                 product.images.filter(image => !image.main).forEach((image) => {
                     existsSync(`./public/images/productos/${image.name}`) && 
                     unlinkSync(`./public/images/productos/${image.name}`);
@@ -60,7 +78,7 @@ module.exports = async (req, res) => {
                 await db.Image.bulkCreate(images, {
                     validate: true
                 });
-            }
+            } */
         } else {
             const id = req.params.id;
 

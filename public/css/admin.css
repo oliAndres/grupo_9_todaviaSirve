@@ -7,6 +7,7 @@ body {
 }
 .table--container {
     margin-bottom: 30px; 
+    
 }
 
 .title-table {
@@ -15,7 +16,7 @@ body {
     position: relative;
     width: 550px;
     top: 30px;
-    left: 30vw;
+    left: 25vw;
 }
 .btn-action{
     display: block;
@@ -42,3 +43,29 @@ body {
     margin: 0 auto;
     border: 1px solid black;
   }
+
+
+
+  @media (min-width:768px) {
+.title-table {
+    left: 15vw;
+  }
+}
+
+
+
+@media (min-width:1024px) {
+    .title-table {
+        left: 24vw;
+      }
+
+      
+}
+
+
+
+@media (min-width:1440px) {
+        .title-table {
+            left: 31vw;
+          }
+}

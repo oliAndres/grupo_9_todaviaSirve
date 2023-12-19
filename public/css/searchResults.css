@@ -9,11 +9,12 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
-    margin: 15px
+    margin: 15px;
+    object-fit: cover;
 }
 
 .SearchResults_card {
-    width: 250px; 
+    margin: 20px;
     border-radius: 5px;
     overflow: hidden;
     background-color: #fafafa;
@@ -29,9 +30,9 @@
 
 .SearchResults_card img {
     width: 100%;
-    height: 250px; 
-    object-fit: cover;
-    object-position: center center; 
+    height: 280px;
+    object-fit:contain;
+    padding: 10px;; 
 }
 
 .SearchResults_card .SearchResults_card-content {

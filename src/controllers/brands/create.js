@@ -8,7 +8,7 @@ module.exports = async (req, res) => {
         name: name,
         image: req.file ? req.file.filename : null
     });
-console.log(brand)
+console.log()
     return res.redirect('/brands');
 
   } catch (error) {

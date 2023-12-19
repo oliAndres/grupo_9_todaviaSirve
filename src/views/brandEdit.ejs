@@ -15,7 +15,7 @@
         </li>
         
         <li class="nav-item">
-          <a class="nav-link" href="/categories">Categoria</a>
+          <a class="nav-link" href="/brands">Marcas</a>
         </li>
        
     </ul>
@@ -23,18 +23,18 @@
      
     </nav>
         
-          <h1 class="title-table">Agregar Categorias</h1>
+          <h1 class="title-table">Agregar Marca</h1>
           <br>
         <div class="category-box"> 
           <div class="row">
-            <form action="/categories/update/<%= category.id %>?_method=PUT" method="POST" class="newCategory__main__form" enctype="multipart/form-data" >
+            <form action="/brands/update/<%= brand.id %>?_method=PUT" method="POST" class="newBrand__main__form" enctype="multipart/form-data" >
                
                 <div class="mb-3">
-                    <label for=>Nombre de la categoria</label>
+                    <label for=>Nombre de la marca</label>
                     <input placeholder="Ingrese el nombre" class="form-control" type="text" name="name" id="name">
                                     
-                        <div class="boximage_imgProduct">
-                            <label for="" class="form-label">Imagen de la categoria</label>
+                        <div class="boximage_imgBrand">
+                            <label for="" class="form-label">Imagen de la marca</label>
                             <div class="input-group mb-3">
                                 <input type="file" class="form-control" single name="image" id="image" />
                                 <label class="input-group-text" for="image">Subir</label>

@@ -50,6 +50,7 @@
               <th scope="col">ID</th>
               <th scope="col">Nombre</th>
               <th scope="col">Imágen</th>
+              <th scope="col">Acciones</th>
             </tr>
           </thead>
       <tbody>
@@ -62,10 +63,16 @@
               <%= brand.name %>
             </td>
             <td>
-              <img src="/images/brand<%= brands.name %>" class="img-fluid" alt="" >
+              <img src="/images/brands/<%= brand.image %>" class="img-fluid" alt="" >
             </td>           
         <td>
-          
+          <a href="/brands/edit/ <%= brand.id%> " class="btn btn-outline-primary btn-sm btn-action">EDITAR</a>
+          <form action="/brands/remove <%= brand.id%>?_method=DELETE" method="POST">
+            <button class="btn btn-outline-danger">
+              Eliminar producto
+          </button>
+
+
         </form>
       </td>
     </tr>

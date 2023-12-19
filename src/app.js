@@ -14,6 +14,7 @@ var productsRouter = require('./routes/products');
 var carritoRouter = require('./routes/carrito');
 var adminRouter = require('./routes/admin');
 var categRouter = require('./routes/category');
+var brandRouter = require('./routes/brand');
 const userSessionCheck = require('./middlewares/userSessionCheck');
 const cookieCheck = require('./middlewares/cookieCheck');
 
@@ -57,6 +58,7 @@ app.use('/api',apisRouter);
 
 
 app.use('/categories',categRouter);
+app.use('/brand',brandRouter);
 
 
 

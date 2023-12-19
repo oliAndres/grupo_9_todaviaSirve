@@ -4,8 +4,7 @@ const db = require("../../database/models");
 module.exports = async (req, res) => {
   try {
     const categories = await db.Category.findAll()
-   /* res.send(categories)*/
- 
+   /* res.send(categories)*/ 
     return res.render('category', {categories});
   } catch (error) {
     console.error('Error:', error);

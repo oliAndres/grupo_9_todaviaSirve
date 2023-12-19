@@ -29,10 +29,58 @@ exports.processLogin = [
             maxAge: 1000 * 60
         });
 
+        db.Order.findOne({
+          where: {
+            userId: user.id,
+            statusId: 1,
+          },
+          include: [
+            {
+              association: "items",
+              include: [
+                {
+                  association: "product",
+                  include: ["images"],
+                },
+              ],
+            },
+          ],
+        }).then((order) => {
+          if (order) {
+            req.session.cart = {
+              orderId: order.id,
+              total: order.total,
+              products: order.items.map(
+                ({ quantity, product: { name, price, discount, images } }) => {
+                  return {
+                    name,
+                    price,
+                    discount,
+                    image: images.find((image) => image.main).file,
+                    quantity,
+                  };
+                }
+              ),
+            };
 
-        return res.redirect("/");
-      })
-      .catch((error) => console.log(error));
+            return res.redirect("/");
+          } else {
+            db.Order.create({
+              total : 0,
+              userId : user.id,
+              statusId : 1
+            }).then(order => {
+              req.session.cart = {
+                orderId: order.id,
+                total: 0,
+                products: [],
+              };
+  
+              return res.redirect("/");
+            })
+          }
+        })
+      }).catch((error) => console.log(error));
   } else {
 
     return res.render('login', {

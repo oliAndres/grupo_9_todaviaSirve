@@ -4,7 +4,7 @@ const {validationResult} = require('express-validator')
 
 module.exports = (req,res) => {
 
-    const {name, lastName, city, province, email, password } = req.body
+    const {name, lastName, city, province,street, email, password } = req.body
     const errors = validationResult(req);
     console.log(req.body)
 
@@ -12,16 +12,19 @@ module.exports = (req,res) => {
 
         db.Address.create({
             city,
-            province
+            province,
+            street
         })
+
             .then(address => {
+            
                 db.User.create({
                     name : name.trim(),
                     lastName : lastName.trim(),
                     email : email.trim(),
                     password : hashSync(password, 10),
                     roleId : 2,
-                    addressId : address.id
+                    addressId : address.id,
                 })
                     .then(({name, lastName}) => {
                         return res.render('registerOk', {

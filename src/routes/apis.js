@@ -1,11 +1,13 @@
+const { getCart, addItemToCart, removeItemToCart, deleteItemToCart, clearCart } = require('../controllers/APis/cartApiController')
 const { listProducts, showProduct, createProduct, updateProduct, deleteProduct } = require('../controllers/apiProductsController')
 
 const router = require('express').Router()
 
 /* apis*/ 
 
-/* productos */
+
 router
+    /* productos */
     .get('/products', listProducts)
     .get('/products/:id',showProduct)
     .post('/products',createProduct)
@@ -13,9 +15,13 @@ router
     .delete('/products/:id',deleteProduct)
 
 
-/* usuarios*/
+    /* carrito */
+    .get('/cart', getCart)
+    .post('/cart', addItemToCart)
+    .delete('/cart',removeItemToCart)
+    .delete('/cart/item', deleteItemToCart)
+    .delete('/cart/all',clearCart)
 
-
-/* categorias*/
+    /* categorias*/
 
 module.exports = router

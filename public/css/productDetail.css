@@ -1,10 +1,14 @@
 .product-detail__main {
     text-align: justify;
-    margin: 0px 10px 10px 10px;
+   
+   margin-left: 5px;
+   margin-right: 15px;
+    background-color: aliceblue;
 }
 .product-detail__main-img {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 .product-detail__main-image-central {
     background-color: white;
@@ -15,28 +19,33 @@
 }
 
 img#main-image {
-    height: 230px;
+    height: 150px;
 }
-.product-detail__main-image-justify-content-between {
-    border-style: inset;
-    gap: inherit;
+/*.product-detail-info {
+border-left: 1px solid;
+}*/
+.product-detail__main-image {
+   
     justify-content: space-between;
 }
 
 .product-detail__main-card-title {
     margin-top: 5px;
     text-align: center;
-    font-weight: 900;
+    font-weight: 800;
 }
 .product-detail__main-card-text {
     padding: 3px;
     border-bottom-style: inset;
     margin: 0px;
-    font-size: x-small;
+    text-align: center;
+    font-size: small;
 
 }
 .product-detail__main-card-precio {
+    margin-top: 5px;
     text-align: center;
+    font-size: large;
 }
 
 .product-detail__main-center-bt {
@@ -44,14 +53,32 @@ img#main-image {
     justify-content: center;
 }
 
-button.product-detail__main-button{
-    background-color: rgb(50, 173, 179);
-    border-radius:5px;
-    font-weight: bold;
+.product-detail-botones{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
+.product-detail__main-comprar-bt{
+    border-radius: 10px;
+}
+.product-detail__main-button{
+border-radius: 10px;
+}
 
-
+/*------------375px----------*/
+@media (min-width:375px) {
+    .product-detail__main-card-text {
+      font-size: medium;
+    }
+    .product-detail__main-card-precio {
+       font-size: 1.5rem;
+    }
+    .product-detail-botones {
+        gap: 20px;
+}
+}
 
 
 /*----------- 481px ----------- */
@@ -59,33 +86,117 @@ button.product-detail__main-button{
 @media (min-width:481px) {
     .product-detail__main {
         display: block;
+        margin-right: 20px;
+        width: 90%;
     }
 
     .product-detail__main-card-text {
         font-size: medium;
     }
 
+    
     .product-detail__main-image-central {
-        height: 260px;
+        height: 200px;
         padding-top: 10px;
+    }
+    .product-detail__main-card-precio{
+        font-size: 1.5rem;
+        margin-top: 10px;
     }
   }
 
-/*----------- 769px ----------- */
 
-@media (min-width:769px) {
+
+/*----------- 768px ----------- */
+
+@media (min-width:768px) {
     .product-detail__main {
-        display: contents;
+        display: flex; 
         padding: 0px;
+        width: 95%;
+        margin-top: 20px;
+        margin-left: 15px;
+        flex-direction: row;
+        margin-bottom: 15px;
+     
     }
 
     .product-detail__main-card-text {
         font-size: small;
     }
+
+    .product-detail__main-img {
+       justify-content: center; 
+       height: 80%;
+       
+    }
+    .product-detail__main-image{
+        margin-top: 5px;
+        justify-content: space-between;
+    }
+    .product-detail__main-info {
+        border-radius: 15px;
+        border: 2px solid rgb(64, 135, 179);
+        padding: 15px;
+    }
+
+    img#main-image {
+        height: 80%;
+       
+    }
+    
+    .order-md-last {
+        order: 2;
+    }
+    .product-detail-botones{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: start;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .product-detail__main-button-comprar{
+       width: 100%;
+    }
 }
 
-@media(min-width: 1024px) {
-    img#main-image {
-        height: 250px;
+/*----------- 1024px ----------- */
+
+@media (min-width:1024px) {
+    .product-detail__main-card-text {
+        font-size: large; /* Update font size for larger screens */
     }
+
+    .product-detail__main{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .product-detail__main-info{
+        box-sizing: border-box;
+        display:flex;
+        flex-flow:row wrap;
+    }
+    .product-detail__main-card-body{
+        margin-top: 40px;
+    }
+    
+    .product-detail__main-card-title{
+        font-weight: bolder;
+        font-size: 1.5em;
+    }
+    .product-detail__main-card-precio{
+        font-size: 3.3em;
+        margin: 10px;
+        font-weight: unset;
+    }
+    .product-detail-botones{
+       
+        display: flex;
+       
+       
+        
+    }
+    
+    
 }

@@ -24,7 +24,6 @@ window.onload = function () {
             { condition: !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(this.value), message: 'El email es inválido' }
         ]);
 
-        // Verificar email único
         try {
             const response = await fetch(`/api/check-email?email=${this.value}`);
             const result = await response.json();
@@ -38,6 +37,7 @@ window.onload = function () {
         }
     });
 
+
     $('password').addEventListener('blur', function() {
         validateField(this, 'msgError-password', [
             { condition: !this.value.trim(), message: 'La contraseña es obligatoria' },
@@ -46,7 +46,6 @@ window.onload = function () {
     });
 
 
-    // Otras validaciones...
 
     $('formAdd').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -65,7 +64,6 @@ window.onload = function () {
         !error && this.submit();
     });
 
-    // Función genérica para validar un campo y mostrar mensajes de error
     function validateField(field, errorId, conditions) {
         const errorElement = $(errorId);
         errorElement.innerHTML = null;

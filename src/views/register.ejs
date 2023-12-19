@@ -17,6 +17,7 @@
                 class="row"
                 id="formAdd"
               >
+              
                 <div class="col-12 mb-3">
                   <label for="name" class="form-label">Nombre</label>
                   <input
@@ -100,6 +101,20 @@
                     <option value="" hidden selected>Elije tu ciudad...</option>
                   </select>
                   <small class="text-danger ms-2" id="msgError-city"></small>
+                </div>
+                <div class="col-12 mb-3">
+                  <label for="street" class="form-label">Calle</label>
+                  <input
+                    type="text"
+                    class="form-control <%= locals.errors && (errors.street && 'is-invalid') %>"
+                    id="street"
+                    placeholder="Calle:"
+                    name="street"
+                  />
+                  <small class="text-danger ms-2" id="msgError-street">
+                    <%= locals.errors && (errors.street &&
+                    errors.street.msg) %>
+                  </small>
                 </div>
                 <div class="d-flex justify-content-end">
                   <button type="submit" class="btn btn-dark">Registrate</button>

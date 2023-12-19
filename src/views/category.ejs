@@ -11,7 +11,7 @@
               
     <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Sección</a>
+          <a class="nav-link active" aria-current="page" href="/admin">Volver a Admin</a>
         </li>
         
         <li class="nav-item">
@@ -22,50 +22,49 @@
         </div>
      
     </nav>
-        
-          <h1 class="title-table">Administrador de Categorias</h1>
-          <br>
-       
-
-      <div class="table--container">
-        <div class="col-4 col-md-4 mx-auto mt-3">
-        <div class="card">
-          <div class="card-header d-flex align-items-center justify-content-between">
-            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-              <div>
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+    <div class="table--container">
+      <h1 class="title-table">Bienvenidos al Administrador</h1>
+      <br>     
+      <div class="col-10 col-md-10 mx-auto mt-3">
+      <div class="card">
+        <div class="card-header d-flex align-items-center justify-content-between">
+          <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <div>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                
+                  <li class="breadcrumb-item active" aria-current="page" > Administrador de Categorias </></li> 
                   
-                    <li class="breadcrumb-item active" aria-current="page" > Categorias </></li> 
-                    
-                </ol>
-              </div>
-            </nav>
-          </div>
+              </ol>
+            </div>
+          </nav>
           
-        <table class="table">
+
+        </div>
           
-          <thead class="thead-dark">
-
-            <tr class="bg-primary text-white">
-              <th scope="col">ID</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">Imágen</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% categories.forEach(category=> { %>
-              <tr>
-                <td>
-                  <%= category.id %>
-                </td>
-                <td>
-                  <%= category.name %>
-                </td>
-                <td>
-                  <%= category.image %>
-                </td>
-
+            <table class="table">
+          
+              <thead class="thead-dark">
+                
+                <tr class="bg-primary text-white">
+                  <th scope="col">ID</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Imágen</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+               <% categories.forEach(category=> { %>
+                <tr>
+                  <td>
+                    <%= category.id %>
+                  </td>
+                  <td>
+                    <%= category.name %>
+                  </td>
+                  <td>
+                    <img src="/images/categories/<%= category.image %>" class="img-fluid" alt="" >
+                  </td>           
               <td>
                 <a href="/categories/edit/<%= category.id %>" class="btn btn-outline-primary btn-sm btn-action">EDITAR</a>
                 <form action="/categories/remove/<%= category.id %>?_method=DELETE" method="POST">
@@ -76,12 +75,11 @@
               </td>
             </tr>
             <% }); %>
-        </tbody>
+            </tbody>            
       
-          
-      
-      </table>
-    </div>   
+          </table>
+    </div>  
+   </div>  
     </main>
     <%- include('partials/footer') %>
 </body>

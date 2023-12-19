@@ -5,7 +5,7 @@ const storage = multer.diskStorage({
     cb(null, './public/images/categories'); // Asegúrate de que la ruta coincida con tu configuración
   },
   filename: (req, file, cb) => {
-    cb(null, `${Date.now()}_category_${file.originalname}`);
+    cb(null, `${Date.now()}_category`);
   }
 });
 

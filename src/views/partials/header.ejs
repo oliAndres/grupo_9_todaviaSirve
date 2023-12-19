@@ -1,11 +1,12 @@
     <header class="home__header">
         <div class="home__header__back">
            <div class="menu container">
-               <a href="/" method=GET class="logo"><img src="/images/ts3.png" alt=""></a>
+               <a href="/" class="logo"><img src="/images/logo_navideño.png" alt=""></a>
                <div class="home__header__search">             
-                   <input type="text" name="keyword" id="searchBar" placeholder="¿Que productos buscas....?">
+                <form action="/search" method="get" class="home__header__search">
+                   <input type="text" name="search" id="searchBar" placeholder="¿Que productos buscas....?">
                    <button type="submit" id="search"><i class="fi fi-rr-search"></i></button>
-                   <small class="text-danger ms-2" id="msgError"></small>
+                </form>
                </div>
                
 
@@ -17,7 +18,6 @@
               <!-- ... -->
 <nav class="home__header__navbar">
     <ul>
-        <li> <a href="#">Ofertas</a></li>
 
        
        

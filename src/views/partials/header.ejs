@@ -1,7 +1,7 @@
     <header class="home__header">
         <div class="home__header__back">
            <div class="menu container">
-               <a href="/products/search" method=GET class="logo"><img src="/images/ts3.png" alt=""></a>
+               <a href="/" method=GET class="logo"><img src="/images/ts3.png" alt=""></a>
                <div class="home__header__search">             
                    <input type="text" name="keyword" id="searchBar" placeholder="¿Que productos buscas....?">
                    <button type="submit" id="search"><i class="fi fi-rr-search"></i></button>
@@ -31,6 +31,14 @@
                     <img width="100px" src="/images/productos/userImages/<%= locals.userLogin.avatar || "Andres.jpg" %>" alt="">
                 </div>
             </li>
+            <li>
+                <a href="#" id="btn-cart" class="position-relative" data-bs-toggle="modal" data-bs-target="#cart">
+                    <i class="fa-solid fa-cart-shopping fa-xl"></i>
+                    <span id="show-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" hidden>
+                     
+                    </span>
+                  </a>
+            </li>
             <li> <a href="/users/logOut">Salir</a></li> 
             <% if (locals.userLogin.role === 1) { %>
                 <li> <a href="/admin">Admin</a></li>
@@ -46,5 +54,29 @@
            </div>
         </div>   
        </header>
+
+        <!-- Modal -->
+  <div class="modal fade" id="cart" tabindex="-1" aria-labelledby="cartLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-3" id="cartLabel">Carrito de compras</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="cart-body">
+            
+          </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Continuar comprando</button>
+          <button type="button" id="btn-clearCart" onclick="clearCart()" class="btn btn-outline-danger">Vaciar carrito</button>
+          <button type="button" class="btn btn-outline-primary">Finalizar compra</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
        <script src="/js/searchBarValidator.js"></script>
  

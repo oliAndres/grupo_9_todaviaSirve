@@ -53,9 +53,25 @@
             </tr>
           </thead>
       <tbody>
-      
+        <% brands.forEach(brand=> { %>
+          <tr>
+            <td>
+              <%= brand.id %>
+            </td>
+            <td>
+              <%= brand.name %>
+            </td>
+            <td>
+              <img src="/images/brand<%= brands.name %>" class="img-fluid" alt="" >
+            </td>           
+        <td>
           
-      
+        </form>
+      </td>
+    </tr>
+    <% }); %>
+    </tbody>            
+
       </table>
     </div>   
     </main>

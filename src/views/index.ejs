@@ -25,9 +25,9 @@
             </div>
           </div>
 
-          <div class="card-container" >
+          <div class="card-container_home" >
             <% products.forEach(producto=> { %>
-              <div class="card">
+              <div class="card_home">
                 <a href="/products/detail/<%= producto.id %>">
                   <% if (producto.images && producto.images.length> 0) { %>
                     <img src="/images/productos/<%= producto.images[0].name %>" alt="">
@@ -35,7 +35,7 @@
                       <p>No image available</p>
                       <% } %>
                 </a>
-                <div class="card-content">
+                <div class="card-content_home">
                   <p class="card-name">
                     <%= producto.name %>
                   </p>

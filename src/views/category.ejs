@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+
+<body>
+    <%- include('partials/header') %>
+    <main>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            
+              
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/admin">Volver a Admin</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/categories/add">Nueva Categoria</a>
+        </li>
+       
+    </ul>
+        </div>
+     
+    </nav>
+    <div class="table--container_category">
+      <h1 class="title-table">Administrador de Categorias</h1>
+      <br>     
+      <div class="category_card col-12 col-md-7 mx-auto mt-3">
+      <div class="card">
+        <div class="card-header d-flex ">
+          <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <div>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                
+                  <li class="breadcrumb-item active" aria-current="page" > Administrador de Categorias </></li> 
+                  
+              </ol>
+            </div>
+          </nav>
+          
+
+        </div>
+          
+            <table class="table">
+          
+              <thead class="thead-dark">
+                
+                <tr class="bg-primary text-white">
+                  <th scope="col">ID</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Imágen</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+               <% categories.forEach(category=> { %>
+                <tr>
+                  <td>
+                    <%= category.id %>
+                  </td>
+                  <td>
+                    <%= category.name %>
+                  </td>
+                  <td>
+                    <img src="/images/categories/<%= category.image %>" class="img-fluid" alt="" width="100">
+                  </td>           
+              <td>
+                <a href="/categories/edit/<%= category.id %>" class="btn btn-outline-primary btn-sm btn-action">EDITAR</a>
+                <form action="/categories/remove/<%= category.id %>?_method=DELETE" method="POST">
+                  <button class="btn btn-outline-danger">
+                    Eliminar producto
+                </button>
+              </form>
+              </td>
+            </tr>
+            <% }); %>
+            </tbody>            
+      
+          </table>
+    </div>  
+   </div>  
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>

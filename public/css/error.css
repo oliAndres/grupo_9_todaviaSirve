@@ -1,0 +1,25 @@
+.error_main{
+    width: 100vw;
+    height: 90vh;
+    background-image: url(https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTdkZXJkcjZpbWVnanlhdzEwdmk0Mmx3Mmkya2NiOW5jYjc1aXEzcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ohs7KViF6rA4aan5u/giphy.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.error_main_title{
+    text-align: center;
+    font-size: 3rem;
+}
+.error_main_404{
+    text-align: center;
+    font-size: 4rem;
+}
+.error_main_p{
+    text-align: center;
+}
+
+.error_main_button{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}

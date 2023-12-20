@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+<body>
+    <%- include('partials/header') %>
+
+    <main>
+       
+<h2 class="SearchResults_title">Resultados para tu busqueda: </h2>
+
+<div class="SearchResults_container">
+  <% products.forEach(product => { %>
+    <div class="SearchResults_card">
+      <a href="/products/detail/<%= product.id %>">
+        <figure>
+            <img src="/images/productos/<%= product.images[0].name %>" alt="<%= product.name %>">
+        </figure>
+        <div class="SearchResults_card-content">
+          <h4><%= product.name %></h4>
+          <p>$<%= product.price.toLocaleString('es-ES') %></p>
+        </div>
+      </a>
+    </div>
+  <% }); %>
+ 
+    </main>
+    
+    <%- include('partials/footer') %>
+    <%- include('partials/scripts') %>
+</body>
+</html>

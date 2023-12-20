@@ -12,4 +12,6 @@
 @import './productDetail.css';
 @import './editProduct.css';
 @import './newProduct.css';
-@import 'carousel_swiper.css'
+@import 'carousel_swiper.css';
+@import './searchResults.css';
+@import './error.css'

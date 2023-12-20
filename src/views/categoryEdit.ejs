@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+
+<body>
+    <%- include('partials/header') %>
+    <main>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            
+              
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/admin">Volver al admin</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/categories">Categoria</a>
+        </li>
+       
+    </ul>
+        </div>
+     
+    </nav>
+        
+          <h1 class="title-table">Agregar Categorias</h1>
+          <br>
+        <div class="category-box"> 
+          <div class="row">
+            <form action="/categories/update/<%= category.id %>?_method=PUT" method="POST" class="newCategory__main__form" enctype="multipart/form-data" >
+               
+                <div class="mb-3">
+                    <label for=>Nombre de la categoria</label>
+                    <input placeholder="Ingrese el nombre" class="form-control" type="text" name="name" id="name">
+                                    
+                        <div class="boximage_imgProduct">
+                            <label for="" class="form-label">Imagen de la categoria</label>
+                            <div class="input-group mb-3">
+                                <input type="file" class="form-control" single name="image" id="image" />
+                                <label class="input-group-text" for="image">Subir</label>
+                            </div> 
+                        <div class="boxbutton">
+                            <div>
+                                <a href="/">
+                                    <button type="reset" class="Limpiar">Limpiar</button>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="/">
+                                    <button type="submit" class="Publicar">Publicar</button>
+                                </a>
+                            </div>
+            </form>
+
+        </div>
+        
+      </div>
+    </div>
+      </div>
+
+     
+          
+      
+      </table>
+    </div>   
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>

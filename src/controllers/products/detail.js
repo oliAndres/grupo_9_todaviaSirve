@@ -22,9 +22,7 @@ module.exports = async (req, res) => {
     
   )
 
-    return console.log('<>>>>>>>>>>>>>>>>>>>>>>>>', { prodFind: prodFind });
-
-    //return res.render('productDetail', { prodfind: prodFind });
+    return res.render('productDetail', { prodfind: prodFind, relatedProducts: relatedProducts });
 
   } catch (error) {
     res.status(500).send('Error en el servidor');

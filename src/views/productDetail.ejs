@@ -2,7 +2,7 @@
 <html lang="en">
   <%- include('partials/head') %>
 
-  <body class="home">
+  <body class="detail">
     <%- include('partials/header') %>
 
     <main class="product-detail__main">
@@ -70,7 +70,37 @@
         </div>
      
       </div>
+
     </main>
+    
+    
+      <hr>
+      <h2>Productos relacionados</h2>
+      <div class="card-product_related">
+      <div class="card-container_detail" >
+        <% relatedProducts.forEach(relatedProduct=> { %>
+          <div class="card_detail">
+            <a href="/products/detail/<%= relatedProduct.id %>">
+              <% if (relatedProduct.images && relatedProduct.images.length> 0) { %>
+                <img src="/images/productos/<%= relatedProduct.images[0].name %>" alt="">
+                <% } else { %>
+                  <p>No image available</p>
+                  <% } %>
+            </a>
+            <div class="card-content_detail">
+              <p class="card-name">
+                <%= relatedProduct.name %>
+              </p>
+              <p class="price"><b>$<%= relatedProduct.price.toLocaleString('es-ES') %>
+              </b></p>
+              <p class="card-descripcion">
+                <%= relatedProduct.description %>
+              </p>
+            </div>
+          </div>
+          <% }); %>
+      </div>
+    </div>
 
     <%- include('partials/footer') %>
     

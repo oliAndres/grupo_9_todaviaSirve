@@ -26,10 +26,10 @@
           <br>
        
 
-      <div class="table--container">
-        <div class="col-4 col-md-4 mx-auto mt-3">
+      <div class="brand_table--container">
+        <div class="brand_table--container_col col-12 col-md-6 mx-auto mt-3">
         <div class="card">
-          <div class="card-header d-flex align-items-center justify-content-between">
+          <div class="brand_card-header d-flex align-items-center justify-content-between">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
               <div>
                 <ol class="breadcrumb">
@@ -49,7 +49,7 @@
             <tr class="bg-primary text-white">
               <th scope="col">ID</th>
               <th scope="col">Nombre</th>
-              <th scope="col">Imágen</th>
+              <th scope="col">Imagen</th>
               <th scope="col">Acciones</th>
             </tr>
           </thead>
@@ -63,7 +63,7 @@
               <%= brand.name %>
             </td>
             <td>
-              <img src="/images/brands/<%= brand.image %>" class="img-fluid" alt="" >
+              <img src="/images/brands/<%= brand.image %>" class="img-fluid" alt="" width="150" >
             </td>           
         <td>
           <a href="/brands/edit/ <%= brand.id%> " class="btn btn-outline-primary btn-sm btn-action">EDITAR</a>

@@ -1,0 +1,6 @@
+.h1.category_title-table{
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+align-content: center;
+}

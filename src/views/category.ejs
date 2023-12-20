@@ -22,12 +22,12 @@
         </div>
      
     </nav>
-    <div class="category_table--container">
-      <h1 class="category_title-table">Administrador de Categorias</h1>
+    <div class="table--container_category">
+      <h1 class="title-table">Administrador de Categorias</h1>
       <br>     
-      <div class="category_card col-10 col-md-10 mx-auto mt-3">
+      <div class="category_card col-12 col-md-7 mx-auto mt-3">
       <div class="card">
-        <div class="card-header d-flex align-items-center justify-content-between">
+        <div class="card-header d-flex ">
           <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <div>
               <ol class="breadcrumb">
@@ -63,7 +63,7 @@
                     <%= category.name %>
                   </td>
                   <td>
-                    <img src="/images/categories/<%= category.image %>" class="img-fluid" alt="" >
+                    <img src="/images/categories/<%= category.image %>" class="img-fluid" alt="" width="100">
                   </td>           
               <td>
                 <a href="/categories/edit/<%= category.id %>" class="btn btn-outline-primary btn-sm btn-action">EDITAR</a>

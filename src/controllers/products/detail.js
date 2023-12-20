@@ -9,11 +9,23 @@ module.exports = async (req, res) => {
       include: [{ model: Image, as: 'images' }]
     });
 
-    if (prodFind) {
-      return res.render('productDetail', { prodfind: prodFind });    
-    } else {
+    if (!prodFind) {
       res.status(404).send('Producto no encontrado');
     }
+
+    const relatedProducts = await Product.findAll({
+      where : {
+        categoryId : prodFind.categoryId
+      },  
+      include: [{ model: Image, as: 'images' }]
+    }
+    
+  )
+
+    return console.log('<>>>>>>>>>>>>>>>>>>>>>>>>', { prodFind: prodFind });
+
+    //return res.render('productDetail', { prodfind: prodFind });
+
   } catch (error) {
     res.status(500).send('Error en el servidor');
   }

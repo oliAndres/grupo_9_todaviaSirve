@@ -65,7 +65,7 @@ $valProductAdd("name").focus();
 
 
   formAdd.addEventListener("submit", (event) => {
-    event.preventDefault();
+    // event.preventDefault();
 
     const msgErrors = [];
 

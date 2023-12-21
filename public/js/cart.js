@@ -27,19 +27,12 @@ const showCountProductCart = (products, hidden = false) => {
 const showProductInCart = (products, total) => {
   if($cart("cart-table")){
     $cart("cart-table").innerHTML = null;
-    products.forEach(({ id, image, name, price, quantity, discount }) => {
+    products.forEach(({ id, image, name, price, discount }) => {
       $cart("cart-table").innerHTML += `
       <tr>
         <th scope="row"><img src="/images/productos/${image}" alt="" width="80px"/></th>
         <td>${name}</td>
         <td>${(price - price * discount /100)}</td>
-        <td>
-            <div class="d-flex gap-2">
-                <button class="btn btn-sm btn-outline-info ${quantity === 1 && 'disabled'}" onclick="removeItemToCart(${id})"><i class="fa-solid fa-minus"></i></button>
-                <input type="text" value="${quantity}" style="width:30px"/>
-                <button class="btn btn-sm btn-outline-info" onclick="addItemToCart(1,${id})"><i class="fa-solid fa-plus"></i></button>
-            </div>
-        </td>
         <td>
         <h3 style="cursor:pointer" onclick="deleteItemToCart(${id})" class="text-danger"><i class="fa-regular fa-trash-can"></i></h3>
         </td>
@@ -202,7 +195,6 @@ window.onload = function () {
                     <th scope="col">Imagen</th>
                     <th scope="col">Producto</th>
                     <th scope="col">Precio</th>
-                    <th scope="col">Cantidad</th>
                     <th scope="col"></th>
                     </tr>
                 </thead>

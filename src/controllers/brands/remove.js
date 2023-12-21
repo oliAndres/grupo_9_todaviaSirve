@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
     const brandToDelete = await db.Brand.findByPk(id);
 
     if(brandToDelete){
-        existsSync(`./public/images/brand/${brandToDelete.image}`) &&
+        existsSync(`./public/images/brand/ ${brandToDelete.image}`) &&
         unlinkSync(`./public/images/brand/${brandToDelete.image}`);
         brandToDelete.destroy();
 

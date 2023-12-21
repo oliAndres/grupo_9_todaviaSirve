@@ -1,7 +1,7 @@
 'use strict';
 
 const productsJSON = require('../../data/products.json');
-const categories = require('../../data/categories.json')
+const categories = require('../../data/categories.json');
 
 const marcas = [
   "Smeg",
@@ -16,32 +16,31 @@ const marcas = [
   "iPhone",
   "Levis",
   "Philco"
-]
+];
 
-const productsDB = productsJSON.map(({id, name, marca, price, description, category}) => {
+const getRandomUserId = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+const productsDB = productsJSON.map(({ id, name, marca, price, description, category }) => {
   return {
     name,
     price,
     description,
-    discount : 0,
-    brandId : marcas.indexOf(marca) + 1,
-    categoryId: categories.find(element => element.name === category ).id,
-    createdAt : new Date,
-    updatedAt : new Date
-  }
-})
-
+    discount: 0,
+    brandId: marcas.indexOf(marca) + 1,
+    categoryId: categories.find(element => element.name === category).id,
+    userId: getRandomUserId(1, 2), 
+    createdAt: new Date(),
+    updatedAt: new Date()
+  };
+});
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
-   
-      await queryInterface.bulkInsert('Products', productsDB, {});
-    
+  async up(queryInterface, Sequelize) {
+    await queryInterface.bulkInsert('Products', productsDB, {});
   },
 
-  async down (queryInterface, Sequelize) {
-
-      await queryInterface.bulkDelete('Products', null, {});
-       }
+  async down(queryInterface, Sequelize) {
+    await queryInterface.bulkDelete('Products', null, {});
+  }
 };

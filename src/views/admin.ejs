@@ -100,8 +100,8 @@
                   </td>
 
                 <td>
-                  <a href="/products/edit/<%= product.id %>" class="btn btn-outline-primary btn-sm btn-action">EDITAR</a>
-                  <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                  <a href="/products/edit/<%= product.id %>" class="btn btn-outline-primary btn-sm btn-action">Editar</a>
+                  <button type="button" class="btn btn-outline-danger btn-sm btn-action" data-bs-toggle="modal"
                     data-bs-target="#deleteModalProducts<%= product.id %>"> Eliminar</button>
                   <%- include('partials/modalDelete', { id: product.id, name: product.name }) %>
                 </td>

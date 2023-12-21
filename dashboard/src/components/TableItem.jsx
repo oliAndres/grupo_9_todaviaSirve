@@ -1,15 +1,15 @@
 import PropTypes from "prop-types";
 
 export const TableItem = ({
-  product: { id, title, price, discount, category},
+  product: { id, name, price,category},
   handleEditForm,
   handleDeleteProduct,
 }) => {
   return (
     <tr>
-      <td>{title}</td>
+      <td>{name}</td>
       <td>{price}</td>
-      <td>{discount}</td>
+
       <td> {category.name}</td>
       <td>
         <div className="d-flex">

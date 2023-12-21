@@ -1,22 +1,11 @@
 import { Button, Form } from "react-bootstrap";
-import { UseFetch } from "../hooks/UseFetch";
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import PropTypes from "prop-types";
-import { createProduct, updateProduct } from "../services/product.services";
 
 export const FormProduct = ({
-  products,
-  setProducts,
   formValues,
   setFormValues,
 }) => {
-  const [categories, setCategories] = useState([]);
-
-  const getData = async () => {
-    const categories = await UseFetch("categories");
-
-    setCategories([...categories.data]);
-  };
 
   useEffect(() => {
     getData();
@@ -33,7 +22,7 @@ export const FormProduct = ({
     event.preventDefault();
     if (
       [
-        formValues.title,
+        formValues.name,
         formValues.price,
         formValues.categoryId,
         formValues.description,
@@ -43,29 +32,10 @@ export const FormProduct = ({
       return;
     }
 
-    if (formValues.id) {
-      const { data } = await updateProduct(formValues)
-
-      const productsUpdated = products.map((product) => {
-        if (product.id === data.id) {
-          product = data;
-        }
-        return product;
-      });
-
-      setProducts([...productsUpdated]);
-    } else {
-      const { data } = await createProduct(formValues)
-      setProducts([...products, data]);
-    }
-
     setFormValues({
       id: null,
-      title: "",
+      name: "",
       price: "",
-      discount: "",
-      categoryId: "",
-      sectionId: "",
       description: "",
     });
   };
@@ -77,9 +47,9 @@ export const FormProduct = ({
         <Form.Control
           type="text"
           placeholder="Título del producto..."
-          name="title"
+          name="name"
           onChange={handleInputChange}
-          value={formValues.title}
+          value={formValues.name}
         />
       </Form.Group>
       <Form.Group className="mb-3 col-12 col-md-6">
@@ -100,55 +70,6 @@ export const FormProduct = ({
           value={formValues.discount}
         />
       </Form.Group>
-
-      <Form.Group className="mb-3 col-12 col-md-6">
-        <Form.Label>Sección</Form.Label>
-        <Form.Select
-          className="form-control"
-          name="sectionId"
-          onChange={handleInputChange}
-        >
-          <option hidden defaultValue>
-            Selecciona...
-          </option>
-          {sections.map((section, index) =>
-            section.id == formValues.sectionId ? (
-              <option key={index + section.name} selected value={section.id}>
-                {section.name}
-              </option>
-            ) : (
-              <option key={index + section.name} value={section.id}>
-                {section.name}
-              </option>
-            )
-          )}
-        </Form.Select>
-      </Form.Group>
-
-      <Form.Group className="mb-3 col-12 col-md-6">
-        <Form.Label>Categoría</Form.Label>
-        <Form.Select
-          className="form-control"
-          name="categoryId"
-          onChange={handleInputChange}
-        >
-          <option defaultValue hidden>
-            Selecciona...
-          </option>
-          {categories.map((category, index) =>
-            category.id == formValues.categoryId ? (
-              <option selected key={index + category.name} value={category.id}>
-                {category.name}
-              </option>
-            ) : (
-              <option key={index + category.name} value={category.id}>
-                {category.name}
-              </option>
-            )
-          )}
-        </Form.Select>
-      </Form.Group>
-
       <Form.Group className="mb-3 col-12 ">
         <Form.Label>Descripción</Form.Label>
         <Form.Control

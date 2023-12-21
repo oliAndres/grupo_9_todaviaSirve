@@ -13,10 +13,8 @@ export const ListProductsPage = () => {
   const [formValues, setFormValues] = useState({
     id: null,
     title: "",
-    price: "",
-    discount: "",
+    name: "",
     categoryId: "",
-    sectionId: "",
     description: "",
   });
 
@@ -25,21 +23,19 @@ export const ListProductsPage = () => {
 
   const handleEditForm = (idProduct) => {
 
-    const {id, title, price, discount, categoryId, sectionId, description} = products.find(product => product.id === idProduct)
+    const { id, title, name, categoryId, description } = products.find(product => product.id === idProduct)
 
     setFormValues({
       id,
       title,
-      price,
-      discount,
+      name,
       categoryId,
-      sectionId,
       description,
     })
   }
 
   const handleDeleteProduct = async (id) => {
-    const {msg} = await deleteProduct(id);
+    const { msg } = await deleteProduct(id);
     console.log(msg);
     const productsFiltered = products.filter(product => product.id !== id);
 
@@ -56,19 +52,19 @@ export const ListProductsPage = () => {
     getData();
   }, []);
 
-/* paginator settings */
+  /* paginator settings */
 
-const [itemOffset, setItemOffset] = useState(0);
+  const [itemOffset, setItemOffset] = useState(0);
 
-const endOffset = itemOffset + itemsPerPage;
-const currentItems = products.slice(itemOffset, endOffset);
-const pageCount = Math.ceil(products.length / itemsPerPage);
+  const endOffset = itemOffset + itemsPerPage;
+  const currentItems = products.slice(itemOffset, endOffset);
+  const pageCount = Math.ceil(products.length / itemsPerPage);
 
-const handlePageClick = (event) => {
-  const newOffset = (event.selected * itemsPerPage) % products.length;
- 
-  setItemOffset(newOffset);
-};
+  const handlePageClick = (event) => {
+    const newOffset = (event.selected * itemsPerPage) % products.length;
+
+    setItemOffset(newOffset);
+  };
 
 
   return (
@@ -79,7 +75,7 @@ const handlePageClick = (event) => {
             <CardTitle>{"Agregar"} producto</CardTitle>
           </Card.Header>
           <Card.Body>
-            <FormProduct products={products} setProducts={setProducts} formValues={formValues} setFormValues={setFormValues}/>
+            <FormProduct products={products} setProducts={setProducts} formValues={formValues} setFormValues={setFormValues} />
           </Card.Body>
         </Card>
       </Col>
@@ -88,25 +84,25 @@ const handlePageClick = (event) => {
           <Card.Header className="d-flex justify-content-between">
             <FormSearch />
             <ReactPaginate
-            pageCount={pageCount}
-            breakLabel="..."
-            nextLabel=">"
-            previousLabel="<"
-            pageRangeDisplayed={4}
-            onPageChange={handlePageClick}
-            breakClassName="page-item"
-            breakLinkClassName="page-link"
-            marginPagesDisplayed={2}
-            containerClassName="pagination justify-content-center cursorPage"
-            pageClassName="page-item"
-            pageLinkClassName="page-link"
-            previousClassName="page-item"
-            previousLinkClassName="page-link"
-            nextClassName="page-item"
-            nextLinkClassName="page-link"
-            activeClassName="active"
-      
-          />
+              pageCount={pageCount}
+              breakLabel="..."
+              nextLabel=">"
+              previousLabel="<"
+              pageRangeDisplayed={4}
+              onPageChange={handlePageClick}
+              breakClassName="page-item"
+              breakLinkClassName="page-link"
+              marginPagesDisplayed={2}
+              containerClassName="pagination justify-content-center cursorPage"
+              pageClassName="page-item"
+              pageLinkClassName="page-link"
+              previousClassName="page-item"
+              previousLinkClassName="page-link"
+              nextClassName="page-item"
+              nextLinkClassName="page-link"
+              activeClassName="active"
+
+            />
           </Card.Header>
           <Card.Body>
             <Table striped borderless responsive>
@@ -122,7 +118,7 @@ const handlePageClick = (event) => {
               </thead>
               <tbody>
                 {currentItems.map((product, index) => (
-                  <TableItem key={product.title + index} product={product} handleEditForm={handleEditForm} handleDeleteProduct={handleDeleteProduct}/>
+                  <TableItem key={product.title + index} product={product} handleEditForm={handleEditForm} handleDeleteProduct={handleDeleteProduct} />
                 ))}
               </tbody>
             </Table>

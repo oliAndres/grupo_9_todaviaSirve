@@ -13,7 +13,7 @@ export const SideBar = () => {
           <a href="/">
           <img
             className="w-100 rounded-circle"
-            src="/images/logo_navidad.jpg"
+            src="/images/logo_navideño.png"
             alt="Todavia Sirve"
           />
           </a>

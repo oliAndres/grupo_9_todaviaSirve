@@ -66,10 +66,12 @@
                     <img src="/images/categories/<%= category.image %>" class="img-fluid" alt="" >
                   </td>           
               <td>
-                <a href="/categories/edit/<%= category.id %>" class="btn btn-outline-primary btn-sm btn-action">EDITAR</a>
+                <form action="/categories/edit/<%= category.id %>">
+                <button class="btn btn-outline-primary btn-sm btn-action">Editar</button>
+              </form>
                 <form action="/categories/remove/<%= category.id %>?_method=DELETE" method="POST">
-                  <button class="btn btn-outline-danger">
-                    Eliminar producto
+                  <button class="btn btn-outline-danger btn-sm btn-action">
+                    Eliminar
                 </button>
               </form>
               </td>

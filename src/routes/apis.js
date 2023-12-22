@@ -1,6 +1,10 @@
 const { getCart, addItemToCart, removeItemToCart, deleteItemToCart, clearCart } = require('../controllers/APis/cartApiController')
 const { listProducts, showProduct, createProduct, updateProduct, deleteProduct } = require('../controllers/apiProductsController')
+// import checkEmail from('../controllers/apiUsersController')
+// import { getCategoriesWithProducts, getCategories } from('../controllers/apiCategoriesController')
+const { totalProductInDB, getAllProducts } = require('../controllers/APis/productsApiController')
 
+const { check } = require('express-validator')
 const router = require('express').Router()
 
 /* apis*/ 

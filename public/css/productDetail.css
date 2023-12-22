@@ -26,8 +26,8 @@ img#main-image {
 border-left: 1px solid;
 }*/
 .product-detail__main-image {
-   
     justify-content: space-between;
+    
 }
 
 .product-detail__main-card-title {

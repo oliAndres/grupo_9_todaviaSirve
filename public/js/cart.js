@@ -32,14 +32,14 @@ const showProductInCart = (products, total) => {
       <tr>
         <th scope="row"><img src="/images/productos/${image}" alt="" width="80px"/></th>
         <td>${name}</td>
-        <td>${(price - price * discount /100)}</td>
+        <td>$${(price - price * discount /100).toLocaleString('es-ES')}</td>
         <td>
         <h3 style="cursor:pointer" onclick="deleteItemToCart(${id})" class="text-danger"><i class="fa-regular fa-trash-can"></i></h3>
         </td>
     </tr>
       `;
     });
-    $cart('show-total').innerHTML = total;
+    $cart('show-total').innerHTML = total.toLocaleString('es-ES');
   }
  
 };

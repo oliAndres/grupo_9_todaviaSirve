@@ -48,18 +48,13 @@
                   </p>
                 </div>
                 <div class="product-detail__main-card-precio">
-                    $ <%= prodfind.price %>
+                    $ <%= prodfind.price.toLocaleString('es-ES') %>
                  
                 </div>
               </div>
             </article>
             
             <div class="product-detail-botones">
-              <div class="product-detail__main-comprar-bt">
-                <a href="/carrito">
-                  <button class="product-detail__main-button  bg-black text-white" type="submit">Comprar</button>
-                </a>
-              </div>
               <div class="product-detail__main-añadir-bt">
                 <a href="#" onclick="addItemToCart(1,'<%=prodfind.id%>')">
                   <button class="product-detail__main-button font-semibold rounded-md border">Añadir al carrito</button>

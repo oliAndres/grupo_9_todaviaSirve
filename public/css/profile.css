@@ -1,4 +1,5 @@
 .profile--main {
+    height: 80vh;
     box-sizing: border-box;
     background-color: var(--grisClaro);
     display: flex;

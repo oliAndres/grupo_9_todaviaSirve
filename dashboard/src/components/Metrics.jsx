@@ -12,13 +12,6 @@ export const Metrics = ({totalProducts}) => {
     },
     {
       id: crypto.randomUUID(),
-      color: "success",
-      title: "Categorías",
-      value: 79,
-      icon: "fa-award",
-    },
-    {
-      id: crypto.randomUUID(),
       color: "warning",
       title: "Usuarios registrados",
       value: 49,

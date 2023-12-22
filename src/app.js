@@ -58,7 +58,7 @@ app.use('/api',apisRouter);
 
 
 app.use('/categories',categRouter);
-app.use('/brand',brandRouter);
+app.use('/brands',brandRouter);
 
 
 

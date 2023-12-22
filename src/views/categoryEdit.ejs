@@ -11,11 +11,11 @@
               
     <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Sección</a>
+          <a class="nav-link active" aria-current="page" href="/admin">Volver al admin</a>
         </li>
         
         <li class="nav-item">
-          <a class="nav-link" href="/category">Categoria</a>
+          <a class="nav-link" href="/categories">Categoria</a>
         </li>
        
     </ul>
@@ -23,13 +23,12 @@
      
     </nav>
         
-          <h1 class="title-table">Administrador de Categorias</h1>
+          <h1 class="title-table">Agregar Categorias</h1>
           <br>
         <div class="category-box"> 
           <div class="row">
             <form action="/categories/update/<%= category.id %>?_method=PUT" method="POST" class="newCategory__main__form" enctype="multipart/form-data" >
-                <h3 class="newCategory__main__form--title">Agregar Categoria</h3>
-                <br>
+               
                 <div class="mb-3">
                     <label for=>Nombre de la categoria</label>
                     <input placeholder="Ingrese el nombre" class="form-control" type="text" name="name" id="name">

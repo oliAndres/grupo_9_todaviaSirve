@@ -12,7 +12,6 @@ export const ListProductsPage = () => {
 
   const [formValues, setFormValues] = useState({
     id: null,
-    title: "",
     name: "",
     categoryId: "",
     description: "",
@@ -23,11 +22,10 @@ export const ListProductsPage = () => {
 
   const handleEditForm = (idProduct) => {
 
-    const { id, title, name, categoryId, description } = products.find(product => product.id === idProduct)
+    const { id, name, categoryId, description } = products.find(product => product.id === idProduct)
 
     setFormValues({
       id,
-      title,
       name,
       categoryId,
       description,
@@ -72,7 +70,7 @@ export const ListProductsPage = () => {
       <Col sm={12} lg={4}>
         <Card className="mb-3">
           <Card.Header>
-            <CardTitle>{"Agregar"} producto</CardTitle>
+            <CardTitle>{"Eliminar"} producto</CardTitle>
           </Card.Header>
           <Card.Body>
             <FormProduct products={products} setProducts={setProducts} formValues={formValues} setFormValues={setFormValues} />
@@ -108,11 +106,9 @@ export const ListProductsPage = () => {
             <Table striped borderless responsive>
               <thead>
                 <tr>
-                  <th>Título</th>
+                  <th>Nombre</th>
                   <th>Precio</th>
-                  <th>Descuento</th>
                   <th>Categoría</th>
-                  <th>Sección</th>
                   <th>Acciones</th>
                 </tr>
               </thead>

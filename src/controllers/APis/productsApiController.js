@@ -1,25 +1,25 @@
 const db = require("../../database/models");
-
-const totalProductInDB = async (req, res) => {
-  try {
-    const total = await db.Product.count();
-
-    return res.status(200).json({
-      ok: true,
-      data: total,
+const totalProductInDB = (req, res) => {
+  db.Product.findAll()
+    .then((total) => {
+      return res.status(200).json({
+        ok: true,
+        data: total.length, 
+      });
+    })
+    .catch((error) => {
+      return res.status(error.status || 500).json({
+        ok: false,
+        msg: error.message || "Upss, hubo un error",
+      });
     });
-  } catch (error) {
-    return res.status(error.status || 500).json({
-      ok: false,
-      msg: error.message || "Upss, hubo un error",
-    });
-  }
 };
+
 
 const getAllProducts = async (req, res) => {
   try {
     const products = await db.Product.findAll({
-      include: ["section", "category", "images"],
+      include: ["category", "images"],
     });
 
     return res.status(200).json({

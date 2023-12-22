@@ -9,6 +9,7 @@ export const loader = async () => {
         }
         
     } catch (error) {
-        console.error
+        console.error(error); 
+        throw error;    
     }
 }

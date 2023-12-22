@@ -23,5 +23,13 @@ router
     .delete('/cart/all',clearCart)
 
     /* categorias*/
+    .get('/check-email',checkEmail)
+    
+    .get('/categories/products', getCategoriesWithProducts)
+    .get('/categories', getCategories)
+
+    .delete('/products/:id',deleteProduct)
+    .get('/products/count',totalProductInDB)
+    .get('/products',getAllProducts)
 
 module.exports = router

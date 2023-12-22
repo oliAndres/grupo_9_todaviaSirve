@@ -66,10 +66,10 @@
                     <img src="/images/categories/<%= category.image %>" class="img-fluid" alt="" width="100">
                   </td>           
               <td>
-                <button class="btn btn-outline-danger btn-sm btn-action"><a href="/categories/edit/<%= category.id %>">Editar</a></button>
+                <button class="btn btn-outline-primary btn-sm  " style="margin-bottom: 1rem;"><a href="/categories/edit/<%= category.id %> " >EDITAR</a></button>
                 <form action="/categories/remove/<%= category.id %>?_method=DELETE" method="POST">
-                  <button class="btn btn-outline-danger btn-sm btn-action">
-                    Eliminar
+                  <button class="btn btn-outline-danger btn-sm ">
+                    ELIMINAR
                 </button>
              
               </form>

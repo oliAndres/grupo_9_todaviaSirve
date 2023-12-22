@@ -6,29 +6,21 @@
     <%- include('partials/header') %>
     <main>
       <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-            
-              
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/admin">Volver al admin</a>
-        </li>
-        
-        <li class="nav-item">
-          <a class="nav-link" href="/brands">Marcas</a>
-        </li>
-       
-    </ul>
+        <div class="container-fluid">        
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/admin">Volver al admin</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/brands">Marcas</a>
+            </li>
+          </ul>
         </div>
-     
-    </nav>
-        
-          <h1 class="title-table">Agregar Marca</h1>
-          <br>
-        <div class="category-box"> 
-          <div class="row">
-            <form action="/brands/update/<%= brand.id %>?_method=PUT" method="POST" class="newBrand__main__form" enctype="multipart/form-data" >
-               
+      </nav>
+      <div class="editBrand__main col-7 col-md-6 mx-auto mt-3 mb-10">
+        <form action="/brands/update/<%= brand.id %>?method=PUT" method="POST" class="editBrandmain_form" enctype="multipart/form-data" >
+          <h3 class="editBrand__main-title-table">Editar Marca</h3>
+              <br>
                 <div class="mb-3">
                     <label for=>Nombre de la marca</label>
                     <input placeholder="Ingrese el nombre" class="form-control" type="text" name="name" id="name">

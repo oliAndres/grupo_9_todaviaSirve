@@ -6,29 +6,21 @@
     <%- include('partials/header') %>
     <main>
       <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-            
-              
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/admin">Volver al admin</a>
-        </li>
-        
-        <li class="nav-item">
-          <a class="nav-link" href="/categories">Categoria</a>
-        </li>
-       
-    </ul>
+        <div class="container-fluid">         
+           <ul class="nav nav-tabs">
+             <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="/admin">Volver al admin</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="/categories">Categoria</a>
+            </li>
+          </ul>
         </div>
-     
-    </nav>
-        
-          <h1 class="title-table">Agregar Categorias</h1>
-          <br>
-        <div class="category-box"> 
-          <div class="row">
-            <form action="/categories/update/<%= category.id %>?_method=PUT" method="POST" class="newCategory__main__form" enctype="multipart/form-data" >
-               
+      </nav>
+      <div class="editCategory__main col-7 col-md-6 mx-auto mt-3">
+        <form action="/categories/update/<%= category.id %>?method=PUT" method="POST" class="newCategorymain_form" enctype="multipart/form-data" >
+          <h3 class="editCategory_main_form--title">Editar Categoria</h3>
+            <br>                  
                 <div class="mb-3">
                     <label for=>Nombre de la categoria</label>
                     <input placeholder="Ingrese el nombre" class="form-control" type="text" name="name" id="name">

@@ -1,3 +1,4 @@
+const { log } = require('console');
 const db = require('../../database/models');
 const fs = require('fs').promises; 
 const path = require('path'); 
@@ -25,9 +26,12 @@ async function destroyProduct(req, res) {
             }
             await image.destroy();
         }
-
-        return res.redirect('/admin');
-    } catch (error) {
+        console.log("ROLE ID DE USER",req.session.userLogin.role);
+        if (req.session.userLogin.role === 2) {
+            return res.redirect("/users/profile/");
+        } else {
+            return res.redirect("/admin");
+        }    } catch (error) {
         console.error('Error al eliminar el producto:', error);
         return res.status(500).json({ error: 'Error interno del servidor' });
     }

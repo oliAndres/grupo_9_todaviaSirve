@@ -1,13 +1,10 @@
-<!-- Script JavaScript -->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-<!-- Script JavaScript -->
 <script>
     function abrirEliminarModal(productID) {
         var modalID = 'deleteModalProducts' + productID;
         console.log('Intentando abrir el modal con ID:', modalID);
 
-        // Obtiene la instancia del modal y lo muestra
         var myModal = new bootstrap.Modal(document.getElementById(modalID));
         myModal.show();
     }

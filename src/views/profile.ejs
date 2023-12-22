@@ -134,10 +134,7 @@
                                     <a href="/products/edit/<%= product.id %>" class="btn btn-outline-primary  btn-action btn-edit">
                                         <i class="fa-solid fa-pencil"></i> <!-- Icono de editar -->
                                     </a>
-                                    <!-- <button type="button" class="btn btn-outline-primary" >
-                                        <i class="fas fa-edit"></i> 
-                                        
-                                    </button> -->
+                                    <%- include('partials/modalDelete', { id: product.id, name: product.name }) %>
                                     <button type="button" class="btn btn-outline-danger" onclick="abrirEliminarModal('<%= product.id %>')">
                                         <i class="fas fa-trash-alt"></i> <!-- Icono de eliminar -->
                                     </button>

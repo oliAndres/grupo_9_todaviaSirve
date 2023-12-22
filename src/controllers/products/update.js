@@ -104,7 +104,12 @@ module.exports = async (req, res) => {
             });
         }
 
-        return res.redirect("/admin");
+        if (req.session.userLogin.role === 2) {
+            return res.redirect("/users/profile/");
+        } else {
+            return res.redirect("/admin");
+        }
+        
     } catch (error) {
         console.error('Error en la edición del producto:', error);
         return res.status(500).send('Error interno del servidor');

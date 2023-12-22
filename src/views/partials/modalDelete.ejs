@@ -1,6 +1,6 @@
 <!-- The Modal -->
-<div class="modal" id="deleteModalProducts<%=id%>">
-    <div class="modal-dialog">
+<div class="modal fade " id="deleteModalProducts<%=id%>">
+    <div class="modal-dialog modal-dialog-centered ">
         <div class="modal-content">
             <div class="modal-body">
                 <form action="/products/destroyProducts/<%= id %>?_method=DELETE" method="POST">

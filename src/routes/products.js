@@ -4,6 +4,7 @@ const upload = require('../middlewares/upload');
 const userCheck = require('../middlewares/userCheck');
 const adminCheck = require('../middlewares/adminCheck');
 const productEditValidator = require('../validations/productEditValidator');
+const productAddValidator = require('../validations/productAddValidator')
 const router = express.Router();
 
 router.get('/detail/:id', productsController.detail);
@@ -26,6 +27,6 @@ router.get('/add',userCheck, productsController.add);
 router.get('/deleteProducts/:id', productsController.deleteProduct);
 router.delete('/destroyProducts/:id', productsController.destroyProduct);
 
-router.post('/add', upload.array('images'),productsController.create)
+router.post('/add', upload.array('images'),productAddValidator,productsController.create)
 
 module.exports = router;

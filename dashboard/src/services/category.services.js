@@ -2,10 +2,10 @@ import { UseFetch } from "../hooks/UseFetch"
 
 export const getAllCategory = async () => {
     try {
-
-       return UseFetch('categories')
-        
+        const response = await UseFetch('categories');
+        return response;
     } catch (error) {
-        console.error
+        console.error(error);
+        throw error;
     }
-}
+};

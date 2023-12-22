@@ -69,7 +69,7 @@ $valProductAdd("name").focus();
 
     const msgErrors = [];
 
-    for (let i = 0; i < elementsForm.length; i++) {
+    for (let i = 0; i < elementsForm.length -2; i++) {
       if (elementsForm[i].value.trim() === "") {
         msgErrors.push(`El campo$valProductAdd{elementsForm[i].name} no puede estar vacío`);
         elementsForm[i].style.borderColor = 'red'
@@ -78,10 +78,10 @@ $valProductAdd("name").focus();
       }
     }
     
-   /* if(msgErrors.length) {
-      alert('Los campos señalados son obligatorios')
-    }else {
-      this.submit()
-    }*/
+   if(msgErrors.length === 0) {
+     formAdd.submit()
+    }else{
+      console.log(msgErrors);
+    }
   })
 }

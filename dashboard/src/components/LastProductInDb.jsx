@@ -12,7 +12,7 @@ export const LastProductInDb = () => {
           <img
             className="img-fluid px-3 px-sm-4 mt-3 mb-4"
             style={{ width: "40rem" }}
-            src="/images/mandalorian.jpg"
+            src="\images\Auto_usado1.jpg"
             alt=" Star Wars - Mandalorian "
           />
         </div>

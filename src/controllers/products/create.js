@@ -2,6 +2,7 @@ const db = require('../../database/models');
 
 const create = async (req, res) => {
   try {
+    const userId = req.session.userLogin.id;
     const { brand, category, ...productData } = req.body;
     let brandId;
     let categoryId;
@@ -35,6 +36,7 @@ const create = async (req, res) => {
       ...productData,
       brandId,
       categoryId, 
+      userId
     });
     console.log(req.files)
 
@@ -50,7 +52,11 @@ const create = async (req, res) => {
     
 
     console.log(product);
-    res.redirect('/admin');
+    if (req.session.userLogin.role === 2) {
+      return res.redirect("/users/profile/");
+  } else {
+      return res.redirect("/admin");
+  }
   } catch (error) {
     console.error('Error:', error);
     res.status(500).send('Error al crear el producto');
